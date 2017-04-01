@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<meta name="keywords" content="，，">
+<meta name="description" content="" />
+<meta name="author" content="Design:ZhangXi; Web Layout:HXH;" />
+<link type="image/x-icon" href="../favicon.ico" rel="icon"/>
+<link type="image/x-icon" href="../favicon.ico" rel="shortcut icon" />
+<link type="text/css" rel="stylesheet" href="../css/index.css" />
+<!--link type="text/css" rel="stylesheet" href="../css/jquery-ui.css" /-->
+
+</head>
+
+<body>
+<!--顶部导航-->
+<div id="header" ></div>
+<!--div class="warp"><a href='../index.html' class='top_nav_home'>HOME</a></div-->
+<div id="pay-menu" ></div>
+
+	<!--内容部分-->
+	<div class="warp">
+		<div class="content">
+        	<div class="center_left">
+            	<iframe src="left.html" width="250" height="930" scrolling="no" allowtransparency="true" frameborder="0" ></iframe>
+             	
+            </div>
+        	<div class="center_right ">
+            	<div class="right center_user_bg">
+    				<div class="pay_form m35"> 
+     
+                        
+          <div class="help-node closed">
+              <a name="1"><h5>1.什麼是RC幣？</h5></a>
+              <div> <span class="bg"></span><p>RC幣是一種可以在RC平臺在線統一支付的虛擬貨幣。請先儲值RC幣，然後可隨時使用RC幣購買RC平臺上任何的業務服務，包括會員、秀場貴族、秀場禮物等。</p>
+              </div>
+          </div>
+          <div class="help-node closed">
+              <a name="2"><h5>2.如何使用RC幣？</h5></a>
+              <div> <span class="bg"></span><p>直接購買RC平臺上的業務，將會扣除您帳號上的RC幣。</p>
+              </div>
+          </div>
+          <div class="help-node closed">
+              <a name="3"><h5>3.RC幣的轉換比例？</h5></a>
+              <div> <span class="bg"></span><p>1RC幣=1台幣</p>
+              </div>
+          </div>
+          <div class="help-node closed">
+              <a name="4"><h5>4.各個區域的Gash轉點問題！</h5></a>
+              <div> <span class="bg"></span><p> 各區域的轉點點數不同，香港地區轉點是按照香港的Gash點數進行轉換，台幣地區轉點的是按照台灣的Gash點數進行轉換RC幣。</p>
+                  <p>香港的Gash點數 10點 = 1港幣 = 4台幣 = 4RC幣</p>
+                  <p>台灣的Gash點數 1點 = 1台幣 = 1RC幣 </p>
+              </div>
+          </div>
+          <div class="help-node closed">
+              <a name="5"><h5>5.Gash小額付費幫助！</h5></a>
+              <div> <span class="bg"></span><p>選擇確認支付後跳到Gash全球支付系統需要選擇付款方式：</p>
+                  <p>第一步：</p>
+                  <img src="img/faq/select_pay_way_step_1.png" alt="Gash小額付費幫助">
+                  <p>第二步：</p>
+                  <img src="img/faq/select_pay_way_step_2.png" alt="Gash小額付費幫助">
+              </div>
+          </div>
+                    </div>
+                    
+                </div>
+                
+                
+            </div>
+        </div>
+	</div>
+
+<script type="text/javascript" src="../js/open.rc.js"></script> 
+<script type="text/javascript" src="../js/open.common.js"></script> 
+<script type="text/javascript" src="../js/open.pay.js"></script>
+<script type="text/javascript" language="javascript"> 
+$(document).ready(function() {
+	rcpay.api.initUserInfo();
+	rcpay.api.getCard();
+	rcpay.api.getShow();
+});
+</script> 
+</body>
+</html>

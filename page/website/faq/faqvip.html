@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<meta name="keywords" content="，，">
+<meta name="description" content="" />
+<meta name="author" content="Design:ZhangXi; Web Layout:HXH;" />
+<link type="image/x-icon" href="../favicon.ico" rel="icon"/>
+<link type="image/x-icon" href="../favicon.ico" rel="shortcut icon" />
+<link type="text/css" rel="stylesheet" href="../css/index.css" />
+<style>
+.hfix {position:relative;}
+</style>
+</head>
+
+<body>
+<!--顶部导航-->
+<div id="header" ></div>
+<div id="nav-menu" ></div>
+
+	<!--内容部分-->
+	<div class="warp">
+		<div class="content">
+        	<div class="center_left">
+            	<iframe src="left.html" id="leftFrame"  name="leftFrame" title="leftFrame" scrolling="no" allowtransparency="true" scrolling="no" frameborder="0" width="250" height="700"></iframe>
+                
+            </div>
+        	<div class="center_right ">
+                <div class="right center_user_bg">
+                  
+                     <div id="help-content" class="help-content m20">
+          <div class="help-node" id="1">
+            <h5><a href="faqvip.html#1"><font><font>1. 什么是ShowTime语音VIP会员</font></font></a></h5>
+            <div> 
+            <p><font><font>ShowTime语音VIP会员是ShowTime语音平台提供给用户们的增值服务，在享受ShowTime语音平台一般免钱的服务下，通过付费获得更好的付费体验，并享有除了免费特权之外的更多增值特权。</font></font></p>
+            </div>
+          </div>
+          
+          <div class="help-node closed" id="2">
+            <h5><a href="faqvip.html#2"><font><font>2. VIP特权包括：</font></font></a></h5>
+            <div> 
+            <p>  <img src="../images/vip_help.png" width=200 > </p>
+            </div>
+          </div>
+          
+          <div class="help-node closed" id="3">
+            <h5><a href="faqvip.html#3"><font><font>3.  VIP的开通方式</font></font></a></h5>
+            <div> 
+            <p><font><font>登入个人账户中的ShowTime官方儲值中心（此处加入开通特权的链接），點開通VIP進入開通頁面，選擇開通時長進行開通。</font></font></p>
+            </div>
+          </div>
+          
+                     </div> 
+                    
+                </div>
+
+            </div>
+        </div>
+	</div>
+
+<script type="text/javascript" src="../js/open.rc.js"></script> 
+<script type="text/javascript" src="../js/open.common.js"></script> 
+
+<script type="text/javascript" language="javascript"> 
+$(document).ready(function() {
+	var path = window.location.href;
+	var show_id = path.split("#")[1];
+	if(show_id!=null){
+		$(".help-node").addClass("closed");
+		$("#"+show_id).removeClass("closed");
+	}
+	
+	$("#help-content .help-node").click(function(e) {
+		if($(this).hasClass("closed")==true){
+			$(".help-node").addClass("closed");
+			$(this).removeClass("closed");
+		}else{
+			$(".help-node").addClass("closed");
+		}
+    });
+});
+</script>
+
+</body>
+</html>

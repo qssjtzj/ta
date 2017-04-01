@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<meta name="keywords" content="，，">
+<meta name="description" content="" />
+<meta name="author" content="Design:ZhangXi; Web Layout:HXH;" />
+<link type="image/x-icon" href="../favicon.ico" rel="icon"/>
+<link type="image/x-icon" href="../favicon.ico" rel="shortcut icon" />
+<link type="text/css" rel="stylesheet" href="../css/index.css" />
+<style>
+.hfix {position:relative;}
+</style>
+</head>
+
+<body>
+<!--顶部导航-->
+<div id="header" ></div>
+<div id="nav-menu" ></div>
+
+	<!--内容部分-->
+	<div class="warp">
+		<div class="content">
+        	<div class="center_left">
+           	 	<iframe src="left.html" id="leftFrame"  name="leftFrame" title="leftFrame" scrolling="no" allowtransparency="true" scrolling="no" frameborder="0" width="250" height="500"></iframe>
+                
+            </div>
+        	<div class="center_right ">
+                <div class="right center_user_bg">
+                	<div id="help-content" class="help-content m20">
+                      <div class="help-node" id="1">
+                        <h5><a href="faqchong.html#1"><font><font>1. What is the "ShowTime coin"?</font></font></a></h5>
+                        <div> 
+                        <p><font><font>"ShowTime coin "is a kind of virtual money which can pay online in ShowTime platform. 
+            After stored-value for ShowTime coin, users can purchase any service in ShowTime platform anytime, including membership, noble title, virtual gifts and so on.
+            </font></font></p>
+                        </div>
+                      </div>
+                      
+                      <div class="help-node closed" id="2">
+                        <h5><a href="faqchong.html#2"><font><font>2. How to use the ShowTime coin?</font></font></a></h5>
+                        <div> 
+                        <p><font>1.	Log in to your ShowTime account;</font></p>
+                        <p><font>2.	Stored-value for ShowTime coin;</font></p>
+                        <p><font>3.	Purchase the service you want in ShowTime;</font></p>
+                        <p><font>4.	Corresponding ShowTime coin value will be deducted in your account;</font></p>
+            
+                        </div>
+                      </div>
+                      
+                      <div class="help-node closed" id="3">
+                        <h5><a href="faqchong.html#3"><font><font>3.  The exchange rate of ShowTime coin</font></font></a></h5>
+                        <div> 
+                        <p><font><font>RM 1 = 10ShowTime Coin</font></font></p>
+                        </div>
+                      </div>
+                      
+                     </div> 
+                    
+                </div>
+
+            </div>
+        </div>
+	</div>
+
+<script type="text/javascript" src="../js/open.rc.js"></script> 
+<script type="text/javascript" src="../js/open.common.js"></script> 
+
+<script type="text/javascript" language="javascript"> 
+$(document).ready(function() {
+	var path = window.location.href;
+	var show_id = path.split("#")[1];
+	if(show_id!=null){
+		$(".help-node").addClass("closed");
+		$("#"+show_id).removeClass("closed");
+	}
+	
+	$("#help-content .help-node").click(function(e) {
+		
+		if($(this).hasClass("closed")==true){
+			$(".help-node").addClass("closed");
+			$(this).removeClass("closed");
+		}else{
+			$(".help-node").addClass("closed");
+		}
+        
+    });
+});
+</script>
+
+</body>
+</html>

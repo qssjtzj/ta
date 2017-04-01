@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<title></title>
+<meta name="keywords" content="，，">
+<meta name="description" content="" />
+<meta name="author" content="Design:ZhangXi; Web Layout:HXH;" />
+<link type="image/x-icon" href="../favicon.ico" rel="icon"/>
+<link type="image/x-icon" href="../favicon.ico" rel="shortcut icon" />
+<link type="text/css" rel="stylesheet" href="../css/index.css" />
+
+</head>
+
+<body>
+<!--顶部导航-->
+<div id="header" ></div>
+<!--div class="warp"><a href='../index.html' class='top_nav_home'>HOME</a></div-->
+
+	<!--内容部分-->
+	<div class="warp">
+		<div class="content">
+        	<div class="center_left">
+            	<iframe src="left.html" width="250" height="880" scrolling="no" allowtransparency="true" frameborder="0" ></iframe>
+             	
+            </div>
+        	<div class="center_right ">
+            	<div class="right center_user_bg">
+                    <div class="userinfo_form m20" id="un_bind_fb">
+                        <h2>Link to Facebook</h2>
+                        <a class="btn_fb_bind colorfff tc mt80" id="" onclick="fb.account.FBlogin();"> &nbsp; Link to Facebook</a>
+                        <div class="facebook_change tc mt30" id="bind_result"> </div>
+                       
+                    </div>
+                    
+                    <div  class="userinfo_form m20" id="en_bind_fb" style="display:none;">
+                    	<h2>Link to Facebook</h2>
+                        
+                        <div class="m55 ml120">
+                            <div class="login_info" >
+                            	<div class="facebook_name tc mt15" >This account has been linked to an RC account.</div>
+                             	<div class="facebook_change tc "> Tip: Disconnect Facebook in Showoo</div>
+                             	
+                            	<!--
+                                <img src="" title="" width="48" height="48" id="facebook_img"/> 
+                                <div class="facebook_name" id="facebook_username" data-localize="facebook.username" > 名称</div>
+                                <div class="facebook_change"><span data-localize="facebook.noyou" >不是您？</span>
+                                    <a href="javascript:;" onclick="fb.account.FBlogout()">换个Facebook账号串联</a> 
+                                </div>
+                                -->
+                            </div>
+                            <!--
+                            <div class="facebook_account"><span data-localize="facebook.chuanli">该账号已串联RC账号：</span><i id="facebook_account"></i></div>
+                            -->
+                    	</div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+	</div>
+
+<script type="text/javascript" src="../js/open.rc.js"></script> 
+<script type="text/javascript" src="../js/open.common.js"></script> 
+<script type="text/javascript" src="../js/open.center.js"></script>
+<script type="text/javascript" src="../js/bind.fb.js"></script>
+<script type="text/javascript" language="javascript"> 
+$(document).ready(function() {
+	//rcopen.api.initUserInfo();
+	fb.account.checkBind();
+});
+</script> 
+</body>
+</html>

@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<livelist>    
+    <live>
+    	<channelid>100855</channelid>    
+        <imgurl>http://www.xiuktv.com/PubImgSour/1420471031380.jpg</imgurl> 
+        <hostname>asdf</hostname>
+        <num>2000</num>
+        <time>20</time> 
+    </live>   
+    <live>
+    	<channelid>100855</channelid>    
+        <imgurl>http://www.xiuktv.com/PubImgSour/1420469544792.jpg</imgurl> 
+        <hostname>小冉</hostname>
+        <num>1000</num>
+        <time>10</time> 
+    </live>
+    <live>
+    	<channelid>100855</channelid>    
+        <imgurl>http://www.xiuktv.com/PubImgSour/1420469544792.jpg</imgurl> 
+        <hostname>小Q</hostname>
+        <num>1000</num>
+        <time>10</time> 
+    </live>
+    <live>
+    	<channelid>100855</channelid>    
+        <imgurl>http://www.xiuktv.com/PubImgSour/1420471031380.jpg</imgurl> 
+        <hostname>小木</hostname>
+        <num>1000</num>
+        <time>10</time> 
+    </live>
+</livelist>   

@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Showoo-FAQ</title>
+<meta name="keywords" content="，，">
+<meta name="description" content="" />
+<meta name="author" content="Design:ZhangXi; Web Layout:HXH;" />
+<link type="image/x-icon" href="../favicon.ico" rel="icon"/>
+<link type="image/x-icon" href="../favicon.ico" rel="shortcut icon" />
+<link type="text/css" rel="stylesheet" href="../css/index.css" />
+<style>
+.hfix {position:relative;}
+</style>
+</head>
+
+<body>
+<!--顶部导航-->
+<div id="header" ></div>
+<div id="nav-menu" ></div>
+
+	<!--内容部分-->
+	<div class="warp">
+		<div class="content">
+        	<div class="center_left">
+                
+                    <iframe src="left.html" id="leftFrame"  name="leftFrame" title="leftFrame" scrolling="no" allowtransparency="true" scrolling="no" frameborder="0" width="250" height="700"></iframe>
+                
+               
+            </div>
+        	<div class="center_right ">
+                <div class="right center_user_bg">
+                   
+                     <div id="help-content" class="help-content m20">
+                        <div class="help-node" id="1">
+                          <h5><a href="#1">1. What`s this？</a></h5>
+                          <div>
+                            <p><font><font> Please translate as soon as possible</font></font></p>
+                          </div>
+                        </div>
+                        
+                      </div> 
+                    
+                </div>
+
+            </div>
+        </div>
+	</div>
+
+<script type="text/javascript" src="../js/open.rc.js"></script> 
+<script type="text/javascript" src="../js/open.common.js"></script> 
+
+<script type="text/javascript" language="javascript"> 
+$(document).ready(function() {
+	var path = window.location.href;
+	var show_id = path.split("#")[1];
+	if(show_id!=null){
+		$(".help-node").addClass("closed");
+		$("#"+show_id).removeClass("closed");
+	}
+	
+	$("#help-content .help-node").click(function(e) {
+		if($(this).hasClass("closed")==true){
+			$(".help-node").addClass("closed");
+			$(this).removeClass("closed");
+		}else{
+			$(".help-node").addClass("closed");
+		}
+    });
+});
+</script>
+
+</body>
+</html>

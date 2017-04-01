@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<title></title>
+<meta name="keywords" content="，，" />
+<meta name="description" content="" />
+<meta name="author" content="Design:ZhangXi; Web Layout:HXH;" />
+<link type="image/x-icon" href="favicon.ico" rel="icon"/>
+<link type="image/x-icon" href="favicon.ico" rel="shortcut icon" />
+<link type="text/css" rel="stylesheet" href="css/index.css" />
+
+</head>
+<body>
+<!--顶部导航-->
+<div id="header" ></div>
+<!-- <div class="warp"><a href='index.html' class='top_nav_home'>HOME</a></div> -->
+
+	<!--内容部分-->
+	<div class="warp">
+		<div class="content">
+			 <div class="reg_warp" style=" height:590px;">
+             	<div class="reg_bunner"></div>
+                <div class="reg_cont">
+                	
+                	<div class="reg_form">
+                    	<div class="color666 fts14"> <i class="fts30 ">Sign Up </i><i style="color:#999999;">  or</i> <a href="login.html" style="color:#f00;" > Login</a></div>
+                        <a class="login_btn_fb fts14 colorfff bold" id="login_fb_btn" href="javascript:void(0);"  onclick="fb.account.login();">Login via Facebook</a>
+                        
+                        <div class="line"></div>
+                        <p>
+                            <input id="new_account" type="text" class="int " value="Username" maxlength="25"  onfocus="opencyou.registerInput.clearNote(this.id,'Username')" onblur="opencyou.registerInput.checkAccount(this.id)" />
+                            <em class="tip" id="tip_new_account"> </em>
+                            
+                        </p>
+                        <p>
+                        	<input id="new_username" type="text" class="int" value="Nickname" maxlength="16" onfocus="opencyou.registerInput.clearNote(this.id,'Nickname')" onblur="opencyou.registerInput.checkUsername(this.id)"/>
+                            <em class="tip" id="tip_new_username"> </em>
+                        </p>
+                        <p>
+                        
+                            <input id="new_password" type="password" class="int" onkeydown="if(event.keyCode==32) return false" style="display:none;" onpaste="return false" onblur="opencyou.registerInput.thisPw(this.id,'new_password_01'); opencyou.registerInput.checkPwd1(this.id)" onfocus="opencyou.registerInput.addcss(this.id)"/>
+                            <input  id="new_password_01" type="text" class="int" onkeydown="if(event.keyCode==32) return false" style="" value="Password" maxlength="16" onfocus="opencyou.registerInput.changePw(this.id,'new_password')"/>
+                       		<em class="tip" id="tip_new_password"> </em>
+                       	</p>
+                        <p>
+                            <input id="password2" type="password" class="int" onkeydown="if(event.keyCode==32) return false" style="display:none" onpaste="return false" onblur="opencyou.registerInput.thisPw(this.id,'password2_01');opencyou.registerInput.checkPwd2(this.id)" onfocus="opencyou.registerInput.addcss(this.id)"/>
+                            <input  id="password2_01" type="text" class="int"onkeydown="if(event.keyCode==32) return false" style="" value="Confirm Password" maxlength="16" onfocus="opencyou.registerInput.changePw(this.id,'password2')" />
+                            <em class="tip" id="tip_password2"> </em>
+                        </p>
+                        <p>
+                        	<input id="new_email" type="text" class="int" value="Email"  style="ime-mode:disabled;"  maxlength="60" onfocus="opencyou.registerInput.clearNote(this.id,'Email')" onblur="opencyou.registerInput.checkEmail(this.id)" />
+                            <em class="tip" id="tip_new_email"> </em>
+                        </p>
+                        
+                        <div  class="reg_code" >
+                         	<input name="new_seccode" id="new_seccode" type="text" value="Verification Code"  maxlength="5" autocomplete="off" onfocus="opencyou.registerInput.clearNote(this.id,'Verification Code')" onblur="opencyou.registerInput.checkCode(this.id)"/>
+                            <em class="tip" id="tip_new_seccode" style=" bottom:1px; right:145px;"> </em>
+                          	<img id="sec_code"  src="/validateCodeServlet"  onclick="opencyou.registerInput.updateseccode()" width="75" height="40"/>
+                        	<a href="javascript:void(0);" onclick="opencyou.registerInput.updateseccode();" tltle="Change" >ReFresh?</a> 
+                     	</div>
+                       
+                        <div class="reg_rule">
+                       		<input id="agreebbrule" type="checkbox" value="0" class="agree_check" checked="checked" /> <span>I agree with <a href="inc/useragreement.html" target="_new" title="">Showoo Terms of Service </a><!--,and I guarantee that I am more than 13 years old.--></span>
+                            
+                        </div>
+                        
+                        <a class="reg_submit_btn fts14 colorfff bold"  id="reg_submit_btn"  onclick="opencyou.registerInput.submitLogin()" >Register</a>
+                        
+                        <p class="tip colorf33 line30" id="tip_form"> </p>
+                    	<!--a class="reg_btn_fb" onclick="fb.account.login();"></a-->
+                    	
+                    </div>
+                </div>
+             </div>
+		</div>
+	</div>
+
+<script type="text/javascript" src="js/open.rc.js"></script> 
+<script type="text/javascript" src="js/open.common.js"></script> 
+<script type="text/javascript" src="js/open.register.js"></script> 
+<script type="text/javascript" src="js/show.fb.js"></script> 
+<script>
+$(document).ready(function() {
+	
+});
+</script>
+</body>
+</html>

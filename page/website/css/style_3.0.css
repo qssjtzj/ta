@@ -1,0 +1,21 @@
+.top_ads{ width:100%; background:#512271; }
+
+.playImg .prev {left: 5px;}
+.playImg .next {right: 5px;}
+
+.play_logbg{ position: absolute;right: -118px; top:-1px; width:374px; height:265px; background:url(../imgs/v3/logbg.png) no-repeat center; }
+.play_right{ float:left; width:251px; height:228px; border:none; background:none; }
+
+.play_user{ margin: 23px 23px 0 28px; width: 80%;height: 120px; border-bottom:none;}  
+.play_user a{ display:block; float:left; width:50%; margin-top:18px; color:#fff;}
+.play_user_info{ width:100%; margin:0 auto; padding-top:18px; text-align: center;}
+.play_user span{ display:block; margin:0 auto; text-align:center; color:#fff; font-size:14px; line-height:50px;}
+.play_user .play_user_login{ width:51px; height:52px; background:url(../imgs/v3/play_login.png) no-repeat center;  }
+.play_user .play_user_signup{  width:49px; height:51px; background:url(../imgs/v3/play_signup.png) no-repeat center; }
+
+.play_download{ height:56px; width: 80%; margin-left: 30px; margin-top:16px;} 
+.play_download a{ display:block; width:32%; height:56px; cursor:pointer; float:left;  }
+.play_download .download_android{ background:url(../imgs/v3/dl_android.png) no-repeat center;  }
+.play_download .download_ios{  background:url(../imgs/v3/dl_ios.png) no-repeat center; }
+.play_download .download_window{background:url(../imgs/v3/dl_window.png) no-repeat center;}
+.play_download .download_bar{ float:left; display:block; width:1%; height:45px; border-right:1px solid #ccc; margin:5px 0px; }

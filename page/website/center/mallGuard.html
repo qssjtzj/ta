@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<title></title>
+<meta name="keywords" content="，，">
+<meta name="description" content="" />
+<meta name="author" content="Design:ZhangXi; Web Layout:HXH;" />
+<link type="image/x-icon" href="../favicon.ico" rel="icon"/>
+<link type="image/x-icon" href="../favicon.ico" rel="shortcut icon" />
+<link type="text/css" rel="stylesheet" href="../css/index.css" />
+
+</head>
+
+<body>
+<!--顶部导航-->
+<div id="header" ></div>
+<div id="nav-menu" ></div>
+<!--div class="warp"><a href='../index.html' class='top_nav_home'>HOME</a></div-->
+
+	<!--内容部分-->
+	<div class="warp">
+		<div class="content">
+        	<!--<div class="center_left">
+            	<iframe src="left.html" width="250" height="880" scrolling="no" allowtransparency="true" frameborder="0" ></iframe>
+             	
+            </div>-->
+        	<div class="">
+            	<div class="right mall_center_bg">
+    				<div class=" mall_tab_ul">
+                    	<a href="mallVip.html" title="vip" >VIP</a>
+                   		<a href="javascript:void(0);" title="vip" class="current">GUARD</a>
+                   		<a href="mallCar.html" title="vip" >CAR</a>
+                    </div>
+                    
+                    
+                    <div class="mall_right" >
+                        
+                        <div class="vip_title ">房间守护</div>
+                        
+                        <div class=" vip_content ">
+                            <table >
+                            	<tr>
+                                	<th style="width:30%;"></th>
+                                    <th class="fts14">守护</th>
+                                </tr>
+                            	<tr>
+                                	<td class="fts14">尊贵标识</td>
+                                    <td>
+                                    	<img src="../imgs/head_guard.png" height="50" />
+                                    </td>
+                                </tr>
+                            	<tr>
+                                	<td class="fts14">价格</td>
+                                    <td>
+                                    	30天：10000 Tokens<br/>
+                                        90天：129900 Tokens（折扣 87%）<br/>
+                                        360天：420000 Tokens（折扣 70%）
+                                    </td>
+                                </tr>
+                                <tr>
+                                	<td class="fts14">专属坐席</td>
+                                    <td>进入房间自动落座专属坐席<br/><img src="../imgs/002_03.jpg" width="498" height="135" /></td>
+                                </tr>
+                                <tr>
+                                	<td class="fts14">进场提示</td>
+                                    <td>进入房间醒目提示，伴有奢华座驾（<span id="carname">兰博基尼</span>），身份更尊贵<br/><img src="../imgs/car/04.jpg" id="carimage" width="151" height="98" /></td>
+                                </tr>
+                                <tr>
+                                	<td class="fts14">聊天特效</td>
+                                    <td>聊天标识守护身份，专属动态表情<br/> <font color="#cc9933" >更有专属加粗文字</font> </td>
+                                </tr>
+                                <tr>
+                                	<td class="fts14">专属礼物</td>
+                                    <td>拥有专属守护礼物 <br/><img src="../imgs/001.png" width="487" height="110" /></td>
+                                </tr>
+                                <tr>s
+                                	<td class="fts14">房间特权</td>
+                                    <td>防管理踢出房间，禁言，更可防特权踢人，禁言<br/> 给房主发送密信</td>
+                                </tr>
+                                <tr>
+                                	<td colspan="2"><b style="color:#cc9933;" >注：</b>守护者拥有的房间特权，只能在您所守护的主播房间中生效。</td>
+                                </tr>
+                            </table>
+                            
+                           
+                        </div>
+                        
+                        <div class="car_title mt15">如何开通守护</div>
+                        
+                        <img src="../imgs/003_03.jpg" width="390" height="307" border="0" class=" fl mt30" />
+                        <div class=" fl mt30" style=" width:385px; padding:50px; line-height:24px;" >
+                        	<p>登录状态下进入要守护的主播房间，点击直播窗口右下角的<b style="color:#ff6600;" >"开通守护"</b>按钮，如图所示。</p><br/>
+	
+							<p>进入守护开通购买页，请注意确认守护对象，选择守护类型，勾选守护天数，完成购买即可。</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                
+            </div>
+        </div>
+	</div>
+
+<script type="text/javascript" src="../js/open.rc.js"></script> 
+<script type="text/javascript" src="../js/open.common.js"></script> 
+<script type="text/javascript" src="../js/open.mall.js"></script>
+<script type="text/javascript" language="javascript"><!-- 
+$(document).ready(function() {
+	//rcopen.api.initVipInfo();
+	rcmall.api.initGuardCar();
+	
+	$("#vipamount").val('2400');
+	$(".vip_time_ul li").click(function(){
+		$(".vip_time_ul li").removeClass("on");
+		//alert($("#"+this.id).html());
+		//alert($("#"+this.id).attr("id"));
+		$("#vipamount").val($("#"+this.id).attr("v"));
+		$("#"+this.id).addClass("on");
+		$("#pay_value").html($("#"+this.id).attr("v"));
+	});
+	
+});
+--></script>
+
+</body>
+</html>

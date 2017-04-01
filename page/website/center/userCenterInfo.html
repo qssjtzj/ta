@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<title></title>
+<meta name="keywords" content="，，">
+<meta name="description" content="" />
+<meta name="author" content="Design:ZhangXi; Web Layout:HXH;" />
+<link type="image/x-icon" href="../favicon.ico" rel="icon"/>
+<link type="image/x-icon" href="../favicon.ico" rel="shortcut icon" />
+<link type="text/css" rel="stylesheet" href="../css/index.css" />
+<link type="text/css" rel="stylesheet" href="../css/jquery-ui.css" />
+
+</head>
+
+<body>
+<!--顶部导航-->
+<div id="header" ></div>
+<!--div class="warp"><a href='../index.html' class='top_nav_home'>HOME</a></div-->
+
+<input type="hidden" name="isupdate" id="isupdate" value="0"></input>
+	<!--内容部分-->
+	<div class="warp">
+		<div class="content">
+        	<div class="center_left">
+            	<iframe src="left.html" width="250" height="880" scrolling="no" allowtransparency="true" frameborder="0" ></iframe>
+             
+            </div>
+        	<div class="center_right ">
+            	<div class="right center_user_bg">
+    
+                    <div class="userinfo_form m20" >
+                        <h2>Account Settings</h2>
+                        <ul id="userinfo_list" >
+                        </ul>
+                        <a class="btn_update colorfff line40 tc m35 bold" id="btn_update_userinfo" onclick="rcopen.api.showUpdateForm()"> Update</a>
+                    </div>
+                    
+                    <div class="userinfo_form userinfo_update m20" style=" display:none;">
+                        <h2>Account Settings</h2>
+                        <ul id="user_update_list">
+                        </ul>
+                      
+                        <div class="btn_update colorfff line40 tc m35 mt20 ml124 bold" id="btn_save_userinfo" onclick="rcopen.api.submitUpdateForm()"> Submit</div>  <i style="color:#f00; padding-left:124px;" id="tip_form_tep1"> </i>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+	</div>
+
+<script type="text/javascript" src="../js/open.rc.js"></script> 
+<script type="text/javascript" src="../js/open.common.js"></script> 
+<script type="text/javascript" src="../js/country.js"></script>
+<script type="text/javascript" src="../js/open.center.js"></script>
+<script type="text/javascript" src="../upload/js/ajaxUpLoad.js"></script>
+<script type="text/javascript" language="javascript"> 
+$(document).ready(function() {
+	//rcopen.api.initUserInfo();
+	rcopen.api.getUserInfo();
+	
+});
+</script> 
+
+</body>
+</html>

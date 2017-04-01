@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<title></title>
+<meta name="keywords" content="，，">
+<meta name="description" content="" />
+<meta name="author" content="Design:ZhangXi; Web Layout:HXH;" />
+<link type="image/x-icon" href="favicon.ico" rel="icon"/>
+<link type="image/x-icon" href="favicon.ico" rel="shortcut icon" />
+<link type="text/css" rel="stylesheet" href="css/index.css" />
+
+</head>
+<body>
+<!--顶部导航-->
+<div id="header" ></div>
+<!-- <div class="warp"><a href='index.html' class='top_nav_home'>HOME</a></div> -->
+
+ 	
+	<!--内容部分-->
+	<div class="warp">
+		<div class="content">
+			 <div class="reg_warp">
+             	<div class="reg_bunner"></div>
+                <div class="reg_cont">
+                	
+                	<div class="reg_form">
+                    	<div class="color666 fts14"> 
+                       	 	<i class="fts30 ">Login </i><i style="color:#999999;">  or</i> <a href="register.html" style="color:#f00;" >Sign Up</a>
+                        </div>
+                        <a class="login_btn_fb fts14 colorfff bold" id="login_fb_btn" href="javascript:void(0);"  onclick="fb.account.login();">Login via Facebook</a>
+                        
+                        <div class="line"></div>
+                    	<p>
+                        	<i style="color:#f00;" id="tip_form"> </i>
+                            <input id="user_name" type="text" class="int" value="Username" onfocus="opencyou.loginInput.clearNote(this.id)" onblur="opencyou.loginInput.checkAccount(this.id)"/>
+                            <input id="fb_bind" type="hidden" value="0"/>
+                            <input id="fb_id" type="hidden" value="0"/>
+                            <input id="fb_token" type="hidden" value="0"/>
+                            <em class="tip" id="tip_user_name"> </em>
+                        </p>
+                        <p>
+                            <input id="user_pwd" type="password" class="int" onkeydown="if(event.keyCode==32) return false" style="display:none" onpaste="return false" onblur="opencyou.loginInput.thisPw(this.id,'user_pwd_01');" onfocus="opencyou.loginInput.addcss(this.id)"/>
+                            <input  id="user_pwd_01" type="text" class="int" onkeydown="if(event.keyCode==32) return false" style="" value="Password" maxlength="16" onfocus="opencyou.loginInput.changePw(this.id,'user_pwd')"/>
+                        	<em class="tip" id="tip_user_pwd"> </em>
+                        </p>
+                        <div class="reg_rule">
+                        	<input id="remember" type="checkbox" value="0" class="int01 pa" checked="checked" />
+                       		<span class="pl15" data-localize="loginpage.remeber">Remember Password</span>
+                            <a href="common/getpassindex.html" title="Forget Password"  class="fr" target="_new" data-localize="loginpage.retrieve">Forget Password?</a>
+                        </div>
+                        <a class="reg_submit_btn fts14 colorfff bold" id="login_submit_btn" href="javascript:void(0);" onclick="opencyou.account.userLogin();">Login</a>
+                       
+                        <!--div class="description" ><span data-localize="loginpage.noaccount">Not an RC member? </span> <a href="register.html" title="Register now" data-localize="loginpage.registernow">Register now!</a></div-->
+                         
+                    </div>
+                </div>
+             </div>
+		</div>
+	</div>
+
+<script type="text/javascript" src="js/open.rc.js"></script> 
+<script type="text/javascript" src="js/open.common.js"></script> 
+<script type="text/javascript" src="js/open.register.js"></script> 
+<script type="text/javascript" src="js/show.fb.js"></script> 
+<script>
+$(document).ready(function() {
+	opencyou.loginInput.initRegInput();
+	
+	//回车登陆
+	$(document).keydown(function(e) {
+     	//Ctrl + Enter
+    	//if (e.ctrlKey && e.keyCode == 13) {
+     	if (e.keyCode == 13) {
+        	opencyou.account.userLogin();
+        	return false;
+       	}
+    });
+			
+});
+
+</script>
+
+</body>
+</html>

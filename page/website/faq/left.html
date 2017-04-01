@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Showoo-FAQ</title>
+<meta name="keywords" content="，，">
+<meta name="description" content="" />
+<meta name="author" content="Design:ZhangXi; Web Layout:HXH;" />
+<link type="image/x-icon" href="../favicon.ico" rel="icon"/>
+<link type="image/x-icon" href="../favicon.ico" rel="shortcut icon" />
+<link type="text/css" rel="stylesheet" href="../css/index.css" />
+
+</head>
+
+<body>
+
+                <div class="left">
+                    
+                    <div class="center_user_faq center_user_bg">
+                        <div class="">
+                            <h2 class="pl5">FAQs</h2>
+                            <ul>
+                           	<!--
+                              	<li><a href="faq.html" target="_parent" ><span><font><font>热点问题</font></font></span></a></li>
+                              	<li><a href="faqaccount.html" target="_parent"><span><font><font>帐号相关</font></font></span></a></li>
+                             	<li><a href="faqim.html" target="_parent"><span><font><font>RC好友功能</font></font></span></a></li>
+                              	<li><a href="faqserver.html" target="_parent"><span><font><font>RC群功能相关</font></font></span></a></li>
+                              	<li><a href="faqchannel.html" target="_parent"><span><font><font>RC群语音频道</font></font></span></a></li>
+                              	<li><a href="faqvoice.html" target="_parent"><span><font><font>语音设定相关</font></font></span></a></li>
+                              	<li><a href="faqoverlay.html" target="_parent"><span><font><font>RC游戏迷你窗</font></font></span></a></li>
+                              	<li><a href="faqfb.html" target="_parent"><span><font><font>绑定脸书相关</font></font></span></a></li>
+                                <li><a href="faqapp.html" target="_parent"><span><font><font>语音群应用相关</font></font></span></a></li>
+                                <li><a href="faqshow.html" target="_parent"><span><font><font>秀场相关</font></font></span></a></li>
+                                <li><a href="faqvip.html" target="_parent"><span><font><font>VIP会员相关</font></font></span></a></li>
+                             -->
+                            	<li><a href="index.html" id="_faq_live" target="_parent"><span><font><font>How to start live broadcast</font></font></span></a></li>
+     						 	<li><a href="faqchong.html" id="_faq_chong" target="_parent"><span><font><font>About Top up</font></font></span></a></li>
+     						 	<li><a href="faqvip.html" id="_faq_vip" target="_parent"><span><font><font>About VIP</font></font></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            
+        	
+<script type="text/javascript" src="../js/open.rc.js"></script> 
+
+<script type="text/javascript" language="javascript"> 
+$(document).ready(function() {
+	$(".center_user_faq ul li a").removeClass("active");
+	
+	var href=window.parent.location.href; 
+	
+	if(href.indexOf("/faq/index.html")>0){
+		$("#_faq_live").addClass("active");
+	}else if(href.indexOf("/faq/faqchong.html")>0 ){
+		$("#_faq_chong").addClass("active");
+	}else if(href.indexOf("/faq/faqvip.html")>0){
+		$("#_faq_vip").addClass("active");
+	}else{
+		$("#_faq_live").addClass("active");
+	}
+	
+	var path = window.location.href;
+	var show_id = path.split("#")[1];
+	if(show_id!=null){
+		$(".help-node").addClass("closed");
+		$("#"+show_id).removeClass("closed");
+		
+	}
+	
+	$("#help-content .help-node").click(function(e) {
+		
+		$(".help-node").addClass("closed");
+        $(this).removeClass("closed");
+		
+    });
+});
+</script>
+
+</body>
+</html>

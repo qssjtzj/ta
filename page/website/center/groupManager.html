@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<title></title>
+<meta name="keywords" content="，，">
+<meta name="description" content="" />
+<meta name="author" content="Design:ZhangXi; Web Layout:HXH;" />
+<link type="image/x-icon" href="../favicon.ico" rel="icon"/>
+<link type="image/x-icon" href="../favicon.ico" rel="shortcut icon" />
+<link type="text/css" rel="stylesheet" href="../css/index.css" />
+<link type="text/css" rel="stylesheet" href="../css/jquery-ui.css" />
+
+</head>
+
+<body>
+<!--顶部导航-->
+<div id="header" ></div>
+<!--div class="warp"><a href='../index.html' class='top_nav_home'>HOME</a></div-->
+
+	<!--内容部分-->
+	<div class="warp">
+		<div class="content">
+        	<div class="center_left">
+            	<iframe src="left.html" width="250" height="880" scrolling="no" allowtransparency="true" frameborder="0" ></iframe>
+             	
+            </div>
+        	<div class="center_right ">
+            	<div class="right center_user_bg">
+    
+                    <div class="userinfo_update m20 pl5" >
+                        <h2>Group Management
+                        <!-- 
+						<a href="groupGift.html?atype=2" class="btn_group" >Gifts Sending</a> 
+						<a href="groupGift.html?atype=1" class=" btn_group" >Gifts History</a>
+						<a href="groupGift.html?atype=3" class=" btn_group" >Gifts Record</a>
+						 -->
+						</h2>
+                        
+                        <div class="group_update bc mt20" style=" display:block;" id="form3">
+                        	<p class=" fts14 line70" >Channel is not allowed to create, <a class="undl line24 color086" href="groupApply.html"> Please register to become our official DJ.</a></p>
+                        	
+                        </div>
+                        
+                        <div class="group_update bc m10 mt30" id="form1" style=" display:none;">
+                        	
+                            <div class=" group_manager m30 color333 fts12 line22">
+                            
+                              	<dl id="group_list">
+                                </dl>
+                            </div>
+                        </div>
+                        
+                    </div>
+                   
+                </div>
+                
+                
+            </div>
+        </div>
+	</div>
+
+<script type="text/javascript" src="../js/open.rc.js"></script> 
+<script type="text/javascript" src="../js/open.common.js"></script> 
+<script type="text/javascript" src="../js/country.js"></script>
+<script type="text/javascript" src="../js/open.center.js"></script>
+<script type="text/javascript" language="javascript"> 
+$(document).ready(function() {
+	
+	//rcopen.api.initUserInfo();
+	rcopen.api.initGroup();
+	rcopen.api.getGroupManager();
+});
+</script> 
+
+</body>
+</html>

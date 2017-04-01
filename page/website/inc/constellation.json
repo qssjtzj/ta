@@ -1,0 +1,15 @@
+{ 
+"constellation":[{"value":"1","constellation":"Aquarius"}
+    ,{"value":"2","constellation":"Pisces"}
+    ,{"value":"3","constellation":"Aries"}
+    ,{"value":"4","constellation":"Taurus"}
+    ,{"value":"5","constellation":"Gemini"}
+    ,{"value":"6","constellation":"Cancer"}
+    ,{"value":"7","constellation":"Leo"}
+    ,{"value":"8","constellation":"Virgo"}
+    ,{"value":"9","constellation":"Libra"}
+    ,{"value":"10","constellation":"Scorpio"}
+    ,{"value":"11","constellation":"Sagittarius"}
+    ,{"value":"12","constellation":"Capricorn"}
+    ]
+}

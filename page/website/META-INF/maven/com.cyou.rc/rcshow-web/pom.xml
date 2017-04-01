@@ -1,0 +1,179 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.cyou.rc</groupId>
+	<artifactId>rcshow-web</artifactId>
+	<packaging>war</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>rcshow-web Maven Webapp</name>
+	<dependencies>
+	</dependencies>
+	<!-- profile 信息 -->
+	<profiles>
+		<profile>
+			<!-- 中文版 -->
+			<id>cn</id>
+			<properties>
+				<project.language.version>cn</project.language.version>
+			</properties>
+		</profile>
+		<profile>
+			<!-- 英文版 -->
+			<id>en</id>
+			<properties>
+				<project.language.version>en</project.language.version>
+			</properties>
+		</profile>
+		<profile>
+			<!-- 泰文版 -->
+			<id>th</id>
+			<properties>
+				<project.language.version>th</project.language.version>
+			</properties>
+		</profile>
+	</profiles>
+	<repositories>
+		<!-- <repository>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<id>rc_snapshot</id>
+			<name>rc_snapshot</name>
+			<url>http://220.181.142.210:8092/nexus/content/repositories/rc_snapshot/</url>
+		</repository>
+		<repository>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<id>public</id>
+			<name>public</name>
+			<url>http://220.181.142.210:8092/nexus/content/groups/public/</url>
+		</repository> -->
+	</repositories>
+	<pluginRepositories>
+		<!--  <pluginRepository>
+			<id>rc_plugin</id>
+			<name>rc_plugin</name>
+			<url>http://220.181.142.210:8092/nexus/content/repositories/rc_snapshot/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+		<pluginRepository>
+			<id>public_plugin</id>
+			<name>rc_plugin</name>
+			<url>http://220.181.142.210:8092/nexus/content/groups/public/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>-->
+	</pluginRepositories>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<port>80</port>
+					<path>/</path>
+					<uriEncoding>UTF-8</uriEncoding>
+					<warSourceDirectory>${basedir}/WebContent</warSourceDirectory>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<!-- http://wiki.eclipse.org/Jetty/Feature/Jetty_Maven_Plugin -->
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>8.1.15.v20140411</version>
+				<configuration>
+					<stopPort>9966</stopPort>
+					<stopKey>foo</stopKey>
+					<scanIntervalSeconds>0</scanIntervalSeconds>
+					<connectors>
+						<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
+							<port>80</port>
+							<maxIdleTime>60000</maxIdleTime>
+						</connector>
+					</connectors>
+					<webAppSourceDirectory>${basedir}/WebContent</webAppSourceDirectory>
+					<webAppConfig>
+						<contextPath>/</contextPath>
+					</webAppConfig>
+					<webResources>
+						<resource>
+							<directory>src/main/resources</directory>
+							<targetPath>target/classes</targetPath>
+							<filtering>true</filtering>
+						</resource>
+					</webResources>
+				</configuration>
+			</plugin>
+			<!--<plugin> <groupId>org.apache.tomcat.maven</groupId> <artifactId>tomcat7-maven-plugin</artifactId> 
+				<version>2.2</version> <configuration> <port>8088</port> <path>/open</path> 
+				<uriEncoding>UTF-8</uriEncoding> <contextFile>conf/context.xml</contextFile> 
+				</configuration> </plugin> -->
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+
+					<warSourceDirectory>${project.build.directory}/WebContent</warSourceDirectory>
+					<!-- <webResources> <resource> <directory>WebContent</directory> </resource> 
+						</webResources> -->
+				</configuration>
+			</plugin>
+            <plugin>  
+	            <groupId>com.cyou.rc</groupId>  
+	            <artifactId>cyou-translation-plugin</artifactId>  
+	            <version>0.0.1-SNAPSHOT</version> 
+	            <configuration>  
+                   <contry>${project.language.version}</contry>  
+	            </configuration>  
+	            <executions>  
+	                <execution>  
+	                    <id>translation</id>  
+	                    <phase>compile</phase>  
+	                    <goals>  
+	                        <goal>global</goal>                            
+	                    </goals>  
+	                </execution>  
+	            </executions>  	            
+            </plugin>	
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.4.3</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>2.8.1</version>
+			</plugin>
+		</plugins>
+	</build>
+</project>

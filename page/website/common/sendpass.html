@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+        <title> </title>
+        <meta name="keywords" content="，，">
+        <meta name="description" content="" />
+        <meta name="author" content="Design:; Web Layout:HXH;" />
+        <link type="image/x-icon" href="../favicon.ico" rel="icon"/>
+        <link type="image/x-icon" href="../favicon.ico" rel="shortcut icon" />
+        <link type="text/css" rel="stylesheet" href="../css/index.css" />
+    </head>
+<body>
+<!--顶部导航-->
+<div id="header" ></div>
+<!--div class="warp"><a href='../index.html' class='top_nav_home'>HOME</a></div-->
+
+	<!--内容部分-->
+	<div class="warp">
+		<div class="content">
+			<div class="center_user_bg mt20 mb40">
+                <div class="common right" >
+                    <h2>Retrieve Password</h2>
+                    
+                    
+                    <div id="getpass_step_2" class="mt50">
+                        <div  class="modify_cont" >
+                            <ul class="mod-sub-nav" >  
+                                <li class="mod-sub-list1"> <span class="list2-active">1</span>Submit Username </li>
+                                <li class="mod-sub-list2 active"> <span class="list1-active">2</span> Verify Email  </li>
+                                <li class="mod-sub-list3 last"> <span class="list2-active">3</span> Reset Password </li>
+                            </ul>
+                            <p class=" fts14 bold pt20"> You are retrieving the password for the <span id="account_val"> </span> account.</p>
+                            <p class=" fts14">The email address you registered for password retrieval is :<span id="email_val"></span></p>
+                            <div class="btn_update fts14 colorfff line40 tc bold mt30 bc" id="" onclick="rcopen.api.sendPwdCode()"> Send Email</div><i style="color:#f00;" id="tip_form"> </i>
+                            <p class="line40 fts12 mt20">Click "Send Email" and a reset link will be sent to your email address.</p>
+                        </div>
+                   		<p class="get_pass_reg description">Not an RC member? <a href="../register.html" title="Register" >Register now!</a></p>
+                       
+                    </div>
+                     <div id="getpass_step_2_r" class="mt50" style=" display:none;">
+                        <div  class="modify_cont description" >
+                            <ul class="mod-sub-nav" >  
+                                <li class="mod-sub-list1"> <span class="list2-active">1</span>Submit Username </li>
+                                <li class="mod-sub-list2 active"> <span class="list1-active">2</span> Verify Email  </li>
+                                <li class="mod-sub-list3 last"> <span class="list2-active">3</span> Reset Password </li>
+                            </ul>
+                            <p class=" fts14 bold pt20"> <span class="spar_email" > </span><span style="padding-left:30px;">&nbsp;&nbsp;&nbsp;
+                            Send successfully!</span></p>
+                            <p class=" fts14 pt15 ">Email Address:<a href="javascript:void(0)" target="_new" title="" > <span id="email_val1"></span></a></p>
+                            <p class=" fts12 line24">An email with a retrieval link has been sent to your inbox. Go and check it!</p>
+                            <div class="btn_update fts14 colorfff line40 tc bold mt30 bc" id="" onclick="goIntoEmail($('#email_val1').html())"> Enter your email now</div>
+                            <a href="javascript:location.reload()" class="fts14 line38 mt20 color"/>back</a>
+                        </div>
+                        <p class="get_pass_reg description">Not an RC member? <a href="../register.html" title="Register" >Register now!</a></p>
+                       
+                    </div>
+                   
+                </div>
+        
+			</div>
+        </div>
+	</div>
+<script type="text/javascript" src="../js/open.rc.js"></script>
+<script type="text/javascript" src="../js/open.common.js"></script>
+<script type="text/javascript" src="../js/open.pass.js"></script>
+<script>
+$(document).ready(function() {
+	rcopen.api.initSendMail();
+});	
+</script>
+</body>
+</html>

@@ -1,0 +1,598 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<title></title>
+<meta name="keywords" content="，，">
+<meta name="description" content="" />
+<meta name="author" content="Design:ZhangXi; Web Layout:HXH;" />
+<link type="image/x-icon" href="../favicon.ico" rel="icon"/>
+<link type="image/x-icon" href="../favicon.ico" rel="shortcut icon" />
+<link type="text/css" rel="stylesheet" href="../css/index.css" />
+</head>
+<body>
+<!--顶部导航-->
+<div id="header" ></div>
+<div id="nav-menu" ></div>
+
+<!--内容部分-->
+<div class="warp">
+	<div class="content">
+		<!--  -->
+    	<div class="rrank_one" >
+            <div class="rank_pop">
+            	<div class="left_title"><font color="ec3229">Follow</font> Ranking</div>
+            	<ul id="followTab" class="ranknav tab">
+            		<li id="ftab_4" link="followRank" class="current">Total</li>
+                   	<li id="ftab_1" link="followRank" >Daily</li>
+                   	<li id="ftab_2" link="followRank" >Weekly</li>
+                 	<li id="ftab_3" link="followRank" >Monthly</li>
+                  	<div class="nav_line" ></div>
+              	</ul>
+               	<div class="rank_list" id="followRank1" style=" display:none;">
+
+#foreach($param in $!{fldaylist})  
+#if ($param)
+	<div class="left_one">
+#if ($param.rankid<4)
+
+        	<div class="l_li l_one bgcolorfollow$param.rankid">
+               	<div class="rank_id fl icon_r$param.rankid"></div>
+               	<div class="fl pr">
+               		<a href="$param.linkurl" target="_blank" title="">
+               			<img src="$param.imgurl" class="fl" width="60" height="60" border="0">
+               		</a>
+               		<ul class="toolul">
+	               		<li><a href="$param.linkurl">$param.username <img src="$param.expurl" height="22"/> </a></li>
+	               		<li class="grey"><span class="t_num"><span>$param.num</span></span></li>
+               		</ul>
+               	</div>
+          	</div>
+       	</div>
+               		
+#else
+			<div class="l_li ">
+               	<div class="rank_id fl ">$param.rankid</div>
+               	<div class="fl pr">
+               		
+               		<ul class="toolul">
+	               		<li><a href="$param.linkurl">$param.username <img src="$param.expurl" height="22"/> </a></li>
+	               		<li class="grey"><span class="t_num"><span>$param.num</span></span></li>
+               		</ul>
+               	</div>
+          	</div>
+       	</div>		
+#end					
+#else
+					
+#end
+#end
+               	               	
+               	</div>
+              	<div class="rank_list" id="followRank2" style=" display:none;">
+
+#foreach($param in $!{flweeklist})  
+#if ($param)
+	<div class="left_one">
+#if ($param.rankid<4)
+
+        	<div class="l_li l_one bgcolorfollow$param.rankid">
+               	<div class="rank_id fl icon_r$param.rankid"></div>
+               	<div class="fl pr">
+               		<a href="$param.linkurl" target="_blank" title="">
+               			<img src="$param.imgurl" class="fl" width="60" height="60" border="0" onerror="this.src='../imgs/icon.png'">
+               		</a>
+               		<ul class="toolul">
+	               		<li><a href="$param.linkurl">$param.username <img src="$param.expurl" height="22"/> </a></li>
+	               		<li class="grey"><span class="t_num"><span>$param.num</span></span></li>
+               		</ul>
+               	</div>
+          	</div>
+       	</div>
+               		
+#else
+			<div class="l_li ">
+               	<div class="rank_id fl ">$param.rankid</div>
+               	<div class="fl pr">
+               		
+               		<ul class="toolul">
+	               		<li><a href="$param.linkurl">$param.username <img src="$param.expurl" height="22"/> </a></li>
+	               		<li class="grey"><span class="t_num"><span>$param.num</span></span></li>
+               		</ul>
+               	</div>
+          	</div>
+       	</div>		
+#end					
+#else
+					
+#end
+#end
+               	              	
+              	</div>
+                <div class="rank_list" id="followRank3" style=" display:none;">
+
+#foreach($param in $!{flmonthlist})  
+#if ($param)
+	<div class="left_one">
+#if ($param.rankid<4)
+
+        	<div class="l_li l_one bgcolorfollow$param.rankid">
+               	<div class="rank_id fl icon_r$param.rankid"></div>
+               	<div class="fl pr">
+               		<a href="$param.linkurl" target="_blank" title="">
+               			<img src="$param.imgurl" class="fl" width="60" height="60" border="0" onerror="this.src='../imgs/icon.png'">
+               		</a>
+               		<ul class="toolul">
+	               		<li><a href="$param.linkurl">$param.username <img src="$param.expurl" height="22"/> </a></li>
+	               		<li class="grey"><span class="t_num"><span>$param.num</span></span></li>
+               		</ul>
+               	</div>
+          	</div>
+       	</div>
+               		
+#else
+			<div class="l_li ">
+               	<div class="rank_id fl ">$param.rankid</div>
+               	<div class="fl pr">
+               		
+               		<ul class="toolul">
+	               		<li><a href="$param.linkurl">$param.username <img src="$param.expurl" height="22"/> </a></li>
+	               		<li class="grey"><span class="t_num"><span>$param.num</span></span></li>
+               		</ul>
+               	</div>
+          	</div>
+       	</div>		
+#end					
+#else
+					
+#end
+#end
+               	                
+                </div>
+                <div class="rank_list" id="followRank4" >
+
+#foreach($param in $!{fltotallist})  
+#if ($param)
+	<div class="left_one">
+#if ($param.rankid<4)
+
+        	<div class="l_li l_one bgcolorfollow$param.rankid">
+               	<div class="rank_id fl icon_r$param.rankid"></div>
+               	<div class="fl pr">
+               		<a href="$param.linkurl" target="_blank" title="">
+               			<img src="$param.imgurl" class="fl" width="60" height="60" border="0" onerror="this.src='../imgs/icon.png'">
+               		</a>
+               		<ul class="toolul">
+	               		<li><a href="$param.linkurl">$param.username <img src="$param.expurl" height="22"/> </a></li>
+	               		<li class="grey"><span class="t_num"><span>$param.num</span></span></li>
+               		</ul>
+               	</div>
+          	</div>
+       	</div>
+               		
+#else
+			<div class="l_li ">
+               	<div class="rank_id fl ">$param.rankid</div>
+               	<div class="fl pr">
+               		
+               		<ul class="toolul">
+	               		<li><a href="$param.linkurl">$param.username <img src="$param.expurl" height="22"/> </a></li>
+	               		<li class="grey"><span class="t_num"><span>$param.num</span></span></li>
+               		</ul>
+               	</div>
+          	</div>
+       	</div>		
+#end					
+#else
+					
+#end
+#end
+               	                
+                </div>
+         	</div>
+      	</div>
+      	
+        <div class="rrank_one" style=" margin-left:38px;" >
+            <div class="rank_pop">
+            	<div class="left_title"><font color="9764d3">Grossing</font> Ranking</div>
+            	<ul id="grossingTab" class="ranknav tab">
+            		<li id="gtab_4" link="grossingRank" class="current">Total</li>
+                	<li id="gtab_1" link="grossingRank" >Daily</li>
+                   	<li id="gtab_2" link="grossingRank" >Weekly</li>
+                 	<li id="gtab_3" link="grossingRank" >Monthly</li>
+                  	
+                  	<div class="nav_line" ></div>
+              	</ul>
+               	<div class="rank_list" id="grossingRank1" style=" display:none;">
+
+#foreach($param in $!{grdaylist})  
+#if ($param)
+	<div class="left_one">
+#if ($param.rankid<4)
+
+        	<div class="l_li l_one bgcolorgross$param.rankid">
+               	<div class="rank_id fl icon_r$param.rankid"></div>
+               	<div class="fl pr">
+               		<a href="$param.linkurl" target="_blank" title="">
+               			<img src="$param.imgurl" class="fl" width="60" height="60" border="0" onerror="this.src='../imgs/icon.png'">
+               		</a>
+               		<ul class="toolul">
+	               		<li><a href="$param.linkurl">$param.username <img src="$param.expurl" height="22"/> </a></li>
+	               		<li class="grey"><span class="t_num"><span>$param.num</span></span></li>
+               		</ul>
+               	</div>
+          	</div>
+       	</div>
+               		
+#else
+			<div class="l_li ">
+               	<div class="rank_id fl ">$param.rankid</div>
+               	<div class="fl pr">
+               		
+               		<ul class="toolul">
+	               		<li><a href="$param.linkurl">$param.username <img src="$param.expurl" height="22"/> </a></li>
+	               		<li class="grey"><span class="t_num"><span>$param.num</span></span></li>
+               		</ul>
+               	</div>
+          	</div>
+       	</div>		
+#end					
+#else
+					
+#end
+#end
+               	
+               	</div>
+              	<div class="rank_list" id="grossingRank2" style=" display:none;">
+
+#foreach($param in $!{grweeklist})  
+#if ($param)
+	<div class="left_one">
+#if ($param.rankid<4)
+
+        	<div class="l_li l_one bgcolorgross$param.rankid">
+               	<div class="rank_id fl icon_r$param.rankid"></div>
+               	<div class="fl pr">
+               		<a href="$param.linkurl" target="_blank" title="">
+               			<img src="$param.imgurl" class="fl" width="60" height="60" border="0" onerror="this.src='../imgs/icon.png'">
+               		</a>
+               		<ul class="toolul">
+	               		<li><a href="$param.linkurl">$param.username <img src="$param.expurl" height="22"/> </a></li>
+	               		<li class="grey"><span class="t_num"><span>$param.num</span></span></li>
+               		</ul>
+               	</div>
+          	</div>
+       	</div>
+               		
+#else
+			<div class="l_li ">
+               	<div class="rank_id fl ">$param.rankid</div>
+               	<div class="fl pr">
+               		
+               		<ul class="toolul">
+	               		<li><a href="$param.linkurl">$param.username <img src="$param.expurl" height="22"/> </a></li>
+	               		<li class="grey"><span class="t_num"><span>$param.num</span></span></li>
+               		</ul>
+               	</div>
+          	</div>
+       	</div>		
+#end					
+#else
+					
+#end
+#end
+              	
+              	</div>
+                <div class="rank_list" id="grossingRank3" style=" display:none;">
+
+#foreach($param in $!{grmonthlist})  
+#if ($param)
+	<div class="left_one">
+#if ($param.rankid<4)
+
+        	<div class="l_li l_one bgcolorgross$param.rankid">
+               	<div class="rank_id fl icon_r$param.rankid"></div>
+               	<div class="fl pr">
+               		<a href="$param.linkurl" target="_blank" title="">
+               			<img src="$param.imgurl" class="fl" width="60" height="60" border="0" onerror="this.src='../imgs/icon.png'">
+               		</a>
+               		<ul class="toolul">
+	               		<li><a href="$param.linkurl">$param.username <img src="$param.expurl" height="22"/></a></li>
+	               		<li class="grey"><span class="t_num"><span>$param.num</span></span></li>
+               		</ul>
+               	</div>
+          	</div>
+       	</div>
+               		
+#else
+			<div class="l_li ">
+               	<div class="rank_id fl ">$param.rankid</div>
+               	<div class="fl pr">
+               		
+               		<ul class="toolul">
+	               		<li><a href="$param.linkurl">$param.username <img src="$param.expurl" height="22"/></a></li>
+	               		<li class="grey"><span class="t_num"><span>$param.num</span></span></li>
+               		</ul>
+               	</div>
+          	</div>
+       	</div>		
+#end					
+#else
+					
+#end
+#end
+              	
+                </div>
+                <div class="rank_list" id="grossingRank4" >
+
+#foreach($param in $!{grtotallist})  
+#if ($param)
+	<div class="left_one">
+#if ($param.rankid<4)
+
+        	<div class="l_li l_one bgcolorgross$param.rankid">
+               	<div class="rank_id fl icon_r$param.rankid"></div>
+               	<div class="fl pr">
+               		<a href="$param.linkurl" target="_blank" title="">
+               			<img src="$param.imgurl" class="fl" width="60" height="60" border="0" onerror="this.src='../imgs/icon.png'">
+               		</a>
+               		<ul class="toolul">
+	               		<li><a href="$param.linkurl">$param.username <img src="$param.expurl" height="22"/></a></li>
+	               		<li class="grey"><span class="t_num"><span>$param.num</span></span></li>
+               		</ul>
+               	</div>
+          	</div>
+       	</div>
+               		
+#else
+			<div class="l_li ">
+               	<div class="rank_id fl ">$param.rankid</div>
+               	<div class="fl pr">
+               		
+               		<ul class="toolul">
+	               		<li><a href="$param.linkurl">$param.username <img src="$param.expurl" height="22"/></a></li>
+	               		<li class="grey"><span class="t_num"><span>$param.num</span></span></li>
+               		</ul>
+               	</div>
+          	</div>
+       	</div>		
+#end					
+#else
+					
+#end
+#end
+              	
+                </div>
+         	</div>
+      	</div>
+      	
+		<div class="rrank_one" style=" margin-left:38px;" >
+            <div class="rank_pop">
+            	<div class="left_title"><font color="1bbcaf">Flowers</font> Ranking</div>
+            	<ul id="flowersTab" class="ranknav tab">
+            		<li id="ltab_4" link="flowersRank" class="current">Total</li>
+                	<li id="ltab_1" link="flowersRank" >Daily</li>
+                   	<li id="ltab_2" link="flowersRank" >Weekly</li>
+                 	<li id="ltab_3" link="flowersRank" >Monthly</li>
+                  	<div class="nav_line" ></div>
+              	</ul>
+               	<div class="rank_list" id="flowersRank1" style=" display:none;">
+#foreach($param in $!{frdaylist})  
+#if ($param)
+
+	<div class="left_one">
+#if ($param.rankid<4)
+
+        	<div class="l_li l_one bgcolorflower$param.rankid">
+               	<div class="rank_id fl icon_r$param.rankid"></div>
+               	<div class="fl pr">
+               		<a href="$param.linkurl" target="_blank" title="">
+               			<img src="$param.imgurl" class="fl" width="60" height="60" border="0" onerror="this.src='../imgs/icon.png'">
+               		</a>
+               		<ul class="toolul">
+	               		<li><a href="$param.linkurl">$param.username <img src="$param.expurl" height="22"/></a></li>
+	               		<li class="grey"><span class="t_num"><span>$param.num</span></span></li>
+               		</ul>
+               	</div>
+          	</div>
+       	</div>
+               		
+#else
+			<div class="l_li ">
+               	<div class="rank_id fl ">$param.rankid</div>
+               	<div class="fl pr">
+               		
+               		<ul class="toolul">
+	               		<li><a href="$param.linkurl">$param.username <img src="$param.expurl" height="22"/></a></li>
+	               		<li class="grey"><span class="t_num"><span>$param.num</span></span></li>
+               		</ul>
+               	</div>
+          	</div>
+       	</div>		
+#end					
+#else
+					
+#end
+#end  
+      	
+               	</div>
+              	<div class="rank_list" id="flowersRank2" style=" display:none;">
+#foreach($param in $!{frweeklist})  
+#if ($param)
+
+	<div class="left_one">
+#if ($param.rankid<4)
+
+        	<div class="l_li l_one bgcolorflower$param.rankid">
+               	<div class="rank_id fl icon_r$param.rankid"></div>
+               	<div class="fl pr">
+               		<a href="$param.linkurl" target="_blank" title="">
+               			<img src="$param.imgurl" class="fl" width="60" height="60" border="0" onerror="this.src='../imgs/icon.png'">
+               		</a>
+               		<ul class="toolul">
+	               		<li><a href="$param.linkurl">$param.username <img src="$param.expurl" height="22"/></a></li>
+	               		<li class="grey"><span class="t_num"><span>$param.num</span></span></li>
+               		</ul>
+               	</div>
+          	</div>
+       	</div>
+               		
+#else
+			<div class="l_li ">
+               	<div class="rank_id fl ">$param.rankid</div>
+               	<div class="fl pr">
+               		
+               		<ul class="toolul">
+	               		<li><a href="$param.linkurl">$param.username <img src="$param.expurl" height="22"/></a></li>
+	               		<li class="grey"><span class="t_num"><span>$param.num</span></span></li>
+               		</ul>
+               	</div>
+          	</div>
+       	</div>		
+#end					
+#else
+					
+#end
+#end  
+      	
+              	</div>
+                <div class="rank_list" id="flowersRank3" style=" display:none;">
+#foreach($param in $!{frmonthlist})  
+#if ($param)
+
+	<div class="left_one">
+#if ($param.rankid<4)
+
+        	<div class="l_li l_one bgcolorflower$param.rankid">
+               	<div class="rank_id fl icon_r$param.rankid"></div>
+               	<div class="fl pr">
+               		<a href="$param.linkurl" target="_blank" title="">
+               			<img src="$param.imgurl" class="fl" width="60" height="60" border="0" onerror="this.src='../imgs/icon.png'">
+               		</a>
+               		<ul class="toolul">
+	               		<li><a href="$param.linkurl">$param.username <img src="$param.expurl" height="22"/></a></li>
+	               		<li class="grey"><span class="t_num"><span>$param.num</span></span></li>
+               		</ul>
+               	</div>
+          	</div>
+       	</div>
+               		
+#else
+			<div class="l_li ">
+               	<div class="rank_id fl ">$param.rankid</div>
+               	<div class="fl pr">
+               		
+               		<ul class="toolul">
+	               		<li><a href="$param.linkurl">$param.username <img src="$param.expurl" height="22"/></a></li>
+	               		<li class="grey"><span class="t_num"><span>$param.num</span></span></li>
+               		</ul>
+               	</div>
+          	</div>
+       	</div>		
+#end					
+#else
+					
+#end
+#end  
+      	
+                </div>
+                <div class="rank_list" id="flowersRank4" >
+#foreach($param in $!{frtotallist})  
+#if ($param)
+
+	<div class="left_one">
+#if ($param.rankid<4)
+
+        	<div class="l_li l_one bgcolorflower$param.rankid">
+               	<div class="rank_id fl icon_r$param.rankid"></div>
+               	<div class="fl pr">
+               		<a href="$param.linkurl" target="_blank" title="">
+               			<img src="$param.imgurl" class="fl" width="60" height="60" border="0" onerror="this.src='../imgs/icon.png'">
+               		</a>
+               		<ul class="toolul">
+	               		<li><a href="$param.linkurl">$param.username <img src="$param.expurl" height="22"/></a></li>
+	               		<li class="grey"><span class="t_num"><span>$param.num</span></span></li>
+               		</ul>
+               	</div>
+          	</div>
+       	</div>
+               		
+#else
+			<div class="l_li ">
+               	<div class="rank_id fl ">$param.rankid</div>
+               	<div class="fl pr">
+               		
+               		<ul class="toolul">
+	               		<li><a href="$param.linkurl">$param.username <img src="$param.expurl" height="22"/></a></li>
+	               		<li class="grey"><span class="t_num"><span>$param.num</span></span></li>
+               		</ul>
+               	</div>
+          	</div>
+       	</div>		
+#end					
+#else
+					
+#end
+#end  
+      	
+                </div>
+         	</div>
+      	</div>
+    	
+    	
+    	<div class="rrank_two" >
+            <div class="rank_pop">
+            	<div class="left_title"><font color="ec3229">Gifts</font> Ranking</div>
+            	
+               	<table class="gift_rank">
+#foreach($tool in $!{giftlist})
+#if ($tool)
+#if ($tool.pos ==1 )
+	<tr>
+#end
+    					<td>
+                        	<img src=" $tool.iconurl" width="40" height="40" border="0"/>
+                            <span class="gift">$tool.toolname  $tool.num</span>
+                            <a href="$tool.linkurl" ><span class="name">$tool.username</span></a>
+                        </td>
+    
+#if ($tool.pos==2 )
+	</tr>
+#end
+
+#end
+#end
+
+                </table>
+         	</div>
+      	</div>
+      	
+	</div>
+</div>
+
+
+<script type="text/javascript" src="../js/open.rc.js"></script> 
+<script type="text/javascript" src="../js/open.common.js"></script>
+<!--  script type="text/javascript" src="../js/rank.js"></script>-->
+<script>
+$(document).ready(function() {
+	
+	$(".ranknav li").click(function(){
+		$(this).parent().find("li").removeClass("current");
+		$(this).addClass("current");
+		
+		var left = this.offsetLeft + 'px';
+		$(this).parent().find(".nav_line").css('left',left);
+		
+		var id = $(this).attr("id").substring(5);
+		$(this).parent().parent().find(".rank_list").hide();
+		var slink=$(this).attr("link");
+		$("#"+slink+id).show();
+		
+	});
+	
+});
+</script>
+</body>
+</html>

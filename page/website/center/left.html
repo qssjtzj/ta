@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<meta name="keywords" content="，，">
+<meta name="description" content="" />
+<meta name="author" content="Design:; Web Layout:HXH;" />
+<link type="image/x-icon" href="../favicon.ico" rel="icon"/>
+<link type="image/x-icon" href="../favicon.ico" rel="shortcut icon" />
+<link type="text/css" rel="stylesheet" href="../css/index.css" />
+</head>
+<body>
+
+<!--内容部分-->
+<div class="left">
+	<div class="center_user_info center_user_bg">
+    	<div class="init_user_t">My Account</div>
+        <div id="init_user_info" class="init_user_info">
+            <div class='u_img bc' id="init_user_img"> 
+                <img src='' width='78' height='78'  border='0' id='user_img' onerror='this.src="../imgs/icon.png"'/> 
+                <img src='../imgs/head_guard.png' width='26' height='58' class="u_guard" id="user_guard_img"  border='0' id="user_img" style=" display:none;"/> 
+            </div>
+            <div class='u_username Ffamily_ht fts16 bc tc line20 pt10'> 
+                <img id="user_vip_img" src="../imgs/icon_vip.png" width="17" height="16"　border="0" class=" u_vip" style=" display:none;" /><span id="user_name">&nbsp;</span>
+            </div>
+            <div class='u_level bc Ffamily_ht line16 tc fts14'> 
+               <!-- <img src='' width='15' height='15' id="user_level_img" /> LV.<span id="user_level"></span> -->
+            </div>
+        </div>
+	</div>
+    
+	<div class="center_user_setting center_user_bg mt20">
+    	<div class="m20">
+      		<h2><span class="set s_setting"></span> Personal Informations</h2>
+      		<ul>
+            	<li><a href="userCenterSet.html" class="" id="_user_setting" title="" target="_parent">基本信息</a></li>
+                <li><a href="userCenterInfo.html" class="" id="_user_info" title="Account Settings" target="_parent">Change My Settings</a></li>
+                <li><a href="userCenterModify.html" class="" id="_user_pwd" title="Change Password" target="_parent" >Change Password</a></li>
+                <li><a href="userCenterIcon.html" class="" id="_user_icon" title="Change Portrait"  target="_parent">Change Portrait</a></li>
+                <li><a href="userCenterFB.html" class="" id="_user_fb" title="Social network site management" target="_parent" >Social network site</a></li>
+      		</ul>
+      		<h2><span class="set s_chong"></span>Account Center</h2>
+          	<ul>
+				<li><a id="_acct_info"  href="acctInfos.html" title="" target="_parent" >Account Informations</a></li>
+           	 	<li><a id="_pay_recharge"  href="../pay/recharge.html" title="" target="_parent">Recharge & History</a></li>
+            	<!--<li><a id="_pay_vip"  href="userCenter.html" title="" target="_parent" >VIP Privilege</a></li>-->
+            	<li><a id="_gift_record"  href="../center/groupGift.html?atype=1" title="" target="_parent" >Gift Record</a></li>
+                <li><a id="_pay_car"  href="../center/userCar.html" title="" target="_parent" >My Car</a></li>
+          	</ul>
+      		<h2><span class="set s_vip"></span>Broadcaster Center</h2>
+          	<ul>
+            	<li><a id="_group_apply" href="groupApply.html" title="Sign up for live show" target="_parent" >Sign up for live show</a></li>
+                <li><a id="_group_creat" href="groupCreate.html" title="Create a group" target="_parent" >Create a group</a></li>
+                <li><a id="_group_manager" href="groupManager.html" title="Group management" target="_parent" >Group management</a></li>
+                <li><a id="_group_tool" href="groupTool.html" title="Broadcast software" target="_parent" >Broadcast software</a></li>
+          	</ul>
+    	</div>
+  	</div>
+</div>
+<script type="text/javascript" src="../js/open.rc.js"></script> 
+<script type="text/javascript" src="../js/open.common.js"></script> 
+<script type="text/javascript" src="../js/open.center.js"></script> 
+<script>
+$(document).ready(function() {
+	rcopen.api.initUserInfo();
+	
+	$("#bottomIframe").remove();
+	/*
+	$(".center_user_setting ul li a").click(function(){
+		$(".center_user_setting ul li a").removeClass("active");
+		
+		$("#"+this.id).addClass("active");
+	});
+	*/
+	$(".center_user_setting ul li a").removeClass("active");
+	
+	var href=window.parent.location.href; 
+	if(href.indexOf("/center/userCenterInfo.html")>0){
+		$("#_user_info").addClass("active");
+	}else if(href.indexOf("/center/userCenterSet.html")>0){
+		$("#_user_setting").addClass("active");
+	}else if(href.indexOf("/center/userCenterModify.html")>0 || href.indexOf("/center/userCenterEmail.html")>0){
+		$("#_user_pwd").addClass("active");
+	}else if(href.indexOf("/center/userCenterIcon.html")>0){
+		$("#_user_icon").addClass("active");
+	}else if(href.indexOf("/center/userCenterFB.html")>0){
+		$("#_user_fb").addClass("active");
+	}else if(href.indexOf("/center/acctInfos.html")>0){
+		$("#_acct_info").addClass("active");
+	}else if(href.indexOf("/center/userCenter.html")>0){
+		$("#_pay_vip").addClass("active");
+	}else if(href.indexOf("/center/groupApply.html")>0){
+		$("#_group_apply").addClass("active");
+	}else if(href.indexOf("/center/groupCreate.html")>0){
+		$("#_group_creat").addClass("active");
+	}else if(href.indexOf("/center/groupManager.html")>0){
+		$("#_group_manager").addClass("active");
+	}else if(href.indexOf("/center/groupGift.html")>0){
+		$("#_gift_record").addClass("active");
+	}else if(href.indexOf("/center/groupTool.html")>0){
+		$("#_group_tool").addClass("active");
+	}else if(href.indexOf("/pay/")>0){
+		$("#_pay_recharge").addClass("active");
+	}else if(href.indexOf("/center/userCar.html")>0){
+		$("#_pay_car").addClass("active");
+	}else {
+		$("#_user_info").addClass("active");
+	}
+	
+});
+
+</script>
+</body>
+</html>

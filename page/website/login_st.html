@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<!--meta http-equiv="P3P" content='CP="NOI ADM DEV PSAi COM NAV OUR OTR STP IND DEM"' /-->
+<meta http-equiv="P3P" content='CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"' />
+<title></title>
+<meta name="keywords" content="，，">
+<meta name="description" content="" />
+<meta name="author" content="Design:ZhangXi; Web Layout:HXH;" />
+<link type="image/x-icon" href="favicon.ico" rel="icon"/>
+<link type="image/x-icon" href="favicon.ico" rel="shortcut icon" />
+<link type="text/css" rel="stylesheet" href="css/index.css" />
+<link type="text/css" rel="stylesheet" href="css/index-st.css" />
+</head>
+<body>
+<!--顶部导航-->
+<div id="header" ></div>
+<!-- <div class="warp"><a href='index.html' class='top_nav_home'>HOME</a></div> -->
+
+	<!--内容部分-->
+	<div class="warp">
+		<div class="content">
+        	<div class="stlongin">
+           	 	<div class="stlogin_top"></div>
+                <div class="stlogin_content">
+			 		<iframe id="myIframe" src="http://202.43.38.212/api/login/login_form.php" width="615" height="550" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
+                </div>
+        	</div>
+		</div>
+	</div>
+
+<script type="text/javascript" src="js/open.rc.js"></script> 
+<script type="text/javascript" src="js/open.common.js"></script> 
+<script>
+$(document).ready(function() {
+	
+	var href= window.location.href;
+	if(href.indexOf("?type=1")>0){
+	//var type = opencyou.utils.getParamFromUrl("type");
+	//if(type==1){
+		var frame = document.getElementById("myIframe");
+		frame.src= "http://202.43.38.212/api/login/register_form.php?account_type=w1";
+	}else{
+		var frame = document.getElementById("myIframe");
+		frame.src= "http://202.43.38.212/api/login/login_form.php?account_type=w1";
+	}
+	
+});
+</script>
+
+</body>
+</html>

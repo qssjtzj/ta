@@ -1,0 +1,61 @@
+
+#header {width:100%; height:40px;position:absolute; top:0px; z-index:100;}
+.hfix {position:relative; width:100%;height:40px;background:url(../imgs/headbg_small_40.png) repeat-x ;}
+.rc_logo {width:146px;height:40px;background:url(../imgs/logo_small.png) no-repeat;line-height:28px;margin-top:0px;margin-left:0px;}
+
+.top_nav {float:right; height:40px;overflow:hidden;margin-top:0px;font-size:12px;}
+.rc_login {height:38px;line-height:38px;}
+.rc_regist {height:38px;line-height:38px;}
+
+.rc_search {width:173px;height:23px;padding-top: 8px;position:relative; float:right; margin-right:15px; }
+.rc_search .int {width:171px;height:21px;background:#f8f8f8;border:1px solid #999;font-size:12px;-moz-border-radius: 2px;border-radius: 2px;}
+
+.rc_search .int input{width:145px;height:17px;padding:2px ;line-height:16px;color:#ccc;background-image: none;outline:none;}
+
+.rc_search .btn_search{width:14px;height:14px;background:url(../imgs/icon_search_small.png) center no-repeat;position:absolute; right:5px; top:12px; overflow:hidden; color:#f8f8f8;}
+.rc_search .btn_search:active{background:url(../imgs/icon_search_small.png) center no-repeat;}
+
+.rc_search .icon {display:inline;width: 2px;height: 2px;}
+.rc_search .icon_search {margin: 0px;background:none;}
+ 
+
+.on_login {height:40px;line-height:40px;font-size:14px;margin-top: 0px;}
+.on_login .login_record {height:40px;line-height:40px;padding:0px 10px;}
+
+.on_login .login_record:hover{background-color:#666666; }
+.on_login .login_record img{margin-top:11px;}
+
+.on_login .login_center {height:40px;}
+.on_login .login_center:hover{ background:#666;}
+.on_login .login_center .icon_head {width:29px;height:29px;margin-top:3px;}
+.on_login .log_name{margin-left:50px;height:40px;line-height:40px;}
+
+.on_login .login_tokens{height:40px;}
+.on_login .login_tokens .icon_tokens{ margin-top:12px; }
+.on_login .login_tokens .token_num{ height:40px; line-height:40px;}
+
+.on_login .icon_border{ float: right;position: relative; width:1px; height:12px; background:#999 repeat-y ; margin-top:14px;}
+
+.on_login_list {top:40px;}
+.on_center_list {top:40px;}
+#logVipImg{ position: absolute;top: 20px;left: 32px; }
+
+.warp1{ width:1080px; margin:0 auto;}
+
+/*.scroller{ height:40px; width:760px; padding:0 50px; position:absolute; z-index: 100; top:0px; background:url(../imgs/grid_black_860.gif) no-repeat center; overflow:hidden;}*/
+.animate { font-size:14px; color:#fff; line-height:40px;cursor:pointer; width:520px; height:40px;  overflow:hidden; text-overflow:ellipsis;white-space:nowrap; }
+.animate  *{ float:left;}
+.animate .giftimg{ padding:0 10px; padding-top:8px;  }
+
+.broadcast { font-size:14px; color:#fff; line-height:40px;  position:absolute; top:0px; cursor:pointer; overflow:visible; width:760px; /*width:760px;  right: -760px; min-width:450px; */  }
+.broadcast  *{ float:left;}
+.broadcast .giftimg{ padding:0 10px; padding-top:8px;  }
+
+.warp2 .scroller{ height:40px; /*width:520px;*/ padding:2px 30px; position:relative; background:url(../imgs/broadcastbg.gif) no-repeat left top; overflow:hidden;/*position:absolute; z-index: 100; top:0px;*/ }
+
+/*
+.ScrollMid {float:right;}
+.ScrollMid ul{width:1430px;float:left;}
+.ScrollMid li{list-style:none; float:right; padding-left:100px; font-size:16px; color:#fff; font-family:Verdana; line-height:40px;}
+.ScrollMid li *{ float:left;}
+.ScrollMid .giftimg{ padding:0 10px;  }*/

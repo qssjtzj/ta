@@ -1,0 +1,651 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.cyou.open</groupId>
+	<artifactId>open</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>open</name>
+	
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<jdk.version>1.7</jdk.version>
+
+		<javax.servlet-api.version>3.0.1</javax.servlet-api.version>
+		<spring-webmvc.version>3.2.4.RELEASE</spring-webmvc.version>
+		<spring-context-support.version>3.2.4.RELEASE</spring-context-support.version>
+		<spring-orm.version>3.2.4.RELEASE</spring-orm.version>
+		<hibernate-core.version>4.2.2.Final</hibernate-core.version>
+		<hibernate-ehcache.version>4.2.2.Final</hibernate-ehcache.version>
+		<hibernate-validator.version>4.3.1.Final</hibernate-validator.version>
+		<hibernate-tools.version>3.2.4.GA</hibernate-tools.version>
+		<commons-pool.version>1.6</commons-pool.version>
+		<commons-lang.version>2.5</commons-lang.version>
+		<commons-lang3.version>3.1</commons-lang3.version>
+		<commons-io.version>2.4</commons-io.version>
+		<commons-dbcp.version>1.4</commons-dbcp.version>
+		<commons-fileupload.version>1.3.1</commons-fileupload.version>
+		<commons-beanutils.version>1.9.1</commons-beanutils.version>
+		<commons-codec.version>1.9</commons-codec.version>
+		<jackson-annotations.version>2.3.1</jackson-annotations.version>
+		<jackson-core.version>2.3.1</jackson-core.version>
+		<jackson-databind.version>2.3.1</jackson-databind.version>
+		<mysql-connector-java.version>5.1.25</mysql-connector-java.version>
+		<log4j.version>1.2.17</log4j.version>
+		<slf4j-api.version>1.7.2</slf4j-api.version>
+		<slf4j-log4j12.version>1.7.2</slf4j-log4j12.version>
+		<guava.version>13.0.1</guava.version>
+		<fastjson.version>1.1.36</fastjson.version>
+		<mail.version>1.4</mail.version>
+		<freemarker.version>2.3.18</freemarker.version>
+		<aspectjrt.version>1.7.4</aspectjrt.version>
+		<validation-api.version>1.1.0.Final</validation-api.version>
+		<aspectjweaver.version>1.7.1</aspectjweaver.version>
+		<dozer.version>5.4.0</dozer.version>
+	</properties>
+	<!-- profile 信息 -->
+	<profiles>
+		<profile>
+			<!-- 本地开发环境的配置 -->
+			<id>dev</id>
+			<properties>
+				<project.language.version>en</project.language.version>
+			
+				<!-- 数据库连接配置 -->
+				<!-- member 库 -->
+				<db.member.url><![CDATA[jdbc:mysql://10.127.68.206:3306/member?useUnicode=true&amp;characterEncoding=utf-8]]></db.member.url>
+				<db.member.username>rc</db.member.username>
+				<db.member.password>a3c5922c</db.member.password>
+				<db.member.slave.url><![CDATA[jdbc:mysql://10.127.68.206:3307/member?useUnicode=true&amp;characterEncoding=utf-8]]></db.member.slave.url>
+				<db.member.slave.username>rc</db.member.slave.username>
+				<db.member.slave.password>a3c5922c</db.member.slave.password>
+				<!-- raidcall 库 -->
+				<db.raidcall.url><![CDATA[jdbc:mysql://10.127.68.206:3306/raidcall?useUnicode=true&amp;characterEncoding=utf-8]]></db.raidcall.url>
+				<db.raidcall.username>rc</db.raidcall.username>
+				<db.raidcall.password>a3c5922c</db.raidcall.password>
+				<db.raidcall.slave.url><![CDATA[jdbc:mysql://10.127.68.206:3307/raidcall?useUnicode=true&amp;characterEncoding=utf-8]]></db.raidcall.slave.url>
+				<db.raidcall.slave.username>rc</db.raidcall.slave.username>
+				<db.raidcall.slave.password>a3c5922c</db.raidcall.slave.password>
+				<!-- rcec_main 库 -->
+				<db.rcecmain.url><![CDATA[jdbc:mysql://10.127.68.206:3306/rcec_main?useUnicode=true&amp;characterEncoding=utf-8]]></db.rcecmain.url>
+				<db.rcecmain.username>rc</db.rcecmain.username>
+				<db.rcecmain.password>a3c5922c</db.rcecmain.password>
+				<db.rcecmain.slave.url><![CDATA[jdbc:mysql://10.127.68.206:3307/rcec_main?useUnicode=true&amp;characterEncoding=utf-8]]></db.rcecmain.slave.url>
+				<db.rcecmain.slave.username>rc</db.rcecmain.slave.username>
+				<db.rcecmain.slave.password>a3c5922c</db.rcecmain.slave.password>
+				<!-- rcec_flower 库 -->
+				<db.flower.url><![CDATA[jdbc:mysql://10.127.68.206:3306/flower?useUnicode=true&amp;characterEncoding=utf-8]]></db.flower.url>
+				<db.flower.username>rc</db.flower.username>
+				<db.flower.password>a3c5922c</db.flower.password>
+				<db.flower.slave.url><![CDATA[jdbc:mysql://10.127.68.206:3307/flower?useUnicode=true&amp;characterEncoding=utf-8]]></db.flower.slave.url>
+				<db.flower.slave.username>rc</db.flower.slave.username>
+				<db.flower.slave.password>a3c5922c</db.flower.slave.password>		
+				<!-- rcec_record 库 -->
+				<db.rcecrecord.url><![CDATA[jdbc:mysql://10.127.68.206:3306/rcec_record?useUnicode=true&amp;characterEncoding=utf-8]]></db.rcecrecord.url>
+				<db.rcecrecord.username>rc</db.rcecrecord.username>
+				<db.rcecrecord.password>a3c5922c</db.rcecrecord.password>
+				<db.rcecrecord.slave.url><![CDATA[jdbc:mysql://10.127.68.206:3307/rcec_record?useUnicode=true&amp;characterEncoding=utf-8]]></db.rcecrecord.slave.url>
+				<db.rcecrecord.slave.username>rc</db.rcecrecord.slave.username>
+				<db.rcecrecord.slave.password>a3c5922c</db.rcecrecord.slave.password>					
+				<!-- channellive 库 -->
+				<db.channellive.url><![CDATA[jdbc:mysql://10.127.68.206:3306/channellive?useUnicode=true&amp;characterEncoding=utf-8]]></db.channellive.url>
+				<db.channellive.username>rc</db.channellive.username>
+				<db.channellive.password>a3c5922c</db.channellive.password>
+				<db.channellive.slave.url><![CDATA[jdbc:mysql://10.127.68.206:3307/channellive?useUnicode=true&amp;characterEncoding=utf-8]]></db.channellive.slave.url>
+				<db.channellive.slave.username>rc</db.channellive.slave.username>
+				<db.channellive.slave.password>a3c5922c</db.channellive.slave.password>					
+							
+				<!-- 应用程序配置 -->
+				<base.path.url>http://www.rc.im/</base.path.url>
+				<base.dbapi.url>http://dbapi.rc.im/</base.dbapi.url>
+				<config.image.host>PubImgSour</config.image.host>
+				<config.image.path>F:/develop/WorkSpace/open/WebContent/PubImgSour</config.image.path>
+				<!-- 程序日志配置 -->
+				<log4j.file.path>d:/logs/rcshow/</log4j.file.path>
+				
+				<!-- 支付相关配置 -->
+				<server.id>1</server.id>
+				<cypay.pay.url>http://open.wall-et.net/pay/directPay.htm</cypay.pay.url>
+				<cypay.notify.url>http://220.181.142.210/rcpay/cypaynotify</cypay.notify.url>
+				<cypay.return.url>http://220.181.142.210/pay/payreturn.html</cypay.return.url>
+				<cypay.secret>98a1b6c5905c4144a96d6dc3a2601a1d</cypay.secret>
+				<cypay.appid>fe4c2e8254854185b1c9dbe20ce60ddf</cypay.appid>
+				<cypay.channelid>1e3a21ceb2de493e99f8627927025233</cypay.channelid>
+				<cypay.currency>MYR</cypay.currency>
+				<cypay.country.code>MY</cypay.country.code>
+				<cypay.rate.rcbi>10</cypay.rate.rcbi>
+				<cypay.rate.showbi>8</cypay.rate.showbi>
+				
+				<!-- 搜索lucene地址 -->
+				<lucene.url>http://localhost/index/</lucene.url>
+				
+				<!-- redis的配置 -->
+				<redis.server.ip>redislocal.prsoft</redis.server.ip>
+				<redis.server.port>6379</redis.server.port>
+				<redis.server.pwd></redis.server.pwd>
+				<redis.server.timeout>0</redis.server.timeout>
+			</properties>
+		</profile>
+		<profile>
+			<!-- 测试环境的配置 -->
+			<id>test</id>
+			<properties>
+				<project.language.version>en</project.language.version>
+				<!-- 数据库连接配置 -->
+				<!-- member 库 -->
+				<db.member.url><![CDATA[jdbc:mysql://dblocal.prsoft:3306/member?useUnicode=true&amp;characterEncoding=utf-8]]></db.member.url>
+				<db.member.username>raidcall</db.member.username>
+				<db.member.password>123456as</db.member.password>
+				<db.member.slave.url><![CDATA[jdbc:mysql://dblocal.prsoft:3306/member?useUnicode=true&amp;characterEncoding=utf-8]]></db.member.slave.url>
+				<db.member.slave.username>raidcall</db.member.slave.username>
+				<db.member.slave.password>123456as</db.member.slave.password>
+				<!-- raidcall 库 -->
+				<db.raidcall.url><![CDATA[jdbc:mysql://dblocal.prsoft:3306/raidcall?useUnicode=true&amp;characterEncoding=utf-8]]></db.raidcall.url>
+				<db.raidcall.username>raidcall</db.raidcall.username>
+				<db.raidcall.password>123456as</db.raidcall.password>
+				<db.raidcall.slave.url><![CDATA[jdbc:mysql://dblocal.prsoft:3306/raidcall?useUnicode=true&amp;characterEncoding=utf-8]]></db.raidcall.slave.url>
+				<db.raidcall.slave.username>raidcall</db.raidcall.slave.username>
+				<db.raidcall.slave.password>123456as</db.raidcall.slave.password>
+				<!-- rcec_main 库 -->
+				<db.rcecmain.url><![CDATA[jdbc:mysql://dblocal.prsoft:3306/rcec_main?useUnicode=true&amp;characterEncoding=utf-8]]></db.rcecmain.url>
+				<db.rcecmain.username>raidcall</db.rcecmain.username>
+				<db.rcecmain.password>123456as</db.rcecmain.password>
+				<db.rcecmain.slave.url><![CDATA[jdbc:mysql://dblocal.prsoft:3306/rcec_main?useUnicode=true&amp;characterEncoding=utf-8]]></db.rcecmain.slave.url>
+				<db.rcecmain.slave.username>raidcall</db.rcecmain.slave.username>
+				<db.rcecmain.slave.password>123456as</db.rcecmain.slave.password>	
+				<!-- rcec_flower 库 -->
+				<db.flower.url><![CDATA[jdbc:mysql://dblocal.prsoft:3306/flower?useUnicode=true&amp;characterEncoding=utf-8]]></db.flower.url>
+				<db.flower.username>raidcall</db.flower.username>
+				<db.flower.password>123456as</db.flower.password>
+				<db.flower.slave.url><![CDATA[jdbc:mysql://dblocal.prsoft:3306/flower?useUnicode=true&amp;characterEncoding=utf-8]]></db.flower.slave.url>
+				<db.flower.slave.username>raidcall</db.flower.slave.username>
+				<db.flower.slave.password>123456as</db.flower.slave.password>				
+				<!-- rcec_record 库 -->
+				<db.rcecrecord.url><![CDATA[jdbc:mysql://dblocal.prsoft:3306/rcec_record?useUnicode=true&amp;characterEncoding=utf-8]]></db.rcecrecord.url>
+				<db.rcecrecord.username>raidcall</db.rcecrecord.username>
+				<db.rcecrecord.password>123456as</db.rcecrecord.password>
+				<db.rcecrecord.slave.url><![CDATA[jdbc:mysql://dblocal.prsoft:3306/rcec_record?useUnicode=true&amp;characterEncoding=utf-8]]></db.rcecrecord.slave.url>
+				<db.rcecrecord.slave.username>raidcall</db.rcecrecord.slave.username>
+				<db.rcecrecord.slave.password>123456as</db.rcecrecord.slave.password>
+				<!-- channellive 库 -->
+				<db.channellive.url><![CDATA[jdbc:mysql://dblocal.prsoft:3306/channellive?useUnicode=true&amp;characterEncoding=utf-8]]></db.channellive.url>
+				<db.channellive.username>raidcall</db.channellive.username>
+				<db.channellive.password>123456as</db.channellive.password>
+				<db.channellive.slave.url><![CDATA[jdbc:mysql://dblocal.prsoft:3306/channellive?useUnicode=true&amp;characterEncoding=utf-8]]></db.channellive.slave.url>
+				<db.channellive.slave.username>raidcall</db.channellive.slave.username>
+				<db.channellive.slave.password>123456as</db.channellive.slave.password>					
+				
+				<!-- 应用程序配置 -->
+				<base.path.url>http://www.xiuktv.com/</base.path.url>
+				<base.dbapi.url>http://dbapi.xiuktv.com/</base.dbapi.url>
+				<config.image.host>PubImgSour</config.image.host>
+				<config.image.path>/data/www/resource</config.image.path>
+				<!-- 程序日志配置 -->
+				<log4j.file.path>/data/logs/rcshow/</log4j.file.path>
+				
+				<!-- 支付相关配置 -->
+				<server.id>1</server.id>
+				<cypay.pay.url>http://pay.xiuktv.com/pay/directPay.htm</cypay.pay.url>
+				<cypay.notify.url>http://pay.xiuktv.com/rcpay/cypaynotify</cypay.notify.url>
+				<cypay.return.url>http://pay.xiuktv.com/pay/payreturn.html</cypay.return.url>
+				<cypay.secret>98a1b6c5905c4144a96d6dc3a2601a1d</cypay.secret>
+				<cypay.appid>fe4c2e8254854185b1c9dbe20ce60ddf</cypay.appid>
+				<cypay.channelid>1e3a21ceb2de493e99f8627927025233</cypay.channelid>
+				<cypay.currency>MYR</cypay.currency>
+				<cypay.country.code>MY</cypay.country.code>
+				<cypay.rate.rcbi>10</cypay.rate.rcbi>
+				<cypay.rate.showbi>8</cypay.rate.showbi>
+				
+				<!-- 搜索lucene地址 -->
+				<lucene.url>http://search.xiuktv.com/index/</lucene.url>
+				
+				<!-- redis的配置 -->
+				<redis.server.ip>redislocal.prsoft</redis.server.ip>
+				<redis.server.port>6379</redis.server.port>
+				<redis.server.pwd></redis.server.pwd>
+				<redis.server.timeout>0</redis.server.timeout>
+			</properties>
+		</profile>
+		<profile>
+			<!-- 泰国正式环境的配置 -->
+			<id>online</id>
+			<properties>
+				<project.language.version>th</project.language.version>
+				<!-- 数据库连接配置 -->
+				<!-- member 库 -->
+				<db.member.url><![CDATA[jdbc:mysql://192.168.88.10:3306/member?useUnicode=true&amp;characterEncoding=utf-8]]></db.member.url>
+				<db.member.username>raidcall</db.member.username>
+				<db.member.password>123456as</db.member.password>
+				<!--db.member.slave.url><![CDATA[jdbc:mysql://192.168.88.10:3307/member?useUnicode=true&amp;characterEncoding=utf-8]]></db.member.slave.url-->
+				<db.member.slave.url><![CDATA[jdbc:mysql://192.168.88.10:3306/member?useUnicode=true&amp;characterEncoding=utf-8]]></db.member.slave.url>
+				<db.member.slave.username>raidcall</db.member.slave.username>
+				<db.member.slave.password>123456as</db.member.slave.password>
+				<!-- raidcall 库 -->
+				<db.raidcall.url><![CDATA[jdbc:mysql://192.168.88.10:3306/raidcall?useUnicode=true&amp;characterEncoding=utf-8]]></db.raidcall.url>
+				<db.raidcall.username>raidcall</db.raidcall.username>
+				<db.raidcall.password>123456as</db.raidcall.password>
+				<!--  <db.raidcall.slave.url><![CDATA[jdbc:mysql://192.168.88.10:3307/raidcall?useUnicode=true&amp;characterEncoding=utf-8]]></db.raidcall.slave.url>-->
+				<db.raidcall.slave.url><![CDATA[jdbc:mysql://192.168.88.10:3306/raidcall?useUnicode=true&amp;characterEncoding=utf-8]]></db.raidcall.slave.url>
+				<db.raidcall.slave.username>raidcall</db.raidcall.slave.username>
+				<db.raidcall.slave.password>123456as</db.raidcall.slave.password>
+				<!-- rcec_main 库 -->
+				<db.rcecmain.url><![CDATA[jdbc:mysql://192.168.88.10:3306/rcec_main?useUnicode=true&amp;characterEncoding=utf-8]]></db.rcecmain.url>
+				<db.rcecmain.username>raidcall</db.rcecmain.username>
+				<db.rcecmain.password>123456as</db.rcecmain.password>
+				<!--  <db.rcecmain.slave.url><![CDATA[jdbc:mysql://192.168.88.10:3307/rcec_main?useUnicode=true&amp;characterEncoding=utf-8]]></db.rcecmain.slave.url>-->
+				<db.rcecmain.slave.url><![CDATA[jdbc:mysql://192.168.88.10:3306/rcec_main?useUnicode=true&amp;characterEncoding=utf-8]]></db.rcecmain.slave.url>
+				<db.rcecmain.slave.username>raidcall</db.rcecmain.slave.username>
+				<db.rcecmain.slave.password>123456as</db.rcecmain.slave.password>
+				<!-- rcec_flower 库 -->
+				<db.flower.url><![CDATA[jdbc:mysql://192.168.88.10:3306/flower?useUnicode=true&amp;characterEncoding=utf-8]]></db.flower.url>
+				<db.flower.username>raidcall</db.flower.username>
+				<db.flower.password>123456as</db.flower.password>
+				<!--  <db.flower.slave.url><![CDATA[jdbc:mysql://192.168.88.10:3307/flower?useUnicode=true&amp;characterEncoding=utf-8]]></db.flower.slave.url>-->
+				<db.flower.slave.url><![CDATA[jdbc:mysql://192.168.88.10:3306/flower?useUnicode=true&amp;characterEncoding=utf-8]]></db.flower.slave.url>
+				<db.flower.slave.username>raidcall</db.flower.slave.username>
+				<db.flower.slave.password>123456as</db.flower.slave.password>
+				<!-- rcec_record 库 -->
+				<db.rcecrecord.url><![CDATA[jdbc:mysql://192.168.88.10:3306/rcec_record?useUnicode=true&amp;characterEncoding=utf-8]]></db.rcecrecord.url>
+				<db.rcecrecord.username>raidcall</db.rcecrecord.username>
+				<db.rcecrecord.password>123456as</db.rcecrecord.password>
+				<!--  <db.rcecrecord.slave.url><![CDATA[jdbc:mysql://192.168.88.10:3307/rcec_record?useUnicode=true&amp;characterEncoding=utf-8]]></db.rcecrecord.slave.url>-->
+				<db.rcecrecord.slave.url><![CDATA[jdbc:mysql://192.168.88.10:3306/rcec_record?useUnicode=true&amp;characterEncoding=utf-8]]></db.rcecrecord.slave.url>
+				<db.rcecrecord.slave.username>raidcall</db.rcecrecord.slave.username>
+				<db.rcecrecord.slave.password>123456as</db.rcecrecord.slave.password>
+				<!-- channellive 库 -->
+				<db.channellive.url><![CDATA[jdbc:mysql://192.168.88.10:3306/channellive?useUnicode=true&amp;characterEncoding=utf-8]]></db.channellive.url>
+				<db.channellive.username>raidcall</db.channellive.username>
+				<db.channellive.password>123456as</db.channellive.password>
+				<!-- <db.channellive.slave.url><![CDATA[jdbc:mysql://192.168.88.10:3307/channellive?useUnicode=true&amp;characterEncoding=utf-8]]></db.channellive.slave.url>-->
+				<db.channellive.slave.url><![CDATA[jdbc:mysql://192.168.88.10:3306/channellive?useUnicode=true&amp;characterEncoding=utf-8]]></db.channellive.slave.url>
+				<db.channellive.slave.username>raidcall</db.channellive.slave.username>
+				<db.channellive.slave.password>123456as</db.channellive.slave.password>					
+				
+				<!-- 应用程序配置 -->
+				<base.path.url>http://www.showoo.cc/</base.path.url>
+				<base.dbapi.url>http://dbapi.showoo.cc/</base.dbapi.url>
+				<config.image.host>PubImgSour</config.image.host>
+				<config.image.path>/data/www/resource</config.image.path>
+				<!-- 程序日志配置 -->
+				<log4j.file.path>/data/logs/rcshow/</log4j.file.path>
+				
+				<!-- 支付相关配置 -->
+				<server.id>1</server.id>
+				<cypay.pay.url>http://open.wall-et.net/pay/directPay.htm</cypay.pay.url>
+				<cypay.notify.url>http://192.168.88.10/rcpay/cypaynotify</cypay.notify.url>
+				<cypay.return.url>http://192.168.88.10/pay/payreturn.html</cypay.return.url>
+				<cypay.secret>98a1b6c5905c4144a96d6dc3a2601a1d</cypay.secret>
+				<cypay.appid>fe4c2e8254854185b1c9dbe20ce60ddf</cypay.appid>
+				<cypay.channelid>1e3a21ceb2de493e99f8627927025233</cypay.channelid>
+				<cypay.currency>MYR</cypay.currency>
+				<cypay.country.code>MY</cypay.country.code>
+				<cypay.rate.rcbi>10</cypay.rate.rcbi>
+				<cypay.rate.showbi>8</cypay.rate.showbi>
+				
+				<!-- 搜索lucene地址 -->
+				<lucene.url>http://search.showoo.cc/index/</lucene.url>
+				
+				<!-- redis的配置 -->
+				<redis.server.ip>redislocal.prsoft</redis.server.ip>
+				<redis.server.port>6379</redis.server.port>
+				<redis.server.pwd></redis.server.pwd>
+				<redis.server.timeout>0</redis.server.timeout>
+			</properties>
+		</profile>
+	</profiles>
+    <repositories>
+      <!-- <repository>
+           <snapshots>
+              <enabled>false</enabled>
+           </snapshots>
+           <id>public</id>
+           <name>public</name>
+           <url>http://123.56.103.80:8092/nexus/content/groups/public/</url>
+       </repository>
+       <repository>
+           <snapshots>
+              <enabled>false</enabled>
+           </snapshots>
+           <id>local-publish</id>
+           <name>local-publish</name>
+           <url>http://123.56.103.80:8092/nexus/content/groups/local-publish/</url>
+       </repository>-->
+    </repositories>
+	<dependencies>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>${javax.servlet-api.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring-webmvc.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>${spring-context-support.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring-orm.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${hibernate-core.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-ehcache</artifactId>
+			<version>${hibernate-ehcache.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>${hibernate-validator.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-tools</artifactId>
+			<version>${hibernate-tools.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-pool</groupId>
+			<artifactId>commons-pool</artifactId>
+			<version>${commons-pool.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>${commons-lang.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>${commons-lang3.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>${commons-io.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>${commons-dbcp.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>${commons-fileupload.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+			<version>${commons-beanutils.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>${commons-codec.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>${jackson-annotations.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>${jackson-core.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson-databind.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql-connector-java.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j-api.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${slf4j-log4j12.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>${guava.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>${fastjson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>${mail.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.freemarker</groupId>
+			<artifactId>freemarker</artifactId>
+			<version>${freemarker.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+			<version>${aspectjrt.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>${validation-api.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>${aspectjweaver.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.dozer</groupId>
+			<artifactId>dozer</artifactId>
+			<version>${dozer.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.social</groupId>
+			<artifactId>spring-social-facebook</artifactId>
+			<version>1.0.3.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.social</groupId>
+			<artifactId>spring-social-web</artifactId>
+			<version>1.0.3.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId> org.springframework.security</groupId>
+			<artifactId>spring-security-crypto</artifactId>
+			<version>3.2.3.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpmime</artifactId>
+			<version>4.2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpcore</artifactId>
+			<version>4.2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>c3p0</groupId>
+			<artifactId>c3p0</artifactId>
+			<version>0.9.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+			<version>2.1.0</version>
+		</dependency>	
+		
+		<dependency>
+			<groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+			<version>1.6.1</version>
+		</dependency>
+		<dependency>
+			<groupId>xmlbeans</groupId>
+			<artifactId>xmlbeans</artifactId>
+			<version>2.3.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.geronimo.specs</groupId>
+			<artifactId>geronimo-stax-api_1.0_spec</artifactId>
+			<version>1.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.7</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml-schemas</artifactId>
+			<version>3.7</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.7</version>
+		</dependency>		
+	</dependencies>
+	<build>
+		<!-- 以下配置表示要对src/main/resources下的资源进行过滤 -->
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+			<resource>
+				<directory>${basedir}/src/main/java</directory>
+				<targetPath>${basedir}/target/classes</targetPath>
+				<filtering>true</filtering>
+				<includes>
+					<include>*.xml</include>
+				</includes>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<port>80</port>
+					<path>/</path>
+					<uriEncoding>UTF-8</uriEncoding>
+					<warSourceDirectory>${basedir}/WebContent</warSourceDirectory>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<!-- http://wiki.eclipse.org/Jetty/Feature/Jetty_Maven_Plugin -->
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>8.1.15.v20140411</version>
+				<configuration>
+					<stopPort>9966</stopPort>
+					<stopKey>foo</stopKey>
+					<scanIntervalSeconds>0</scanIntervalSeconds>
+					<connectors>
+						<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
+							<port>80</port>
+							<maxIdleTime>60000</maxIdleTime>
+						</connector>
+					</connectors>
+					<webAppSourceDirectory>${basedir}/WebContent</webAppSourceDirectory>
+					<webAppConfig>
+						<contextPath>/</contextPath>
+					</webAppConfig>
+					<webResources>
+						<resource>
+							<directory>src/main/resources</directory>
+							<targetPath>target/classes</targetPath>
+							<filtering>true</filtering>
+						</resource>
+					</webResources>
+				</configuration>
+			</plugin>
+			<plugin> 
+				<groupId>org.apache.tomcat.maven</groupId> 
+				<artifactId>tomcat7-maven-plugin</artifactId> 
+				<version>2.2</version> 
+				<configuration> 
+					<port>8088</port> 
+					<path>/open</path> 
+					<uriEncoding>UTF-8</uriEncoding> 
+					<contextFile>conf/context.xml</contextFile> 
+				</configuration> 
+			</plugin>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<warSourceDirectory>${basedir}/WebContent</warSourceDirectory>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.4.3</version>
+				<configuration>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>2.8.1</version>
+			</plugin>
+		</plugins>
+	</build>
+</project>

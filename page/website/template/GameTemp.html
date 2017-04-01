@@ -1,0 +1,308 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<title></title>
+<meta name="keywords" content="，，">
+<meta name="description" content="" />
+<meta name="author" content="Design:ZhangXi; Web Layout:HXH;" />
+<link type="image/x-icon" href="../favicon.ico" rel="icon"/>
+<link type="image/x-icon" href="../favicon.ico" rel="shortcut icon" />
+<link type="text/css" rel="stylesheet" href="../css/index.css" />
+</head>
+<body>
+<!--顶部导航-->
+<div id="header" ></div>
+<div id="nav-menu" ></div>
+
+<div id="game_nav"> 
+	<div class="warp">
+        <ul>
+
+#foreach($param in ${yxtypemap.keySet()})  
+#if (${yxtypemap.get($param)})
+#if(${yxtypemap.get($param).linkurl})
+				<li><a href="${yxtypemap.get($param).linkurl}" >${yxtypemap.get($param).showdata}</a></li>
+#else
+				<li><a onclick="research('${yxtypemap.get($param).remarks}')" href="javascript:void(0);">${yxtypemap.get($param).showdata}</a></li>				
+#end
+#else
+				<li><a href="" >NONE</a></li>
+#end
+#end  
+        </ul>
+    </div>
+</div>
+<div class="warp">
+		<!--广告图片-->
+        <div class="player1">
+          <div class="player-inc playImg" >
+          	<div id="player_list"></div>
+            <ul class="imgList">
+#foreach($param in ${lbmap.keySet()})  
+#if (${lbmap.get($param)})
+#if (${lbmap.get($param).popularity}==1)
+					<li class="cur" > 
+						<a href="${lbmap.get($param).linkurl}" target="_blank" title="">
+						<img src="${lbmap.get($param).imgurl}" width="1000" height="240" border="0" /></a>  
+					</li>
+#else
+					<li class="" > 
+						<a href="${lbmap.get($param).linkurl}" target="_blank" title="">
+						<img src="${lbmap.get($param).imgurl}" width="1000" height="240" border="0" /></a>  
+					</li>
+#end					
+#else
+				<li class="" > 
+						<a href="" target="_blank" title="">
+						<img src="../img/empty.png" width="1000" height="240" border="0" /></a>  
+					</li>
+#end
+#end  
+            </ul>
+            
+            <div class="btn clearfix imgBtnList">
+                <a class="now_a" href="javascript:;"></a>
+                <a class="" href="javascript:;"></a>
+                <a class="" href="javascript:;"></a>
+                <a class="" href="javascript:;"></a>
+            </div>
+            <div class="warp" style=" position:relative; z-index:10; margin:0 auto;">
+                <a href="javascript:;" class="prev"></a>
+                <a href="javascript:;" class="next"></a>
+            </div>
+          </div>
+        </div>
+</div>  
+<!--内容部分-->
+<div class="warp">
+	<div class="content">
+        	<div class="home_left">
+                <div class="rank_pop">
+                    <div class="left_title">Ranking</div>
+                    <div class="rank_list">
+                    
+#foreach($param in ${yxphmap.keySet()})  
+#if (${yxphmap.get($param)})
+#if (${yxphmap.get($param).popularity}==1)
+                    	<div class="left_one">
+                        	<div class="l_one">
+                                <div class="rank_id fl icon_r1"></div>
+                                <div class="fl pr" style="width:174px;">
+                                	<a href="${yxphmap.get($param).linkurl}" target="_blank" title="">
+                                    <img src="${yxphmap.get($param).imgurl}"  width="175" height="135" border="0" />
+                                	</a>
+                                    <a href="javascript:void(0)" class="optiond" > <div class="icon_play optiond"></div></a>
+                                    <div class="toolbar"> 
+                                        <span class="t_name"><a href="${yxphmap.get($param).linkurl}" >${yxphmap.get($param).zbname}</a></span> 
+                                        <span class="t_online"><span class="t_icon icon_online"></span><span class="t_num">${yxphmap.get($param).showdata}</span></span>
+                                    </div>
+                                </div>	
+                            </div>
+                        </div>
+#else
+                        <div class="left_one">
+                        	<div class="l_two">
+                                <div class="rank_id fl icon_r${yxphmap.get($param).popularity}"></div>
+                                <div class="fl pr" style="width:174px;">
+                                    <a href="${yxphmap.get($param).linkurl}" target="_blank" title="">
+                                    <img src="${yxphmap.get($param).imgurl}" class="fl" width="74" height="58" border="0" />
+                                    </a>
+                                    <ul class="fl toolul">
+										<li><a href="${yxphmap.get($param).linkurl}" >${yxphmap.get($param).zbname}</a></li>
+										<!--<li class="grey">Popularity：${yxphmap.get($param).showdata}</li>-->
+										<li class="grey">
+                                            <span class="t_icon icon_online"></span>
+                                            <span class="t_num">${yxphmap.get($param).showdata}</span>
+										</li>										
+									</ul>
+                                </div>	
+                            </div>
+                        </div>
+#end
+#else
+                        <div class="left_one">
+                        	<div class="l_two">
+                                <div class="rank_id fl "></div>
+                                <div class="fl pr" style="width:174px;">
+                                    <img src="" class="fl" width="74" height="58" border="0" />
+                                    <ul class="fl toolul">
+										<li><a href="" ></a></li>
+										<!--<li class="grey">Popularity：</li>-->
+										<li class="grey">
+                                            <span class="t_icon icon_online"></span>
+                                            <span class="t_num"></span>
+										</li>
+									</ul>
+                                </div>	
+                            </div>
+                        </div>
+#end
+#end
+                    </div>
+                   
+              	</div>
+                 <div class="rank_pop">
+                    <div class="left_title">Latest Channel</div>
+                    <div class="rank_list">
+#foreach($param in ${yxphnewmap.keySet()})  
+#if (${yxphnewmap.get($param)})
+#if (${yxphnewmap.get($param).popularity}==1)
+                    	<div class="left_one">
+                        	<div class="l_one">
+                                <div class="rank_id fl icon_r1"></div>
+                                <div class="fl pr" style="width:174px;">
+                                    <a href="${yxphnewmap.get($param).linkurl}" target="_blank" title="">
+                                    <img src="${yxphnewmap.get($param).imgurl}"  width="175" height="135" border="0" />
+                                    </a>
+                                    <a href="javascript:void(0)" class="optiond" > <div class="icon_play optiond"></div></a>
+                                    <div class="toolbar"> 
+                                        <span class="t_name"><a href="${yxphnewmap.get($param).linkurl}" >${yxphnewmap.get($param).zbname}</a></span> 
+                                        <span class="t_online"><span class="t_icon icon_online"></span><span class="t_num">${yxphnewmap.get($param).showdata} </span></span>
+                                    </div>
+                                </div>	
+                            </div>
+                        </div>
+#else
+                        <div class="left_one">
+                        	<div class="l_two">
+                                <div class="rank_id fl icon_r${yxphnewmap.get($param).popularity}"></div>
+                                <div class="fl pr" style="width:174px;">
+                                    <a href="${yxphnewmap.get($param).linkurl}" target="_blank" title="">
+                                    <img src="${yxphnewmap.get($param).imgurl}" class="fl" width="74" height="58" border="0" />
+                                    </a>
+                                    <ul class="fl toolul">
+										<li><a href="${yxphnewmap.get($param).linkurl}" >${yxphnewmap.get($param).zbname}</a></li>
+										<!--<li class="grey">Popularity：${yxphnewmap.get($param).showdata}</li>-->
+										<li class="grey">
+                                            <span class="t_icon icon_online"></span>
+                                            <span class="t_num">${yxphnewmap.get($param).showdata}</span>
+										</li>
+									</ul>
+                                </div>	
+                            </div>
+                        </div>
+#end
+#else
+                        <div class="left_one">
+                        	<div class="l_two">
+                                <div class="rank_id fl "></div>
+                                <div class="fl pr" style="width:174px;">
+                                    <img src="" class="fl" width="74" height="58" border="0" />
+                                    <ul class="fl toolul">
+										<li><a href="" ></a></li>
+										<!--<li class="grey">Popularity：</li>-->
+										<li class="grey">
+                                            <span class="t_icon icon_online"></span>
+                                            <span class="t_num"></span>
+										</li>
+									</ul>
+                                </div>	
+                            </div>
+                        </div>
+#end
+#end
+                    </div>
+                   
+              	</div>
+            </div>
+            <div class="home_right">
+            	
+                 <div class="recom_pop">
+                    <div class="right_title"><span class="r_icon icon_live"></span>Game Live show</div>
+                    <div class="recom_list">
+#foreach($param in ${yxphhotmap.keySet()})  
+#if (${yxphhotmap.get($param)})
+                        <div class="right_one">
+                        	<div class="ent_one">
+                                <div class="ent_img fl pr">
+                                    <img src="${yxphhotmap.get($param).imgurl}"  class="optiond" width="175" height="135" border="0" />
+                                    <a href="${yxphhotmap.get($param).linkurl}" class="optiond" > <div class="icon_play optiond"></div></a>
+                                    <div class="toolbar"> 
+                                        <span class="t_name"><span class="t_icon icon_time"></span><span class="t_num">${yxphhotmap.get($param).time}min</span></span> 
+                                        <span class="t_online"><span class="t_icon icon_online"></span><span class="t_num">${yxphhotmap.get($param).showdata}</span></span>
+                                    </div>
+                                </div>	
+                                <a href="${yxphhotmap.get($param).linkurl}" class="ent_title">${yxphhotmap.get($param).zbname}</a>
+                            </div>
+                        </div>
+#else
+                        <div class="right_one">
+                        	<div class="ent_one">
+                                 <div class="ent_img fl pr">
+                                    <img src=""  class="optiond" width="175" height="135" border="0" />
+                                    <a href="javascript:void(0)" class="optiond" > <div class="icon_play optiond"></div></a>
+                                    <div class="toolbar"> 
+                                        <span class="t_name"><span class="t_icon icon_time"></span><span class="t_num">min</span></span> 
+                                        <span class="t_online"><span class="t_icon icon_online"></span><span class="t_num"></span></span>
+                                    </div>
+                                </div>	
+                                <a href="" class="ent_title"></a>
+                            </div>
+                        </div>
+#end
+#end
+             		</div>
+            	</div><!--end entertainment-->
+                
+                
+            </div>
+           
+        </div>
+</div>
+
+
+<script type="text/javascript" src="../js/open.rc.js"></script> 
+<script type="text/javascript" src="../js/open.common.js"></script>
+
+<script>
+	//加载图片后调用
+	scrollImg();
+	scrollRight();
+	
+function research(url){
+	window.open(url);
+}	
+	
+function scrollImg(){
+	
+	jQuery(function() {
+		function u() {
+			s = r, e.css({opacity: "0","z-index": "2"}), e.eq(s).css({opacity: "0.5","z-index": "3"}), r++, r == e.length && (r = 0), e.eq(r).css({"z-index": "4"}).animate({opacity: "1"}, 800), t.eq(r).addClass("now_a").siblings("a").removeClass("now_a")
+		}
+		var e = $(".playImg .imgList").children("li"), t = $(".playImg .imgBtnList").children("a"), n = e.length, r = 0, i = 6e3, s = n - 1, o = setInterval(u, i);
+		t.each(function(e) {
+			$(this).click(function() {
+				r = e - 1, u()
+			})
+		}), $(".playImg .prev").click(function() {
+			r <= 0 && (r = n), r -= 2, u()
+		}), $(".playImg .next").click(function() {
+			r >= n - 1 && (r = -1), u()
+		}), $(".playImg").hover(function() {
+			clearInterval(o)
+		}, function() {
+			o = setInterval(u, i)
+		})
+	})
+}
+
+function scrollRight(){
+//$(document).ready(function() {
+	$(".right_one .ent_img img").mouseover(function(event) {
+		$(".right_one .ent_img a").hide();
+		$(this).parent().find("a").show();
+		
+	});
+	
+	$(document).mouseover(function(event) {
+		if (!$(event.target).hasClass("optiond")  ) {
+			$(".right_one .ent_img a").hide();
+		}
+	});		
+//});
+}
+</script>
+</body>
+</html>

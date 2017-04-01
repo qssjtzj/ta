@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>个人中心</title>
+    <meta name="viewport" content="width=device-width">
+
+    <meta property="wb:webmaster" content="fa5ea4ed552d9afc"> <!--公用-->
+
+    <link href="./user_center_files/public.css" rel="stylesheet" type="text/css">
+    <link href="./user_center_files/style.css" rel="stylesheet" type="text/css">
+    <link href="./user_center_files/style1.css" rel="stylesheet" type="text/css">
+    <link href="./user_center_files/style2.css" rel="stylesheet" type="text/css"> <!--jquery-ui-->
+    <link href="./user_center_files/jquery-ui.css" rel="stylesheet" type="text/css"> <!--jquery-ui-->
+
+    <link href="./user_center_files/page.css" rel="stylesheet" type="text/css">
+    <link href="./user_center_files/forms.css" rel="stylesheet" type="text/css">
+    <link href="./user_center_files/animate.css" rel="stylesheet" type="text/css">
+    <link href="./user_center_files/sweetalert.css" rel="stylesheet" type="text/css"> <!--IE兼容-->
+
+
+    <link rel="stylesheet" href="./user_center_files/layer.css" id="layui_layer_skinlayercss">
+
+    <script type="text/javascript" src="./user_center_files/jquery.min.js.下载"></script> <!-- 扩展 -->
+
+</head>
+<body class="home-page page-scroll" style="background:#f8f8f8;" cz-shortcut-listen="true">
+<style>
+    .zenj {
+        position: absolute;
+        top: 0;
+        right: 7px;
+        width: 54px;
+        z-index: 999;
+    }
+
+    .zenj input {
+        border: none;
+        cursor: pointer;
+    }
+
+    .zenj1 {
+        width: 54px;
+        height: 28px;
+        background: url(/public/home/images/xiangcebtn_03.png) no-repeat;
+    }
+
+    .qphoto {
+        width: 54px;
+        height: 28px;
+        background: url(/public/home/images/qphotobtn.png) no-repeat;
+        margin-top: 6px;
+    }
+
+    .diz {
+        width: 34px;
+        height: 18px;
+        background: url(/public/home/images/dianzbj_03.png) no-repeat;
+        padding: 5px 10px
+    }
+
+    .diz a {
+        color: #fff;
+        padding-left: 20px;
+        font-size: 12px;
+    }
+
+    .diz a.show {
+        width: 14px;
+        height: 15px;
+        line-height: 16px;
+        display: block;
+        background: url(/public/home/images/bigmu1_031.png) no-repeat left center;
+    }
+
+    .diz a.hide {
+        width: 14px;
+        height: 15px;
+        line-height: 16px;
+        display: block;
+        background: url(/public/home/images/bigmu1_03.png) no-repeat left center;
+    }
+
+    #tFocus-pic li img {
+        width: 100%;
+    }
+
+    /*举报*/
+    .jb_main {
+        height: 456px;
+        width: 600px;
+        background: url(/public/home/images/kuang_bg.png) 0 0 no-repeat;
+        position: fixed;
+        top: 55%;
+        left: 50%;
+        margin-top: -228px;
+        margin-left: -300px;
+        z-index: 9999;
+        display: none
+    }
+
+    .jb_title {
+        color: #fff;
+        padding: 10px 0 0 30px;
+        font-size: 18px;
+    }
+
+    .jb_sub {
+        padding: 40px 0 0 50px;
+    }
+
+    .fo1 {
+        font-size: 16px;
+        margin-bottom: 20px;
+        clear: both;
+    }
+
+    .fo1 label {
+        color: #666;
+        margin-right: 10px;
+    }
+
+    .jb_btn {
+        clear: both;
+        background: url(/public/home/images/jb_btn.jpg) 0 0 no-repeat;
+        width: 115px;
+        height: 33px;
+        border: none;
+        color: #fff;
+        margin-top: 20px;
+        margin-left: 85px;
+        font-size: 16px;
+    }
+
+    .fo1 textarea {
+        width: 400px;
+        margin-left: 15px;
+    }
+
+    .jb_sub .fo1 textarea {
+        width: 380px;
+        height: 100px;
+        resize: none;
+        padding: 10px;
+    }
+
+    .jb_sub .fo1 input {
+        cursor: pointer;
+    }
+
+    .jb_main .jb_title a {
+        float: right;
+        width: 35px;
+        height: 30px;
+        display: block
+    }
+
+    .mem_main .sub4 .list .list_main {
+        margin: 6px 5px;
+    }
+
+    /*打招呼样式覆盖*/
+    .tcframe1 {
+        position: fixed;
+        z-index: 100;
+        width: 640px;
+        height: 490px;
+        top: 50%;
+        left: 50%;
+        margin-left: -320px;
+        margin-top: -245px;
+        opacity: 1;
+    }
+
+    /*会员推荐修改样式*/
+    .mem_main .sub4 .list {
+        height: auto;
+    }
+
+    .mem_main .sub4 .list .list_main .hd {
+        background: rgba(216, 110, 163, 1);
+        opacity: 1
+    }
+
+    /*会员大图片限制高度*/
+    #tFocus-pic li img {
+        width: 100%;
+        height: 390px;
+    }
+
+    .tcframe1 {
+        z-index: 1000
+    }
+
+</style>
+
+<style>
+    .fkyj {
+        width: 650px;
+        background: #fff;
+        padding: 40px 100px;
+    }
+
+    .fkyj p {
+        color: #d871a5;
+        font-size: 16px;
+    }
+
+    /* .fkyj .quess li { padding-left:20px; background:url(/public/home/images/radio_fk_14.jpg) no-repeat left center; line-height:30px; cursor:pointer}
+    .fkyj .quess li.sx{ padding-left:20px; background:url(/public/home/images/radio_fk_13.jpg) no-repeat left center; line-height:30px; cursor:pointer} */
+    .question textarea {
+        width: 470px;
+        height: 120px;
+        vertical-align: top;
+    }
+
+    .question li span {
+        width: 100px;
+        display: block;
+        float: left;
+        text-align: right;
+    }
+
+    .question li {
+        margin: 15px 0;
+    }
+
+    .question li textarea {
+        resize: none;
+        padding: 10px;
+    }
+</style>
+
+<!-- 头部开始 -->
+
+<!--登录开始-->
+<div class="g-header header-show">
+    <div class="ac_header">
+        <div class="logo">
+            <a href="#">
+                <img src="" height="69" width="359" alt="">
+            </a>
+        </div>
+        <div class="right_nav">
+            <ul>
+                <a href="/search">
+                    <li class="bk">搜索</li>
+                </a>
+                <a href="/event/index">
+                    <li class="bk">活动</li>
+                </a>
+                <a href="/teacher/index">
+                    <li class="bk">会员</li>
+                </a>
+                <a href="/teacher/index">
+                    <li class="bk">XX课堂</li>
+                </a>
+                <a href="/msg_box">
+                    <li class="bk" style="">
+                        <img src="./user_center_files/ac_top_icon1.png" alt="" style="margin-left:-20px;">
+                        <span class="xx" id="xx">0</span>
+                    </li>
+                </a>
+                <a href="http://www.hongniang.com/user/index">
+                    <li style="width:100px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; text-decoration: underline;">
+                        用户名
+                    </li>
+                </a>
+                <a href="javascript:;" id="logout">
+                    <li>退出</li>
+                </a>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--<script>
+    $('.bk').hover(function () {
+        $(this).css('color', '#d86ea3');
+
+    }, function () {
+        $(this).css('color', '');
+    });
+</script>-->
+<!-- 头部结束 -->
+
+<script type="text/javascript">
+    var USER = USER || 'Array';
+
+    if (USER) {
+        init_check_prompt();
+    }
+
+</script>
+<!-- 头部结束 -->
+
+<!--banner开始-->
+<div class="member_banner" style="margin-top:117px;"></div>
+<!--banner结束-->
+
+<!--主体开始-->
+<div class="mem_main" data-mid="324847">
+    <div class="sub1">
+        <div class="left" style="position:relative">
+            <div class="zenj"></div>
+            <div id="tFocus">
+                <div class="prev" id="prev"></div>
+                <div class="next" id="next"></div>
+                <ul id="tFocus-pic">
+                    <li style="opacity: 100; z-index: 5;">
+                        <a href="#">
+                        <img src="./user_center_files/woman.jpg" alt="">
+                        </a>
+                    </li>
+                </ul>
+                <div id="tFocusBtn">
+                    <a href="javascript:void(0);" id="tFocus-leftbtn">上一张</a>
+                    <div id="tFocus-btn">
+                        <ul>
+                            <li class="active">
+                                <img src="./user_center_files/woman.jpg" alt="">
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="javascript:void(0);" id="tFocus-rightbtn">下一张</a>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="info1">
+                <div class="name nickname"> 昵称 <img src="./user_center_files/mem_rz22.png" alt=""></div>
+                <div class="loveid">XXID:324847</div>
+            </div>
+
+
+            <div class="info2" style="position: relative;">
+                <ul>
+                    <li>年龄：28岁</li>
+                    <li>婚况：</li>
+                </ul>
+                <ul style="margin-left:100px;">
+                    <li>身高：168CM</li>
+                    <li>学历：保密</li>
+                </ul>
+                <ul style="margin-left:100px;">
+                    <li>年收入：xx-xx万元</li>
+                    <li>工作地：北京石景山区</li>
+                </ul>
+                <!-- 重新插入虚线 -->
+                <div style="width: 76%; height: 1px; border-bottom:1px dashed #cccaca; position:absolute; top: 56px;"></div>
+                <div style="width: 76%; height: 1px; border-bottom:1px dashed #cccaca; position:absolute; top: 97px;"></div>
+                <!-- 重新插入虚线 -->
+                <div style="float: right; text-align: center;">
+                    <img src="./user_center_files/324847">
+                    <p style="color: #666; font-size: 12px;">扫一扫 手机关注TA</p>
+                </div>
+                <!--获取微信号码-->
+                <div style="clear:both"></div>
+                <ul style="width:200px; margin-top:-66px;">
+                    <li>微信号：
+                        <a href="javascript:;" class="gain_wx" style="padding:10px 38px; color:#fff; background:#44b94f; border-radius:5px">获取微信</a>
+                    </li>
+                </ul>
+                <!--获取微信号码-->
+            </div>
+            <!-- ta end-->
+            <div class="info5">
+                <div class="tit"> XX要求 </div>
+                <div class="text"> Ta很懒,什么都没留下</div>
+            </div>
+        </div>
+    </div>
+    <div class="clear" style="height:30px;"></div>
+
+    <div class="sub2">
+        <div class="info1">
+            <div class="left">
+                <img src="./user_center_files/mem_sub2_0.png" alt="">
+                <p style="color:#dd506f;">详细资料</p></div>
+            <div class="right">
+                <ul style="margin-left:155px;">
+                    <li>性别：女</li>
+                    <li>年龄：25</li>
+                    <li>身高：168</li>
+                    <li>体重：保密</li>
+                    <li>民族：保密</li>
+                </ul>
+                <ul>
+                    <li>生肖：保密</li>
+                    <li>星座：保密</li>
+                    <li>血型：O型</li>
+                    <li>职业：保密</li>
+                    <li>信仰：保密</li>
+                </ul> &lt;!&ndash;
+                <ul >
+                    <li>婚姻状况：&#45;&#45;</li>
+                    <li>户籍地址：&#45;&#45;</li>
+                    <li>最高学历：&#45;&#45;</li>
+                    <li>是否吸烟：&#45;&#45;</li>
+                    <li>是否喝酒：&#45;&#45;</li>
+                    <li>兴趣爱好：&#45;&#45;</li>
+                </ul>
+                &ndash;&gt;
+            </div>
+        </div>
+        <div class="info1">
+            <div class="left"><img src="./user_center_files/mem_sub2_1.png" alt="">
+                <p style="color:#dd506f;">生活状况</p></div>
+            <div class="right">
+                <ul style="margin-left:155px;">
+                    <li>住房条件：&#45;&#45;</li>
+                    <li>是否购车：&#45;&#45;</li>
+                    <li>是否吸烟：&#45;&#45;</li>
+                    <li>是否喝酒：&#45;&#45;</li>
+                </ul>
+                <ul>
+                    <li>厨艺：&#45;&#45;</li>
+                    <li>家务：&#45;&#45;</li>
+                    <li>想何时结婚：&#45;&#45;</li>
+                    <li>婚后与父母住吗: &#45;&#45;</li>
+                </ul>
+                <ul>
+                    <li>与对方父母同住：&#45;&#45;</li>
+                    <li>喜欢怎样的约会：&#45;&#45;</li>
+                    <li>较大的消费：&#45;&#45;</li>
+                </ul>
+            </div>
+        </div>
+        <div class="info1">
+            <div class="left"><img src="./user_center_files/mem_sub2_2.png" alt="">
+                <p style="color:#dd506f;">兴趣爱好</p></div>
+            <div class="right">
+                <ul style="margin-left:155px;">
+                    <li>喜欢的活动：&#45;&#45;</li>
+                    <li>喜欢的体育活动:&#45;&#45;</li>
+                    <li>喜欢的音乐:&#45;&#45;</li>
+                </ul>
+                <ul>
+                    <li>喜欢的影视节目：&#45;&#45;</li>
+                    <li>喜欢的食物：&#45;&#45;</li>
+                    <li>喜欢的地方：&#45;&#45;</li>
+                </ul>
+            </div>
+        </div>
+        <div class="info1">
+            <div class="left"><img src="./user_center_files/mem_sub2_3.png" alt="">
+                <p style="color:#9b63ca;">择偶条件</p></div>
+            <div class="right">
+                <ul style="margin-left:155px;">
+                    <li>性别：1</li>
+                    <li>年纪：-</li>
+                    <li>身高：-</li>
+                    <li>学历：不限</li>
+                    <li>是否有照片：有</li>
+                </ul>
+                <ul>
+                    <li>婚况：</li>
+                    <li>体型：</li>
+                    <li>职业：不限</li>
+                    <li>工作地：</li>
+                </ul>
+                <ul>
+                    <li>年收入：</li>
+                    <li>是否吸烟：</li>
+                    <li>是否喝酒：</li>
+                    <li>是否有孩子：不限</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="clear" style="height:30px;"></div>
+    <div class="sub3">
+        <div class="left"><p style="font-size:30px;padding-top:6px;">会员服务</p>
+            <p style="font-size:14px;margin-top:-20px;">
+                <a style="color: #fff;" href="http://www.hongniang.com/vip/power">开通会员服务享受会员权利</a>
+            </p></div>
+        <div class="right">
+            <form action="http://www.hongniang.com/payment/payment" method="post" id="submit_form">
+                <p><input type="radio" value="1" name="id" checked="">一个月&nbsp;&nbsp;&nbsp;&nbsp;98.00元</p>
+                <p><input type="radio" value="2" name="id" checked="">三个月&nbsp;&nbsp;&nbsp;&nbsp;198.00元</p>
+                <p><input type="radio" value="3" name="id" checked="">半年&nbsp;&nbsp;&nbsp;&nbsp;298.00元</p>
+                <p><input type="radio" value="4" name="id" checked="">一年&nbsp;&nbsp;&nbsp;&nbsp;398.00元</p>
+                <input type="submit" id="pay" class="kt" value="立刻开通">
+            </form>
+        </div>
+    </div>
+    <div class="clear" style="height:30px;"></div>
+    <!--照片墙-->
+    <!--<div class="sub4">
+        <div class="tit">推荐会员 :</div>
+        <div class="list">
+            <div class="list_main" id="d111" style="width:226px;height:444px; margin:6px 4px;">
+                <div class="imgs">
+                    <div class="zs">1张</div>
+                    <a target="_blank" href="http://www.hongniang.com/user/member/id/304739"> <img id="mem_list_imgs"
+                                                                                                   src="./user_center_files/14604521581534521564_big.jpg"
+                                                                                                   alt=""
+                                                                                                   style="width:100%; max-height: 253px;"></a>
+                    <div id="hello" class="hd sfd" style="width:203px;"><a href="javascript:;">打招呼</a></div>
+                    <div class="tcframe1"> &lt;!&ndash; 弹出ID 昵称 &ndash;&gt;
+                        <div style="position: absolute; left: 98px; top: 88px;"><p style="font-size: 16px"><a
+                                target="_blank" href="http://www.hongniang.com/user/member/id/304739"><span
+                                style="padding-right: 10px; color:#fff">昵称:梁丽梁</span></a> <span
+                                style="padding-right: 10px; color:#fff;">ID:304739</span> <a href="javascript:;"
+                                                                                             class="change">换一批</a></p>
+                        </div> &lt;!&ndash; 弹出ID 昵称 &ndash;&gt;
+                        <div class="scor_dzh greets" id="gid_304739">
+                            <ul class="greet plcListLoading"> &lt;!&ndash;
+                                        &ndash;&gt; </ul>
+                        </div>
+                        <input type="button" value="" data-mid="304739"> <a href="javascript:void(0)"
+                                                                            style="color:#fff; position:absolute; top:50px; right:0; width:100px; font-size:18px;"
+                                                                            class="tcframe1_close">关闭</a></div>
+                </div>
+                <div class="info">
+                    <div class="name">梁丽梁 <img src="./user_center_files/mem_rz22.png" alt=""></div>
+                    <div class="info1"> 26岁&nbsp;&nbsp;
+                        浙江杭州&nbsp;&nbsp;
+                        未婚&nbsp;&nbsp;
+                        164CM&nbsp;&nbsp;
+                    </div>
+                    <div class="info2" style=" max-height: 90px; overflow:hidden"><span style="color:#333;">内心独白：</span>真话，我并不完美。我曾经是一个非常努力想做到尽善尽美的人，在追求完美的过程中，或许存在很多苛求，对他人、更多的对自己，给自己设定很多标准。然而活生生现实的生活告诉我，那些标准从来都是不作数的，所有的设想只是设想而已，只有遭遇的时候才知道，我们完全可以换一种方式，让自己得到快乐！
+                        成长，使我渐渐明白一些道理，开始学会遵照内心的感动而生活。我庆幸自己渐渐地拥有这些感知能力，一如生命走向完美。当然，现实很多情况并不一定都能如愿，我力求坦然。
+                        <span class="shenlue">...</span></div>
+                </div>
+            </div>
+            <div class="list_main" id="d111" style="width:226px;height:444px; margin:6px 4px;">
+                <div class="imgs">
+                    <div class="zs">1张</div>
+                    <a target="_blank" href="http://www.hongniang.com/user/member/id/305191"> <img id="mem_list_imgs"
+                                                                                                   src="./user_center_files/1461719010566665578_big.jpg"
+                                                                                                   alt=""
+                                                                                                   style="width:100%; max-height: 253px;"></a>
+                    <div id="hello" class="hd sfd" style="width:203px;"><a href="javascript:;">打招呼</a></div>
+                    <div class="tcframe1"> &lt;!&ndash; 弹出ID 昵称 &ndash;&gt;
+                        <div style="position: absolute; left: 98px; top: 88px;"><p style="font-size: 16px"><a
+                                target="_blank" href="http://www.hongniang.com/user/member/id/305191"><span
+                                style="padding-right: 10px; color:#fff">昵称:yideliangshui</span></a> <span
+                                style="padding-right: 10px; color:#fff;">ID:305191</span> <a href="javascript:;"
+                                                                                             class="change">换一批</a></p>
+                        </div> &lt;!&ndash; 弹出ID 昵称 &ndash;&gt;
+                        <div class="scor_dzh greets" id="gid_305191">
+                            <ul class="greet plcListLoading"> &lt;!&ndash;
+                                        &ndash;&gt; </ul>
+                        </div>
+                        <input type="button" value="" data-mid="305191"> <a href="javascript:void(0)"
+                                                                            style="color:#fff; position:absolute; top:50px; right:0; width:100px; font-size:18px;"
+                                                                            class="tcframe1_close">关闭</a></div>
+                </div>
+                <div class="info">
+                    <div class="name">yideliangshui <img src="./user_center_files/mem_rz22.png" alt=""></div>
+                    <div class="info1"> 31岁&nbsp;&nbsp;
+                        浙江杭州&nbsp;&nbsp;
+                        未婚&nbsp;&nbsp;
+                        170CM&nbsp;&nbsp;
+                    </div>
+                    <div class="info2" style=" max-height: 90px; overflow:hidden"><span style="color:#333;">内心独白：</span>我的性格特点是：
+                        业余时间我喜欢：
+                        我憧憬的生活是：
+                        我希望我的爱人：
+
+                        <span class="shenlue">...</span></div>
+                </div>
+            </div>
+            <div class="list_main" id="d111" style="width:226px;height:444px; margin:6px 4px;">
+                <div class="imgs">
+                    <div class="zs">4张</div>
+                    <a target="_blank" href="http://www.hongniang.com/user/member/id/306131"> <img id="mem_list_imgs"
+                                                                                                   src="./user_center_files/1463714837456122527_big.jpg"
+                                                                                                   alt=""
+                                                                                                   style="width:100%; max-height: 253px;"></a>
+                    <div id="hello" class="hd sfd" style="width:203px;"><a href="javascript:;">打招呼</a></div>
+                    <div class="tcframe1"> &lt;!&ndash; 弹出ID 昵称 &ndash;&gt;
+                        <div style="position: absolute; left: 98px; top: 88px;"><p style="font-size: 16px"><a
+                                target="_blank" href="http://www.hongniang.com/user/member/id/306131"><span
+                                style="padding-right: 10px; color:#fff">昵称:寻找心中女神</span></a> <span
+                                style="padding-right: 10px; color:#fff;">ID:306131</span> <a href="javascript:;"
+                                                                                             class="change">换一批</a></p>
+                        </div> &lt;!&ndash; 弹出ID 昵称 &ndash;&gt;
+                        <div class="scor_dzh greets" id="gid_306131">
+                            <ul class="greet plcListLoading"> &lt;!&ndash;
+                                        &ndash;&gt; </ul>
+                        </div>
+                        <input type="button" value="" data-mid="306131"> <a href="javascript:void(0)"
+                                                                            style="color:#fff; position:absolute; top:50px; right:0; width:100px; font-size:18px;"
+                                                                            class="tcframe1_close">关闭</a></div>
+                </div>
+                <div class="info">
+                    <div class="name">寻找心中女神 <img src="./user_center_files/mem_rz22.png" alt=""></div>
+                    <div class="info1"> 25岁&nbsp;&nbsp;
+                        浙江绍兴&nbsp;&nbsp;
+                        未婚&nbsp;&nbsp;
+                        170CM&nbsp;&nbsp;
+                    </div>
+                    <div class="info2" style=" max-height: 90px; overflow:hidden"><span style="color:#333;">内心独白：</span>本人性格稍微有点内向，心地善良，有爱心！爽朗直率，想找一个年龄相仿、心地善良，有爱心！能恩爱互助、相伴一生的、我心中的女神为伴！<span
+                            class="shenlue">...</span></div>
+                </div>
+            </div>
+            <div class="list_main" id="d111" style="width:226px;height:444px; margin:6px 4px;">
+                <div class="imgs">
+                    <div class="zs">4张</div>
+                    <a target="_blank" href="http://www.hongniang.com/user/member/id/306983"> <img id="mem_list_imgs"
+                                                                                                   src="./user_center_files/1466412320945595192_big.jpg"
+                                                                                                   alt=""
+                                                                                                   style="width:100%; max-height: 253px;"></a>
+                    <div id="hello" class="hd sfd" style="width:203px;"><a href="javascript:;">打招呼</a></div>
+                    <div class="tcframe1"> &lt;!&ndash; 弹出ID 昵称 &ndash;&gt;
+                        <div style="position: absolute; left: 98px; top: 88px;"><p style="font-size: 16px"><a
+                                target="_blank" href="http://www.hongniang.com/user/member/id/306983"><span
+                                style="padding-right: 10px; color:#fff">昵称:花凌若别离</span></a> <span
+                                style="padding-right: 10px; color:#fff;">ID:306983</span> <a href="javascript:;"
+                                                                                             class="change">换一批</a></p>
+                        </div> &lt;!&ndash; 弹出ID 昵称 &ndash;&gt;
+                        <div class="scor_dzh greets" id="gid_306983">
+                            <ul class="greet plcListLoading"> &lt;!&ndash;
+                                        &ndash;&gt; </ul>
+                        </div>
+                        <input type="button" value="" data-mid="306983"> <a href="javascript:void(0)"
+                                                                            style="color:#fff; position:absolute; top:50px; right:0; width:100px; font-size:18px;"
+                                                                            class="tcframe1_close">关闭</a></div>
+                </div>
+                <div class="info">
+                    <div class="name">花凌若别离 <img src="./user_center_files/mem_rz22.png" alt=""></div>
+                    <div class="info1"> 29岁&nbsp;&nbsp;
+                        浙江温州&nbsp;&nbsp;
+                        未婚&nbsp;&nbsp;
+                        166CM&nbsp;&nbsp;
+                    </div>
+                    <div class="info2" style=" max-height: 90px; overflow:hidden"><span style="color:#333;">内心独白：</span>不管多大多老，不管家人朋友怎么催，都不要随便对待婚姻，婚姻不是打牌，重新洗牌要付出巨大代价。<span
+                            class="shenlue">...</span></div>
+                </div>
+            </div>
+            <div class="list_main" id="d111" style="width:226px;height:444px; margin:6px 4px;">
+                <div class="imgs">
+                    <div class="zs">1张</div>
+                    <a target="_blank" href="http://www.hongniang.com/user/member/id/307290"> <img id="mem_list_imgs"
+                                                                                                   src="./user_center_files/1467251293668429611_big.jpg"
+                                                                                                   alt=""
+                                                                                                   style="width:100%; max-height: 253px;"></a>
+                    <div id="hello" class="hd sfd" style="width:203px;"><a href="javascript:;">打招呼</a></div>
+                    <div class="tcframe1"> &lt;!&ndash; 弹出ID 昵称 &ndash;&gt;
+                        <div style="position: absolute; left: 98px; top: 88px;"><p style="font-size: 16px"><a
+                                target="_blank" href="http://www.hongniang.com/user/member/id/307290"><span
+                                style="padding-right: 10px; color:#fff">昵称:清晨沐阳</span></a> <span
+                                style="padding-right: 10px; color:#fff;">ID:307290</span> <a href="javascript:;"
+                                                                                             class="change">换一批</a></p>
+                        </div> &lt;!&ndash; 弹出ID 昵称 &ndash;&gt;
+                        <div class="scor_dzh greets" id="gid_307290">
+                            <ul class="greet plcListLoading"> &lt;!&ndash;
+                                        &ndash;&gt; </ul>
+                        </div>
+                        <input type="button" value="" data-mid="307290"> <a href="javascript:void(0)"
+                                                                            style="color:#fff; position:absolute; top:50px; right:0; width:100px; font-size:18px;"
+                                                                            class="tcframe1_close">关闭</a></div>
+                </div>
+                <div class="info">
+                    <div class="name">清晨沐阳 <img src="./user_center_files/mem_rz22.png" alt=""></div>
+                    <div class="info1"> 35岁&nbsp;&nbsp;
+                        江苏常州&nbsp;&nbsp;
+                        离异单身&nbsp;&nbsp;
+                        176CM&nbsp;&nbsp;
+                    </div>
+                    <div class="info2" style=" max-height: 90px; overflow:hidden"><span style="color:#333;">内心独白：</span>假如人生不曾相遇，我还是那个我，偶尔做做梦，然后，开始日复一日的奔波，淹没在这喧嚣的城市里。
+                        我不会了解，这个世界还有这样的一个你，只有你能让人回味，也只有你会让我心醉。 假如人生不曾相遇，我不会相信，有一种人可以百看不厌，有一种人一认识就觉得温馨。<span
+                                class="shenlue">...</span></div>
+                </div>
+            </div>
+            <div class="list_main" id="d111" style="width:226px;height:444px; margin:6px 4px;">
+                <div class="imgs">
+                    <div class="zs">1张</div>
+                    <a target="_blank" href="http://www.hongniang.com/user/member/id/307338"> <img id="mem_list_imgs"
+                                                                                                   src="./user_center_files/14673474051350077352_big.jpg"
+                                                                                                   alt=""
+                                                                                                   style="width:100%; max-height: 253px;"></a>
+                    <div id="hello" class="hd sfd" style="width:203px;"><a href="javascript:;">打招呼</a></div>
+                    <div class="tcframe1"> &lt;!&ndash; 弹出ID 昵称 &ndash;&gt;
+                        <div style="position: absolute; left: 98px; top: 88px;"><p style="font-size: 16px"><a
+                                target="_blank" href="http://www.hongniang.com/user/member/id/307338"><span
+                                style="padding-right: 10px; color:#fff">昵称:我是小方</span></a> <span
+                                style="padding-right: 10px; color:#fff;">ID:307338</span> <a href="javascript:;"
+                                                                                             class="change">换一批</a></p>
+                        </div> &lt;!&ndash; 弹出ID 昵称 &ndash;&gt;
+                        <div class="scor_dzh greets" id="gid_307338">
+                            <ul class="greet plcListLoading"> &lt;!&ndash;
+                                        &ndash;&gt; </ul>
+                        </div>
+                        <input type="button" value="" data-mid="307338"> <a href="javascript:void(0)"
+                                                                            style="color:#fff; position:absolute; top:50px; right:0; width:100px; font-size:18px;"
+                                                                            class="tcframe1_close">关闭</a></div>
+                </div>
+                <div class="info">
+                    <div class="name">我是小方 <img src="./user_center_files/mem_rz22.png" alt=""></div>
+                    <div class="info1"> 27岁&nbsp;&nbsp;
+                        浙江衢州&nbsp;&nbsp;
+                        未婚&nbsp;&nbsp;
+                        178CM&nbsp;&nbsp;
+                    </div>
+                    <div class="info2" style=" max-height: 90px; overflow:hidden"><span style="color:#333;">内心独白：</span>我的性格特点是：乐观
+                        业余时间我喜欢：看书，游泳
+                        我憧憬的生活是：充实，美好，打打闹闹，一辈子
+                        我希望我的爱人：美丽，大方，善解人意
+
+                        <span class="shenlue">...</span></div>
+                </div>
+            </div>
+            <div class="list_main" id="d111" style="width:226px;height:444px; margin:6px 4px;">
+                <div class="imgs">
+                    <div class="zs">1张</div>
+                    <a target="_blank" href="http://www.hongniang.com/user/member/id/307393"> <img id="mem_list_imgs"
+                                                                                                   src="./user_center_files/14675338201411742641_big.jpg"
+                                                                                                   alt=""
+                                                                                                   style="width:100%; max-height: 253px;"></a>
+                    <div id="hello" class="hd sfd" style="width:203px;"><a href="javascript:;">打招呼</a></div>
+                    <div class="tcframe1"> &lt;!&ndash; 弹出ID 昵称 &ndash;&gt;
+                        <div style="position: absolute; left: 98px; top: 88px;"><p style="font-size: 16px"><a
+                                target="_blank" href="http://www.hongniang.com/user/member/id/307393"><span
+                                style="padding-right: 10px; color:#fff">昵称:心语安心</span></a> <span
+                                style="padding-right: 10px; color:#fff;">ID:307393</span> <a href="javascript:;"
+                                                                                             class="change">换一批</a></p>
+                        </div> &lt;!&ndash; 弹出ID 昵称 &ndash;&gt;
+                        <div class="scor_dzh greets" id="gid_307393">
+                            <ul class="greet plcListLoading"> &lt;!&ndash;
+                                        &ndash;&gt; </ul>
+                        </div>
+                        <input type="button" value="" data-mid="307393"> <a href="javascript:void(0)"
+                                                                            style="color:#fff; position:absolute; top:50px; right:0; width:100px; font-size:18px;"
+                                                                            class="tcframe1_close">关闭</a></div>
+                </div>
+                <div class="info">
+                    <div class="name">心语安心 <img src="./user_center_files/mem_rz22.png" alt=""></div>
+                    <div class="info1"> 30岁&nbsp;&nbsp;
+                        上海浦东新区&nbsp;&nbsp;
+                        未婚&nbsp;&nbsp;
+                        162CM&nbsp;&nbsp;
+                    </div>
+                    <div class="info2" style=" max-height: 90px; overflow:hidden"><span style="color:#333;">内心独白：</span>我的性格特点是：爱笑
+                        业余时间我喜欢：逛街
+                        我憧憬的生活是：幸福
+                        我希望我的爱人：对我好
+
+                        <span class="shenlue">...</span></div>
+                </div>
+            </div>
+            <div class="list_main" id="d111" style="width:226px;height:444px; margin:6px 4px;">
+                <div class="imgs">
+                    <div class="zs">1张</div>
+                    <a target="_blank" href="http://www.hongniang.com/user/member/id/308172"> <img id="mem_list_imgs"
+                                                                                                   src="./user_center_files/14696038951183374812_big.jpg"
+                                                                                                   alt=""
+                                                                                                   style="width:100%; max-height: 253px;"></a>
+                    <div id="hello" class="hd sfd" style="width:203px;"><a href="javascript:;">打招呼</a></div>
+                    <div class="tcframe1"> &lt;!&ndash; 弹出ID 昵称 &ndash;&gt;
+                        <div style="position: absolute; left: 98px; top: 88px;"><p style="font-size: 16px"><a
+                                target="_blank" href="http://www.hongniang.com/user/member/id/308172"><span
+                                style="padding-right: 10px; color:#fff">昵称:光明一生</span></a> <span
+                                style="padding-right: 10px; color:#fff;">ID:308172</span> <a href="javascript:;"
+                                                                                             class="change">换一批</a></p>
+                        </div> &lt;!&ndash; 弹出ID 昵称 &ndash;&gt;
+                        <div class="scor_dzh greets" id="gid_308172">
+                            <ul class="greet plcListLoading"> &lt;!&ndash;
+                                        &ndash;&gt; </ul>
+                        </div>
+                        <input type="button" value="" data-mid="308172"> <a href="javascript:void(0)"
+                                                                            style="color:#fff; position:absolute; top:50px; right:0; width:100px; font-size:18px;"
+                                                                            class="tcframe1_close">关闭</a></div>
+                </div>
+                <div class="info">
+                    <div class="name">光明一生 <img src="./user_center_files/mem_rz22.png" alt=""></div>
+                    <div class="info1"> 33岁&nbsp;&nbsp;
+                        广东广州&nbsp;&nbsp;
+                        未婚&nbsp;&nbsp;
+                        175CM&nbsp;&nbsp;
+                    </div>
+                    <div class="info2" style=" max-height: 90px; overflow:hidden"><span style="color:#333;">内心独白：</span>真爱一次就好，携你手一起到老~非诚勿扰<span
+                            class="shenlue">...</span></div>
+                </div>
+            </div>
+            <div class="list_main" id="d111" style="width:226px;height:444px; margin:6px 4px;">
+                <div class="imgs">
+                    <div class="zs">1张</div>
+                    <a target="_blank" href="http://www.hongniang.com/user/member/id/309519"> <img id="mem_list_imgs"
+                                                                                                   src="./user_center_files/1474357543174245680_big.jpg"
+                                                                                                   alt=""
+                                                                                                   style="width:100%; max-height: 253px;"></a>
+                    <div id="hello" class="hd sfd" style="width:203px;"><a href="javascript:;">打招呼</a></div>
+                    <div class="tcframe1"> &lt;!&ndash; 弹出ID 昵称 &ndash;&gt;
+                        <div style="position: absolute; left: 98px; top: 88px;"><p style="font-size: 16px"><a
+                                target="_blank" href="http://www.hongniang.com/user/member/id/309519"><span
+                                style="padding-right: 10px; color:#fff">昵称:厚德载物、</span></a> <span
+                                style="padding-right: 10px; color:#fff;">ID:309519</span> <a href="javascript:;"
+                                                                                             class="change">换一批</a></p>
+                        </div> &lt;!&ndash; 弹出ID 昵称 &ndash;&gt;
+                        <div class="scor_dzh greets" id="gid_309519">
+                            <ul class="greet plcListLoading"> &lt;!&ndash;
+                                        &ndash;&gt; </ul>
+                        </div>
+                        <input type="button" value="" data-mid="309519"> <a href="javascript:void(0)"
+                                                                            style="color:#fff; position:absolute; top:50px; right:0; width:100px; font-size:18px;"
+                                                                            class="tcframe1_close">关闭</a></div>
+                </div>
+                <div class="info">
+                    <div class="name">厚德载物、 <img src="./user_center_files/mem_rz22.png" alt=""></div>
+                    <div class="info1"> 34岁&nbsp;&nbsp;
+                        福建福州&nbsp;&nbsp;
+                        未婚&nbsp;&nbsp;
+                        183CM&nbsp;&nbsp;
+                    </div>
+                    <div class="info2" style=" max-height: 90px; overflow:hidden"><span style="color:#333;">内心独白：</span>
+                        寻求有缘人<span class="shenlue">...</span></div>
+                </div>
+            </div>
+            <div class="list_main" id="d111" style="width:226px;height:444px; margin:6px 4px;">
+                <div class="imgs">
+                    <div class="zs">1张</div>
+                    <a target="_blank" href="http://www.hongniang.com/user/member/id/309684"> <img id="mem_list_imgs"
+                                                                                                   src="./user_center_files/14750321841560048059_big.jpg"
+                                                                                                   alt=""
+                                                                                                   style="width:100%; max-height: 253px;"></a>
+                    <div id="hello" class="hd sfd" style="width:203px;"><a href="javascript:;">打招呼</a></div>
+                    <div class="tcframe1"> &lt;!&ndash; 弹出ID 昵称 &ndash;&gt;
+                        <div style="position: absolute; left: 98px; top: 88px;"><p style="font-size: 16px"><a
+                                target="_blank" href="http://www.hongniang.com/user/member/id/309684"><span
+                                style="padding-right: 10px; color:#fff">昵称:红颜为谁</span></a> <span
+                                style="padding-right: 10px; color:#fff;">ID:309684</span> <a href="javascript:;"
+                                                                                             class="change">换一批</a></p>
+                        </div> &lt;!&ndash; 弹出ID 昵称 &ndash;&gt;
+                        <div class="scor_dzh greets" id="gid_309684">
+                            <ul class="greet plcListLoading"> &lt;!&ndash;
+                                        &ndash;&gt; </ul>
+                        </div>
+                        <input type="button" value="" data-mid="309684"> <a href="javascript:void(0)"
+                                                                            style="color:#fff; position:absolute; top:50px; right:0; width:100px; font-size:18px;"
+                                                                            class="tcframe1_close">关闭</a></div>
+                </div>
+                <div class="info">
+                    <div class="name">红颜为谁 <img src="./user_center_files/mem_rz22.png" alt=""></div>
+                    <div class="info1"> 25岁&nbsp;&nbsp;
+                        浙江杭州&nbsp;&nbsp;
+                        未婚&nbsp;&nbsp;
+                        167CM&nbsp;&nbsp;
+                    </div>
+                    <div class="info2" style=" max-height: 90px; overflow:hidden"><span style="color:#333;">内心独白：</span>我的性格特点是：
+                        业余时间我喜欢：
+                        我憧憬的生活是：
+                        我希望我的爱人：
+
+                        <span class="shenlue">...</span></div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+</div>
+
+<div class="clear" style="height:30px;clear:both;"></div>
+<!--主体结束-->
+
+<!-- footer -->
+<script>
+    $(document).ready(function(){
+
+    });
+
+</script>
+</body>
+</html>

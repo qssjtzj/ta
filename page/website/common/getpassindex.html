@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+        <title> </title>
+        <meta name="keywords" content="，，">
+        <meta name="description" content="" />
+        <meta name="author" content="Design:; Web Layout:HXH;" />
+        <link type="image/x-icon" href="../favicon.ico" rel="icon"/>
+        <link type="image/x-icon" href="../favicon.ico" rel="shortcut icon" />
+        <link type="text/css" rel="stylesheet" href="../css/index.css" />
+    </head>
+<body>
+<!--顶部导航-->
+<div id="header" ></div>
+<!--div class="warp"><a href='../index.html' class='top_nav_home'>HOME</a></div-->
+
+	<!--内容部分-->
+	<div class="warp">
+		<div class="content">
+        	<div class="center_user_bg mt20 mb40">
+                <div class="right common">
+                   
+                    <h2>Retrieve Password</h2>
+                    <div id="getpass_step_1" class="mt50" >
+                        <div  class="modify_cont" >
+                            <ul class="mod-sub-nav" >  
+                                <li class="mod-sub-list1 active"> <span class="list1-active">1</span>Submit Username </li>
+                                <li class="mod-sub-list2 "> <span class="list2-active">2</span> Verify Email  </li>
+                                <li class="mod-sub-list3 last"> <span class="list2-active">3</span> Reset Password </li>
+                            </ul>
+                       
+                        <table class="get_pass">
+                        
+                        	<tr>
+                                <td class="email_title"></td>
+                                <td><i style="color:#f00;" id="tip_form_tep1"> </i></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="email_title">Username:</td>
+                                <td class="email_input tl"><input id="account" type="text"  class="pass_account input_border" onblur="rcopen.checkInput.checkEmpt(this.id)" /></td>
+                                <td class="email_tip"><em class="tip" id="tip_account"> </em></td>
+                            </tr>
+                            <tr>
+                                <td class="email_title">Verification Code:</td>
+                                <td class="email_input reg_code tl">
+                                    <input id="seccode"  type="text"  class="pass_code input_border"  maxlength="5" autocomplete="off"   onblur="rcopen.checkInput.checkEmpt(this.id)" />
+                                    <img id="sec_code"  src="/validateCodeServlet"  onclick="opencyou.topnav.updateseccode('sec_code')" width="115" height="40"/>
+                                    <a href="javascript:void(0);" onclick="opencyou.topnav.updateseccode('sec_code');" tltle="Change" ></a> </td>
+                                <td class="email_tip"><em class="tip" id="tip_seccode"> </em></td>
+                            </tr>
+                           
+                            <tr>
+                                <td  class="email_title"></td>
+                                <td><div class="btn_update fts14 colorfff line40 tc bold mt30" id="" onclick="rcopen.api.gatemail()" > Submit</div></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                        
+                        </div>
+                        <p class="get_pass_reg description">Not an RC member? <a href="../register.html" title="Register" >Register now!</a></p>
+                       
+                    </div>
+                       
+            	</div>
+            
+        	</div>
+        </div>
+	</div>
+<script type="text/javascript" src="../js/open.rc.js"></script>
+<script type="text/javascript" src="../js/open.common.js"></script>
+<script type="text/javascript" src="../js/open.pass.js"></script>
+</body>
+</html>

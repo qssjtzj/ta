@@ -1,0 +1,78 @@
+@charset "UTF-8";
+/* CSS Document */
+.form-field{
+    position:relative
+}
+/*register注册 开始*/
+.register{background: #fff;}
+.register .bz{width: 1190px;margin: 0px auto; height:68px; text-align: center;position: relative;top: -20px;}
+.register .bz .text{position: relative;color: #888;}
+.register .bz .text a{color: #888;}
+.register .bz .text a:hover{color: #d86ea3;}
+.register .bz .text .t1{position: relative;float: left;}
+.register .mains{padding: 80px 0px; background: #fff; height: 300px; overflow: hidden;}
+.register .mains form{margin: 0px auto;;}
+.register .mains form label span{color: #666;text-align: right;display: inline-block;width: 70px;margin-right: 15px;}
+.register .mains form label span i{ color: #d86ea3 }
+.register .mains form .txt{border: 1px #d9d8d8 solid;line-height:50px;width: 307px;margin-bottom: 20px;color: #666;font-size: 14px;padding-left: 15px;}
+.register .mains form .btns{margin: 20px 0px; margin-left:85px; background: #FBB03F; color: #fff;font-size: 18px; width: 330px;line-height: 50px;border: none;-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius:5px;cursor: pointer;}
+.register .mains form .huoqu{position: absolute;top: 5px;right:6px; cursor:pointer; width: 109px; height: 42px; border:1px #d9d8d8 solid;color: #444;}
+.register .mains form .huoqu.cur{background: #ffc04d;}
+
+.forms_main{ width:415px; margin: 0px auto;}
+.register .mains .tit{font-size: 24px; color: #666;clear: both;padding-bottom: 15px;;border-bottom: 1px #e9e8e8 dashed;margin: 30px 0px;padding-top: 10px;}
+.register .mains .tit .text{font-size: 14px; color: #d86ea3;clear: both;}
+.register .mains form{color: #666;}
+.register .mains form label{display: block;margin-bottom: 25px;height: 52px;}
+.register .mains form select{height:50px;color: #999; border: 1px #D9D8D8 solid;font-size: 14px;padding-left: 15px;}
+.register .mains form .sel1{width: 325px;}
+.register .mains .buttons{margin-left: 90px;}
+.register .mains .buttons .btns2{color: #fff;font-size: 18px;width: 78px;line-height: 50px;border: none;margin-top: 20px;-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius:5px;cursor: pointer;float: left;cursor: pointer;}
+.register .mains form .txt{ margin: 0 }
+
+.err-tip{ width: 200px; float: right; color: #ea1b1b; display:none; position:absolute; top:0; left: 423px; line-height: 52px; }
+.err-tip label{ margin: 0px !important;}
+
+.register .mains .left{min-height: 370px; width: 750px;border-right: 1px #d9d8d8 solid;float: left;}
+.register .mains .right{float: left; width:420px; }
+.register .mains .right .nr{position: relative; margin: 0 auto; text-align: center;}
+.register .mains .right .nr p{text-align: center;margin-top: 10px;color: #444;}
+
+.register .mains .w_fwtk{ color: #999; font-size: 12px; margin: 0; margin-left: 2px; margin-top: 1px; display: inline; }
+.register .mains .w_fwtk a{ color: #999; font-size: 12px; }
+.register .mains .w_fwtk a:hover{ color: #f77b7b; }
+.register .mains  .w_fwtk1{ margin-left: 10px; margin-bottom: 6px; }
+.register .mains .w_zsxx{ color: #999; font-size: 12px; margin: 0; text-align: center; }
+.register .mains  #checkbox1{ -webkit-appearance: checkbox; box-sizing: border-box; float: left; margin:4px; }
+.register .mains .basic_wbr{ width: 314px; height: 788px; border: #e0e0e0 1px solid; }
+
+.baic_wbbt h3{ font-weight: normal; color:#666666; font-size:14px;}
+/*register注册 结束*/
+
+/*login登录 开始*/
+.login{ }
+.login .top{height: 235px;background: #f6f7f7;}
+.login .top .logo{text-align: center;position: relative;top: 80px;}
+.login .top  .xx{/*width: 100px;*/text-align: center;margin: 0px auto;position: relative;top: 105px;color: #666;}
+.login .top  .xx a{color: #666;}
+.login .top  .xx a:hover{color: #d86ea3;}
+
+.login .main{padding: 80px 0px;background: #fff;height: 340px;}
+.login .main .bds{width: 1190px; margin: 0px auto;}
+.login .main .bds .left{ height: 370px; width: 697px; border-right: 1px #d9d8d8 solid; float: left;}
+.login .main .bds .left form{margin: 0px auto;}
+.login .main .bds .left form label{display: block;margin-bottom: 25px;height: 52px;}
+.login .main .bds .left form .txt{border: 1px #d9d8d8 solid;line-height:50px;width: 307px; margin-bottom: 20px;clear: both;display: inline-block;color: #666;font-size: 14px;padding-left: 15px; }
+.login .main .bds .left form img{float:right;margin-left: 10px;}
+.login .main .bds .left form label span{color: #666;text-align: right;display: inline-block;width: 70px;margin-right: 15px;}
+.login .main .bds .left form .jzw{clear: both;color: #444; margin-left:85px;}
+.login .main .bds .left form .jzw a{float: right;color: #2675b2;margin-right: 5px;font-size: 14px;}
+.login .main .bds .left form .btns{background: #d86ea3; margin-left:85px; color: #fff;font-size: 18px;width: 330px;line-height: 50px;border: none;margin-top: 20px;-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius:5px;cursor: pointer;}
+.login .main .bds .left form  .fx{margin-top: 30px;}
+.login .main .bds .right{float: left;}
+.login .main .bds .right .nr{position: relative;top: 45px;left: 120px;}
+.login .main .bds .right .nr p{text-align: center;margin-top: 10px;color: #444;}
+/*login登录 结束*/
+
+
+

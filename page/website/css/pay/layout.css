@@ -1,0 +1,53 @@
+
+@charset "utf-8";
+.f14 {
+    font-size: 14px;
+}
+.f16 {
+    font-size: 16px;
+}
+.f20 {
+    font-size: 20px;
+}
+.fb {
+    font-weight: bold;
+}
+.w75 {
+    width: 75px;
+}
+.w250 {
+    width: 250px;
+}
+.w400 {
+    width: 400px;
+}
+.db {
+    display: block;
+}
+.tc {
+    text-align: center;
+}
+.tr {
+    text-align: right;
+}
+.tl {
+    text-align: left;
+}
+.c26559e {
+    color: #26559e;
+}
+.link {
+    color: #00a1ff;
+}
+.link:hover {
+    text-decoration: underline;
+}
+.over {
+    overflow: hidden;
+}
+.pr {
+    position: relative;
+}
+.pb50 {
+    padding-bottom: 50px;
+}

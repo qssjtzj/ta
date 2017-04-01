@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<title></title>
+<meta name="keywords" content="，，">
+<meta name="description" content="" />
+<meta name="author" content="Design:; Web Layout:HXH;" />
+<link type="image/x-icon" href="favicon.ico" rel="icon"/>
+<link type="image/x-icon" href="favicon.ico" rel="shortcut icon" />
+<link type="text/css" rel="stylesheet" href="css/base.css" />
+<link type="text/css" rel="stylesheet" href="css/index.css" />
+
+</head>
+<body>
+<!--顶部导航-->
+<div id="header" ></div>
+<!-- <div class="warp"><a href='index.html' class='top_nav_home'>HOME</a></div> -->
+
+	<!--内容部分-->
+	<div class="warp">
+		<div class="content">
+			 <div class="reg_warp">
+             	<div class="reg_bunner"></div>
+                <div class="reg_cont">
+                	<div class="reg_sucess_cont">
+                    	<div class="reg_sucess_title">
+                         	
+                        	<label class="titleinfo Ffamily_hei fts24"> <img src="imgs/icon_smail.png" width="33" height="33" /> &nbsp;&nbsp;&nbsp;&nbsp; Successful!</label>
+                            <label class="titleaccount fts14">Login Account:<i id="account"></i></label>
+                        </div>
+                        <!--a class="reg_succ fts16 Ffamily_ht"  onclick="javascript:void(0);"> <img src="img/icon2.jpg" width="33" height="33" />&nbsp; &nbsp;Download Showoo!</div-->
+                        <a class="reg_succ fts16 Ffamily_ht"  onclick="javascript:window.location.href='center/userCenterFB.html'">Link to Facebook account</a>
+                        <a class="reg_succ fts16 Ffamily_ht" onclick="javascript:window.location.href='center/userCenterModify.html'">Activate your email address</a>
+                        <div class="reg_sucess_other">The email address you registered has not been activated. This may impact password retrieval. Please activate it as soon as possible.</div>
+                         
+                        <a class="user_center colorfff bold" href="center/userCenterInfo.html">Management</a>
+                    </div>
+                </div>
+             </div>
+		</div>
+	</div>
+
+<script type="text/javascript" src="js/open.rc.js"></script> 
+<script type="text/javascript" src="js/open.common.js"></script> 
+<script>
+$(document).ready(function() {
+	$("#account").html(opencyou.utils.getParamFromUrl("account"));
+});
+	
+</script>
+</body>
+</html>

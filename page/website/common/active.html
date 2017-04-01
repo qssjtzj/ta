@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+        <title> </title>
+        <meta name="keywords" content="，，">
+        <meta name="description" content="" />
+        <meta name="author" content="Design:; Web Layout:HXH;" />
+        <link type="image/x-icon" href="../favicon.ico" rel="icon"/>
+        <link type="image/x-icon" href="../favicon.ico" rel="shortcut icon" />
+        <link type="text/css" rel="stylesheet" href="../css/index.css" />
+    </head>
+<body>
+<!--顶部导航-->
+<div id="header" ></div>
+<!--div class="warp"><a href='../index.html' class='top_nav_home'>HOME</a></div-->
+
+	<!--内容部分-->
+	<div class="warp">
+		<div class="content">
+			<div class="center_user_bg mt20 mb40">
+                <div class="right common">
+                    <h2>Activate Email</h2>
+                    
+                    <div id="active_r" class="modify_cont line28 pr m20" style="display:none;" >
+                        
+                    	<p class=" bold pt20 description14 pt80 mt20"> <!--span class="spar_duigou_blue"> </span--> 
+                        	<img src="../img/m_blue.jpg" width="25" height="19" border="0" />
+                        	The email address you registered : <a href="javascript:void(0);" id="email_val"></a> has been activated.</p>
+                    	<p class="description14"> <a href="javascript:rcopen.api.activeModifyPwd()" title="change password" >I want to change my password.</a></p>
+                        <input type="hidden" id="user_val"/>
+                    </div>
+                    <div id="active_e" class="modify_cont tc line28 w70 pr" style=" display:none;" >
+                        
+                    	<p class=" bold pt20 description14 pt80 mt20"> <span class="spar_cha_red"> </span>
+                        	
+                        	<span> Activate email failed , back <a href="../index.html" title="home" > Home</a> </span></p>
+                    	
+                    </div>
+                </div>
+        
+			</div>
+        </div>
+	</div>
+<script type="text/javascript" src="../js/open.rc.js"></script>
+<script type="text/javascript" src="../js/open.common.js"></script>
+<script type="text/javascript" src="../js/open.pass.js"></script>
+<script>
+$(document).ready(function() {
+	rcopen.api.initActive();
+});	
+</script>
+</body>
+</html>

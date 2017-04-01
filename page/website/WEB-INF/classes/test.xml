@@ -1,0 +1,186 @@
+<beans xsi:schemaLocation="   
+http://www.springframework.org/schema/beans    
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd   
+http://www.springframework.org/schema/tx   
+http://www.springframework.org/schema/tx/spring-tx-3.0.xsd   
+http://www.springframework.org/schema/aop    
+http://www.springframework.org/schema/aop/spring-aop-3.0.xsd   
+http://www.springframework.org/schema/context    
+http://www.springframework.org/schema/context/spring-context-3.0.xsd  ">
+
+		<bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean" scope="singleton">
+		<property name="shared" value="true"/><property name="configLocation"><value>classpath:ehcache.xml</value></property></bean>
+		
+			
+			<!-- 数据源stats(主) -->
+			<bean id="dataSource_stats_w" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+			<property name="driverClassName" value="org.logicalcobwebs.proxool.ProxoolDriver"/>
+			<property name="url" value="proxool.DBConnectPool_stats_w"/></bean>
+			
+			<!-- 数据源stats(从) -->
+			<bean id="dataSource_stats_r" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+			<property name="driverClassName" value="org.logicalcobwebs.proxool.ProxoolDriver"/>
+			<property name="url" value="proxool.DBConnectPool_stats_r"/></bean>
+			
+			<!-- stats 动态数据源 -->
+			<bean id="dynamicDataSource_stats" class="com.jiayuan.wireless.common.db.util.DynamicDataSource">
+			<property name="targetDataSources"><map key-type="java.lang.String">
+			<entry key="master" value-ref="dataSource_stats_w"/>
+			<entry key="slave" value-ref="dataSource_stats_r"/></map>
+			</property>
+			<property name="defaultTargetDataSource" ref="dataSource_stats_r"/></bean>
+			
+			<!-- 数据源mobile(主) -->
+			<bean id="dataSource_mobile_w" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+			<property name="driverClassName" value="org.logicalcobwebs.proxool.ProxoolDriver"/>
+			<property name="url" value="proxool.DBConnectPool_mobile_w"/></bean>
+
+			<!-- 数据源mobile(从) -->
+			<bean id="dataSource_mobile_r" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+			<property name="driverClassName" value="org.logicalcobwebs.proxool.ProxoolDriver"/>
+			<property name="url" value="proxool.DBConnectPool_mobile_r"/></bean>
+
+			<!-- mobile 动态数据源 -->
+			<bean id="dynamicDataSource_mobile" class="com.jiayuan.wireless.common.db.util.DynamicDataSource">
+			<property name="targetDataSources"><map key-type="java.lang.String">
+			<entry key="master" value-ref="dataSource_mobile_w"/>
+			<entry key="slave" value-ref="dataSource_mobile_r"/></map></property>
+			<property name="defaultTargetDataSource" ref="dataSource_mobile_r"/></bean>
+			
+			<!-- 数据源ly(主) -->
+			<bean id="dataSource_ly_w" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+			<property name="driverClassName" value="org.logicalcobwebs.proxool.ProxoolDriver"/>
+			<property name="url" value="proxool.DBConnectPool_ly_w"/>
+			
+			</bean><!-- 数据源ly(从) -->
+			<bean id="dataSource_ly_r" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+			<property name="driverClassName" value="org.logicalcobwebs.proxool.ProxoolDriver"/>
+			<property name="url" value="proxool.DBConnectPool_ly_r"/></bean>
+			
+			<!-- ly 动态数据源 -->
+			<bean id="dynamicDataSource_ly" class="com.jiayuan.wireless.common.db.util.DynamicDataSource">
+			<property name="targetDataSources"><map key-type="java.lang.String"><entry key="master" value-ref="dataSource_ly_w"/>
+			<entry key="slave" value-ref="dataSource_ly_r"/></map></property>
+			<property name="defaultTargetDataSource" ref="dataSource_ly_r"/></bean>
+			
+			<!-- 配置stats库 sessionFactory -->
+			<bean id="sessionFactoryStats" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+			<property name="dataSource"><ref bean="dynamicDataSource_stats"/></property><property name="namingStrategy">
+			<bean class="org.hibernate.cfg.ImprovedNamingStrategy"/></property><property name="hibernateProperties"><props>
+			<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop><prop key="hibernate.show_sql">true</prop>
+			<prop key="hibernate.format_sql">true</prop><prop key="hibernate.generate_statistics">true</prop>
+			<!-- prop key="hibernate.hbm2ddl.auto">update</prop -->
+			<prop key="hibernate.search.autoregister_listeners">false</prop>
+			<prop key="hibernate.cache.use_structured_entries">true</prop>
+			<prop key="hibernate.cache.use_second_level_cache">false</prop>
+			<prop key="hibernate.cache.use_query_cache">false</prop>
+			<prop key="hibernate.cache.use_minimal_puts">true</prop>
+			<prop key="hibernate.cache.region_prefix">jiayuan_wireless_stats_db_</prop>
+
+			<prop key="hibernate.memcached.cacheTimeSeconds">900</prop>
+
+			<prop key="hibernate.memcached.operationTimeout">10000</prop>
+
+			<prop key="hibernate.memcached.youbest_.com.youbest.domain.manage.entity.user.Rights.cacheTimeSeconds">86400</prop>
+
+			<prop key="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</prop>
+
+			<prop key="hibernate.cache.provider_configuration_file_resource_path">ehcache.xml</prop>
+
+			<prop key="net.sf.ehcache.configurationResourceName">ehcache.xml</prop>
+
+			<prop key="hibernate.cache.provider_class">net.sf.ehcache.hibernate.SingletonEhCacheProvider</prop>
+
+			<prop key="hibernate.cache.region.factory_class">net.sf.ehcache.hibernate.EhCacheRegionFactory</prop>
+
+			 </props></property><!-- property name="packagesToScan" value="com.jiayuan.wireless.Editable.editor.db.entity" /-->
+			 <property name="packagesToScan"><list><value>com.jiayuan.wireless.common.db.entity</value></list></property>
+			 <property name="eventListeners"><map><entry key="save-update"><list>
+			 <bean class="com.jiayuan.wireless.common.db.HibernateListener"/>
+			 <bean class="org.hibernate.event.def.DefaultSaveOrUpdateEventListener"/></list></entry></map></property></bean>
+			 
+			 <!-- 配置mobile库 sessionFactory -->
+			 <bean id="sessionFactoryMobile" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+			 <property name="dataSource"><ref bean="dynamicDataSource_mobile"/></property><property name="namingStrategy">
+			 <bean class="org.hibernate.cfg.ImprovedNamingStrategy"/></property><property name="hibernateProperties"><props>
+			 <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop><prop key="hibernate.show_sql">true</prop>
+			 <prop key="hibernate.format_sql">true</prop><prop key="hibernate.generate_statistics">true</prop>
+			 <!-- prop key="hibernate.hbm2ddl.auto">update</prop -->
+			 <prop key="hibernate.search.autoregister_listeners">false</prop>
+			 <prop key="hibernate.cache.use_structured_entries">true</prop>
+			 <prop key="hibernate.cache.use_second_level_cache">false</prop>
+			 <prop key="hibernate.cache.use_query_cache">false</prop><prop key="hibernate.cache.use_minimal_puts">true</prop>
+			 <prop key="hibernate.cache.region_prefix">jiayuan_wireless_mobile_db_</prop></props></property>
+			 <!-- property name="packagesToScan" value="com.jiayuan.wireless.Editable.editor.db.entity" /-->
+			 <property name="packagesToScan"><list><value>com.jiayuan.wireless.common.db.entity</value></list></property>
+			 <property name="eventListeners"><map><entry key="save-update"><list>
+			 <bean class="com.jiayuan.wireless.common.db.HibernateListener"/>
+			 <bean class="org.hibernate.event.def.DefaultSaveOrUpdateEventListener"/></list></entry></map></property></bean>
+			 
+			 <!-- 配置ly库 sessionFactory -->
+			 <bean id="sessionFactoryLy" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+			 <property name="dataSource"><ref bean="dynamicDataSource_ly"/></property><property name="namingStrategy">
+			 <bean class="org.hibernate.cfg.ImprovedNamingStrategy"/></property><property name="hibernateProperties">
+			 <props><prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop><prop key="hibernate.show_sql">true</prop>
+			 <prop key="hibernate.format_sql">true</prop><prop key="hibernate.generate_statistics">true</prop>
+			 <!-- prop key="hibernate.hbm2ddl.auto">update</prop --><prop key="hibernate.search.autoregister_listeners">false</prop>
+			 <prop key="hibernate.cache.use_structured_entries">true</prop><prop key="hibernate.cache.use_second_level_cache">false</prop>
+			 <prop key="hibernate.cache.use_query_cache">false</prop><prop key="hibernate.cache.use_minimal_puts">true</prop>
+			 <prop key="hibernate.cache.region_prefix">jiayuan_wireless_ly_db_</prop></props></property>
+			 <!-- property name="packagesToScan" value="com.jiayuan.wireless.Editable.editor.db.entity" /-->
+			 <property name="packagesToScan"><list><value>com.jiayuan.wireless.common.db.entity</value></list></property>
+			 <property name="eventListeners"><map>
+			 <entry key="save-update"><list><bean class="com.jiayuan.wireless.common.db.HibernateListener"/>
+			 <bean class="org.hibernate.event.def.DefaultSaveOrUpdateEventListener"/></list></entry></map></property></bean>
+			 
+			 <!-- 切换数据源 --><aop:aspectj-autoproxy proxy-target-class="true"/>
+			 <bean id="dataSourceAdvice" class="com.jiayuan.wireless.common.db.util.DataSourceAdvice"/>
+			 <aop:config>
+			 <aop:advisor pointcut="execution(* com.jiayuan.wireless.common.db.dao..*.*(..))" advice-ref="dataSourceAdvice"/>
+			 <aop:advisor pointcut="execution(* com.jiayuan.wireless.common.db.hibernate..*.*(..))" advice-ref="dataSourceAdvice"/>
+			 </aop:config>
+			 
+			 <bean id="sessionFactoryMap" class="java.util.HashMap"><constructor-arg><map>
+			 <entry key="stats" value-ref="sessionFactoryStats"/><entry key="mobile" value-ref="sessionFactoryMobile"/>
+			 <entry key="ly" value-ref="sessionFactoryLy"/></map></constructor-arg></bean>
+			 
+			 <!-- 配置事务管理 -->
+			 <bean id="transactionManagerStats" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+			 <property name="sessionFactory" ref="sessionFactoryStats"/></bean>
+			 <bean id="transactionManagerMobile" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+			 <property name="sessionFactory" ref="sessionFactoryMobile"/></bean>
+			 <bean id="transactionManagerLy" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+			 <property name="sessionFactory" ref="sessionFactoryLy"/></bean>
+			 <bean id="configurationLoader" class="org.springmodules.validation.bean.conf.loader.annotation.AnnotationBeanValidationConfigurationLoader"/>
+			 <bean id="validator" class="org.springmodules.validation.bean.BeanValidator" p:configurationLoader-ref="configurationLoader"/>
+			 <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource" p:basename="classpath:message">
+			 <property name="defaultEncoding" value="utf-8"/>
+			 </bean>
+			 
+			 <!-- 激活Spring注解方式：事务处理 -->
+			 <tx:annotation-driven transaction-manager="transactionManagerStats"/>
+			 <tx:annotation-driven transaction-manager="transactionManagerMobile"/>
+			 <tx:annotation-driven transaction-manager="transactionManagerLy"/><!-- AOP --><aop:aspectj-autoproxy/>
+			 
+			 <!-- 权限缓存 -->
+			 <!--bean id="userCache" class="org.springframework.security.core.userdetails.cache.EhCacheBasedUserCache">
+				 	<property name="cache" ref="userEhCache"/>
+			</bean>
+			<bean id="userEhCache" class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+		    	<property name="cacheManager" ref="cacheManager"/>
+		    	<property name="cacheName" value="userCache"/>
+			</bean>
+			<bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean"/-->
+		<!-- bean id="openSessionInServiceFilter" class="com.jiayuan.wireless.webcontainner.OpenSessionInServiceFilter" / -->
+	<!-- 文件上传的配置 -->
+	<!-- 激活Spring注解方式：自动扫描，并注入bean -->
+	<context:component-scan base-package="com.jiayuan.wireless.util.utils"/>
+	<context:component-scan base-package="com.jiayuan.wireless.common.db.dao"/>
+	<context:component-scan base-package="com.jiayuan.wireless.common.db.service"/>
+	<!-- context:component-scan base-package="com.rdno.testhall.frontend.service">  
+
+        <context:include-filter type="annotation" 
+
+        	expression="org.aspectj.lang.annotation.Aspect" />  
+
+    </context:component-scan --><!-- import resource="hall-service.xml" / --></beans>

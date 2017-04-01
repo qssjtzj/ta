@@ -1,0 +1,56 @@
+@charset "utf-8";
+
+/*width:600  height:400*/
+
+html,body,table,td,input {padding:0; margin:0;}
+body {overflow:hidden; font-size:12px}
+a{ text-decoration:none; cursor:pointer; }
+.table {margin:15px auto 0; width:600px; height:350px; border-collapse:collapse;}
+.table td {vertical-align:top}
+.table td.tdTop {height:150px}
+.table td.tdLeft {width:270px; height:300px;}
+.table td.tdRight {width:260px; padding-left:30px; border-left:1px solid #E5E5E5; text-align:center}
+
+
+
+.btnSys { display:inline-block; width:90px; height:26px; line-height:26px; background:url(../img/btn_d.png) no-repeat center; color:#333333; font-size:12px; }
+.btnSys:active { background:url(../img/btn_d_h.png) no-repeat center; }
+/*
+.btnSys {color:#002945; font-size:12px; text-decoration:none; display:inline-block; height:26px; line-height:26px; padding-left:4px; background-image:url(../img/btn_sys.png); background-position:0 0}
+.btnSys span {display:inline-block; height:26px; line-height:26px; padding-right:4px; cursor:pointer; background-image:url(../img/btn_sys.png); background-position:right -26px; text-align:center}
+.btnSys:hover {background-position:0 -52px}
+.btnSys:hover span {background-position:right -78px}
+.btnSys:active {background-position:0 -104px}
+.btnSys:active span {background-position:right -130px}
+.btnSys span {padding:0 12px 0 8px}
+.tdRight .btnSys span {width:50px}
+*/
+.btnSysBig {color:#fff; font-size:14px; font-weight:bold; text-decoration:none; display:inline-block; text-align:center;
+width:208px; height:40px; line-height:40px;  background:url(../img/btn_sys_big.png) no-repeat center; position:relative;}
+.btnSysBig:active{  background:url(../img/btn_sys_big_h.png) no-repeat center;}
+/*
+.btnSysBig span {display:inline-block; height:37px; line-height:37px; padding-right:5px; cursor:pointer; background-image:url(../img/btn_sys_big.gif); background-position:right -37px; text-align:center}
+.btnSysBig:hover {background-position:0 -74px}
+.btnSysBig:hover span {background-position:right -111px}
+.btnSysBig:active {background-position:0 -148px}
+.btnSysBig:active span {background-position:right -185px}
+.btnSysBig span {padding:0 15px 0 10px}
+
+.file {}
+.file span {width:140px; height:37px; overflow:hidden; position:relative}
+.file em {display:inline-block; width:100%; text-align:center; font-style:normal; position:absolute; top:0; right:0}
+*/
+.file input { line-height:40px; height:40px; position:absolute; top:0; right:0; opacity:0; filter:Alpha(opacity:0); cursor:pointer; }
+
+#loadingImg {margin-left:10px; display:none}
+#txtError {color:#F00; margin-left:10px}
+.file,#loadingImg,#txtError {vertical-align:middle}
+
+.bigImgBox {display:inline-block; width:200px; height:200px; border:1px solid #B2B2B2;}
+.smallImgBox {display:inline-block; overflow:hidden; position:relative}
+.smallImgBox img {position:relative}
+.smallImgBox {background:#F4F4F4; border:1px solid #B2B2B2}
+
+.previewText {color:#9A9A9A; padding:5px 0; line-height:20px;}
+
+#loginTip {border:1px solid #6F97DD; background:#BBD6F3; padding:12px 25px 10px 25px; -webkit-border-radius:6px; -moz-border-radius:6px; border-radius:6px; display:none}

@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<meta name="keywords" content="，，">
+<meta name="description" content="" />
+<meta name="author" content="Design:ZhangXi; Web Layout:HXH;" />
+<link type="image/x-icon" href="../favicon.ico" rel="icon"/>
+<link type="image/x-icon" href="../favicon.ico" rel="shortcut icon" />
+<link type="text/css" rel="stylesheet" href="../css/index.css" />
+<!--link type="text/css" rel="stylesheet" href="../css/jquery-ui.css" /-->
+
+</head>
+
+<body>
+<!--顶部导航-->
+<div id="header" ></div>
+<!--div class="warp"><a href='../index.html' class='top_nav_home'>HOME</a></div-->
+<div id="pay-menu" ></div>
+
+	<!--内容部分-->
+	<div class="warp">
+		<div class="content">
+        	<div class="center_left">
+            	<iframe src="left.html" width="250" height="930" scrolling="no" allowtransparency="true" frameborder="0" ></iframe>
+             	
+            </div>
+        	<div class="center_right ">
+            	<div class="right center_user_bg">
+    				<div class="pay_form m35"> 
+                    	<ul>
+                        	<li class=" ml120 active input_border"><p class=" fts24 bold mt40">Select </p><p class=" fts20 bold">the numbe</p></li>
+                            <li class="pay_form_next"></li>
+                            <li class="input_border"><p class=" fts24 bold mt40 line50">Complete</p></li>
+                        </ul>
+                    	<div class=" mt20 dash_line"></div>
+                        <div class="form_convert" >
+                        	
+                            <li> <span>Account： </span><data id="l_username2"></data></li>
+                            <li> <span>Selected Item：</span>Buy RC Token</li>
+            				<li> 
+                            	<span>Pay RC Coin：</span><input align="absmiddle" type="text" autocomplete="off" name="coin" class="input_border" id="payRcCoins" maxlength="25" />
+                            	<span style="width:74px;">RC Coin：</span><strong class="colored"><data id="pay_user_cion2"> </data></strong>&nbsp;&nbsp;<a href="paycharge.html" target="_blank" title="Top-up RC Coin" class=" fts12 color086 line26">Top-up RC Coin </a>
+                            </li>
+							<li> <span>Exchange rate：</span>1 RC Coin = 8 RC Token</li>
+                       	 	<li> <span>RC Token：</span><data id="pay_user_showbi"></data></li>
+                            
+                           	<div class=" ml90">
+                            	<a class="btn_update colorfff line40 tc bold mt30" style=" display:inline-block; text-decoration: none;" id="" onclick="rcpay.api.convert()" href="javascript:void(0);"> Submit</a>
+                             	<a href="javascript:history.back()" class=" fts12 color086 line26 pl15"/>back</a> 
+                            </div>
+                        </div>
+                       	
+                    </div>
+                    
+                </div>
+                
+                
+            </div>
+        </div>
+	</div>
+
+<script type="text/javascript" src="../js/open.rc.js"></script> 
+<script type="text/javascript" src="../js/open.common.js"></script> 
+<script type="text/javascript" src="../js/open.pay.js"></script>
+<script type="text/javascript" language="javascript"> 
+$(document).ready(function() {
+	rcpay.api.initUserInfo();
+	
+	rcpay.api.getShow();
+	rcpay.api.getCard();
+});
+</script> 
+</body>
+</html>

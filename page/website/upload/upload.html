@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0110)http://rcshow.tv/live/upload_face/index.php?callbackObj=uploadFaceWindow&mod=photo_wall&place=&imageId=2597895 -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <title>上传头像</title>
+    <link rel="stylesheet" type="text/css" href="js/imgareaselect-animated.css"/>
+    <link rel="stylesheet" type="text/css" href="js/custom.css"/>
+
+
+<!--[if gte IE 10]>
+<style type="text/css">
+#ie_tip{display:none;color: #fff;}
+</style>
+<![endif]-->
+
+<!--[if lt IE 9]> 
+<style type="text/css">
+#ie_tip{display:block;color: #999;}
+</style>
+<![endif]-->
+
+<!--[if !IE]><!--> 
+<style type="text/css">
+#ie_tip{display:none;color: #fff;}
+</style> 
+<!--<![endif]-->  
+
+</head>
+<body>
+<table class="table">
+	<tbody>
+    	
+    	<tr>
+          <td class="tdLeft"><span class="bigImgBox"><img id="bigImg" src="" ></span></td>
+          <td class="tdRight">
+          	<div class="previewText">Please choose a picture to upload and save as profile picture,  you will need to refresh this page to view the latest uploaded picture.</div>
+            <div style=" margin-top:18px;"><span class="smallImgBox" style="width:78px; height:78px"><img id="previewImg_78" src="img/space.png"></span></div>
+            <div class="previewText">78 X 78</div>
+            <div><span class="smallImgBox" style="width:40px; height:40px"><img id="previewImg_40" src="img/space.png"></span></div>
+            <div class="previewText" style="padding-bottom:10px">40 X 40</div>
+            <form id="form_point" name="form_point" action="" method="post" enctype="multipart/form-data">
+                  <!--http://rcshow.tv/live/upload_face/index.php-->
+                  <input type="hidden" id="x1" name="x1" value="">
+                  <input type="hidden" id="y1" name="y1" value="">
+                  <input type="hidden" id="x2" name="x2" value="">
+                  <input type="hidden" id="y2" name="y2" value="">
+                  <input style="display:none" type="submit" value="save">
+                  <a onclick="FaceUploader.save()" href="javascript:;" class="btnSys" style="margin-right:15px"><span>save</span></a>
+                  <a onclick="FaceUploader.cancel()" href="javascript:;" class="btnSys"><span>cancel</span></a>
+                </form></td>
+        </tr>
+        <tr>
+          <td colspan="2" class="tdTop">
+          	<a href="javascript:;" class="btnSysBig file">
+            	Upload Photo
+          		<input hidefocus="true" id="file_face" name="file_face" type="file" onchange="FaceUploader.onFileValueChange(this)">
+            </a>
+            <img id="loadingImg" src="img/icon_loading.gif"><span id="txtError"></span>
+            <p id="ie_tip" >Can not upload photos? Double click the have a try!</p>
+          </td>
+          
+        </tr>
+  	</tbody>
+</table>
+<div id="loginTip" style="position:absolute">You are not logged in, please login!</div>
+
+    <script type="text/javascript" src="js/jquery.tools.min.js"></script>
+    <script type="text/javascript" src="js/jquery.imgareaselect.pack.js"></script>
+    <script type="text/javascript" src="js/ajaxUpLoad.js"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
+
+	<script type="text/javascript" src="../js/open.common.js"></script> 
+    
+    <script type="text/javascript">
+	
+		var uid = opencyou.utils.getParamFromUrl("id");
+		
+        window.bigImgWidth = 78;
+        window.bigImgHeight = 78;
+
+        FaceUploader.api = '/user/update/upload?uid='+uid;
+        FaceUploader.params = {"c":"showroom","a":"uploadRawPhoto","imageId":"2597895"};
+        FaceUploader.place = '';
+		FaceUploader.callbackObjName = 'uploadFaceWindow';
+        //FaceUploader.init('/user/update/getimg?uid='+uid, [0,0,78,78], true);
+    </script>
+<script>
+$(document).ready(function() {
+
+	$("#bottomIframe").remove();
+});
+</script>
+</body>
+</html>
