@@ -74,7 +74,6 @@ input, select, textarea:focus {
     position: relative;
 }
 
-
 .clear {
     clear: both;
 }
@@ -82,7 +81,7 @@ input, select, textarea:focus {
 input, select, textarea {
     outline: none;
     font-family: "Microsoft YaHei";
- /*   -webkit-appearance: none;*/
+    /*   -webkit-appearance: none;*/
     outline: none;
     border: 0;
 }
@@ -107,7 +106,6 @@ a:focus {
     display: none !important;
 }
 
-
 /*头部*/
 .header-rela {
     position: relative;
@@ -120,11 +118,11 @@ a:focus {
 }
 
 .g-header {
-    position: fixed;
+    /*position: fixed;
     left: 0;
     top: 0;
     right: 0;
-    z-index: 3000;
+    z-index: 3000;*/
     background-color: #FFFFFF;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, .2);
     -webkit-transition: all .6s;
@@ -132,7 +130,7 @@ a:focus {
 
     width: 100%;
     height: 77px;
-    padding: 19px 0;
+    padding: 2px 0;
     opacity: .98;
 }
 
@@ -141,7 +139,7 @@ a:focus {
     background: #FFFFFF;
 }
 
-.header, .footer, .wrap{
+.header, .footer, .wrap {
     max-width: 1190px;
     margin: 0 auto;
 }
@@ -165,11 +163,71 @@ a:focus {
 }
 
 .header .denglu .dlbtn {
-    background: #d86ea3;
+    background: #fbb03f;
     color: #fff;
     cursor: pointer;
     border: none;
 }
+
+/*头部*/
+.ac_header {
+    width: 1190px;
+    margin: 0 auto;
+}
+
+.ac_header .logo {
+    float: left;
+}
+
+.ac_header .right_nav {
+    float: right;
+    font-size: 16px;
+    color: #666;
+    margin-top: 22px;
+    width:420px;
+}
+
+.ac_header .right_nav ul li {
+    float: left;
+    width: 100px;
+    text-align: center;
+    height: 30px
+}
+
+.bk {
+    border-right: 1px #f1f2f3 solid;
+}
+
+.ac_header .right_nav1 {
+    float: right;
+    font-size: 16px;
+    color: #666;
+    margin-top: 22px;
+    width:220px;
+}
+
+.ac_header .right_nav1 ul li {
+    float: left;
+    width: 46px;
+    text-align: center;
+    height: 30px
+}
+
+.ac_header .right_nav1 ul li .xx {
+    background: #fbb03f;
+    color: #fff;
+    font-size: 12px;
+    height: 20px;
+    display: block;
+    width: 18px;
+    position: relative;
+    left: 28px;
+    top: -37px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
 
 .wjma {
     float: right
@@ -185,7 +243,7 @@ a:focus {
     color: #ffffff;
 }
 
-.foot-lite{
+.foot-lite {
     text-align: center;
     background: #f6f7f7;
 
@@ -198,10 +256,31 @@ a:focus {
     opacity: .98;
 }
 
-.ta-them—grey{ background: #f6f7f7; }
-
-.banner_grey{
-    width: 100%; height:14px; background: #f6f7f7;
+.ta-them—grey {
+    background: #f6f7f7;
 }
 
-.banner_them{width: 100%; height:14px; background: #d96490;  }
+.banner_grey {
+    width: 100%;
+    height: 14px;
+    background: #f6f7f7;
+}
+
+.banner_them {
+    width: 100%;
+    height: 14px;
+    background: #fbb03f;
+}
+
+
+body .row h3{ text-align: center; color: #fbb03f; font-size: 28px; font-weight: normal;}
+body .row h3 a{ float:right; color: #fbb03f; font-size: 14px; line-height:28px; text-decoration: underline; font-weight: normal;}
+
+.index_banner {
+    position: absolute;
+    top:81px;
+    z-index: -1;
+    width: 100%;
+    height: 325px;
+    background: url(../imgs/banner.jpg) no-repeat center;
+}

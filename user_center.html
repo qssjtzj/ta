@@ -9,11 +9,13 @@
 
     <meta property="wb:webmaster" content="fa5ea4ed552d9afc"> <!--公用-->
 
-    <link href="./user_center_files/public.css" rel="stylesheet" type="text/css">
+    <link href="./css/jquery-ui.css" rel="stylesheet" type="text/css">
+    <link href="./css/common.css" rel="stylesheet" type="text/css">
+
+ <!--   <link href="./user_center_files/public.css" rel="stylesheet" type="text/css">-->
     <link href="./user_center_files/style.css" rel="stylesheet" type="text/css">
     <link href="./user_center_files/style1.css" rel="stylesheet" type="text/css">
     <link href="./user_center_files/style2.css" rel="stylesheet" type="text/css"> <!--jquery-ui-->
-    <link href="./user_center_files/jquery-ui.css" rel="stylesheet" type="text/css"> <!--jquery-ui-->
 
     <link href="./user_center_files/page.css" rel="stylesheet" type="text/css">
     <link href="./user_center_files/forms.css" rel="stylesheet" type="text/css">
@@ -27,7 +29,7 @@
 
 </head>
 <body class="home-page page-scroll" style="background:#f8f8f8;" cz-shortcut-listen="true">
-<style>
+<!--<style>
     .zenj {
         position: absolute;
         top: 0;
@@ -231,73 +233,12 @@
         resize: none;
         padding: 10px;
     }
-</style>
+</style>-->
 
 <!-- 头部开始 -->
-
-<!--登录开始-->
-<div class="g-header header-show">
-    <div class="ac_header">
-        <div class="logo">
-            <a href="#">
-                <img src="" height="69" width="359" alt="">
-            </a>
-        </div>
-        <div class="right_nav">
-            <ul>
-                <a href="/search">
-                    <li class="bk">搜索</li>
-                </a>
-                <a href="/event/index">
-                    <li class="bk">活动</li>
-                </a>
-                <a href="/teacher/index">
-                    <li class="bk">会员</li>
-                </a>
-                <a href="/teacher/index">
-                    <li class="bk">XX课堂</li>
-                </a>
-                <a href="/msg_box">
-                    <li class="bk" style="">
-                        <img src="./user_center_files/ac_top_icon1.png" alt="" style="margin-left:-20px;">
-                        <span class="xx" id="xx">0</span>
-                    </li>
-                </a>
-                <a href="http://www.hongniang.com/user/index">
-                    <li style="width:100px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; text-decoration: underline;">
-                        用户名
-                    </li>
-                </a>
-                <a href="javascript:;" id="logout">
-                    <li>退出</li>
-                </a>
-            </ul>
-        </div>
-    </div>
-</div>
-<!--<script>
-    $('.bk').hover(function () {
-        $(this).css('color', '#d86ea3');
-
-    }, function () {
-        $(this).css('color', '');
-    });
-</script>-->
+<iframe src="header.html" height="81" width="100%" allowfullscreen scrolling="no"></iframe>
 <!-- 头部结束 -->
-
-<script type="text/javascript">
-    var USER = USER || 'Array';
-
-    if (USER) {
-        init_check_prompt();
-    }
-
-</script>
-<!-- 头部结束 -->
-
-<!--banner开始-->
-<div class="member_banner" style="margin-top:117px;"></div>
-<!--banner结束-->
+<div class="member_banner"></div>
 
 <!--主体开始-->
 <div class="mem_main" data-mid="324847">
@@ -860,7 +801,6 @@
     $(document).ready(function(){
 
     });
-
 </script>
 </body>
 </html>

@@ -115,7 +115,7 @@ a.aright {
 a.agrayright {
     cursor: default;
 }
-
+/*
 .scrolllist {
     width: 1290px;
     height: 475px;
@@ -127,7 +127,7 @@ a.agrayright {
     height: 478px;
     overflow: hidden;
     float: left;
-    position: relative; /*必要元素*/
+    position: relative; !*必要元素*!
 }
 
 .scrolllist .imglist_w ul {
@@ -189,7 +189,7 @@ a.agrayright {
     font-weight: bold;
     margin-top: 10px;
     cursor: pointer;
-}
+}*/
 
 .imglist li p a {
     width: 125px;
