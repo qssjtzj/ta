@@ -1,0 +1,69 @@
+
+
+._ta .mem_main .sub2 .title{
+    color: #fbb03f;
+    width: 100%;
+    height: 48px;
+    font-size: 22px;
+    text-align: center;
+    line-height: 48px;
+    padding: 10px 0px;
+}
+
+._ta .mem_main .sub2 .right{
+    width:1020px;
+    padding:0px 85px;
+}
+
+._ta .mem_main .sub2 .info1{
+    border: 1px #d9d8d8 solid;
+    padding-top: 10px;
+    height: 300px;
+    margin-top: -1px;
+}
+
+._ta .mem_main .sub2 .info1 .right ul{
+    float: left;
+    width: 300px;
+    border:0px solid #000000;
+    padding:0px 20px;
+}
+
+._ta .mem_main .sub2 .info1 .right ul li{
+    position: relative;
+    width:100%;
+    height:28px;
+    margin-top: 10px;
+    line-height: 28px;
+}
+
+.mem_main ul li span{
+    float: left;
+    text-align: left;
+}
+
+.mem_main ul li .tab{
+    float: left;
+    width:120px;
+    height:28px;
+    position: relative;
+}
+
+.mem_main ul li .tab .tab_one{
+    position: absolute;
+    top:0px;
+    left:0px;
+}
+.mem_main ul li .tab .tab_one.tab_edit{
+    display: none;
+}
+
+.mem_main .txt{
+    border: 1px #d9d8d8 solid;
+    line-height:28px;
+    width: 160px;
+
+    color: #666;
+    font-size: 14px;
+    padding-left: 15px;
+}
