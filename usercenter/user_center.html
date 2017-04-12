@@ -25,8 +25,6 @@
 
     <link rel="stylesheet" href="../user_center_files/layer.css" id="layui_layer_skinlayercss">
 
-
-
 </head>
 <body class="_ta" style="background:#f8f8f8;" >
 
@@ -76,41 +74,46 @@
         <div class="right">
             <div class="info1">
                 <div class="name nickname"> 昵称 <img src="../user_center_files/mem_rz22.png" alt=""></div>
-                <div class="loveid">XXID:324847</div>
+                <div class="loveid" >XXID:324847</div>
+                <input type="hidden" id="uid" name="uid" value="0" />
             </div>
 
-            <div class="info2" style="position: relative;">
+            <div class="info2" style="position: relative; height: 120px;">
                 <ul>
                     <li>年龄：28岁</li>
-                    <li>婚况：</li>
+                    <li>学历：保密</li>
+                    <li>工作地：北京市</li>
                 </ul>
                 <ul style="margin-left:100px;">
                     <li>身高：168CM</li>
-                    <li>学历：保密</li>
+                    <li>：</li>
+                    <li>职业：产品经理</li>
                 </ul>
                 <ul style="margin-left:100px;">
+                    <li>婚况：</li>
+                    <li>：</li>
                     <li>年收入：xx-xx万元</li>
-                    <li>工作地：北京石景山区</li>
                 </ul>
                 <!-- 重新插入虚线 -->
                 <div style="width: 76%; height: 1px; border-bottom:1px dashed #cccaca; position:absolute; top: 56px;"></div>
                 <div style="width: 76%; height: 1px; border-bottom:1px dashed #cccaca; position:absolute; top: 97px;"></div>
+                <div style="width: 76%; height: 1px; border-bottom:1px dashed #cccaca; position:absolute; top: 138px;"></div>
                 <!-- 重新插入虚线 -->
-                <div style="float: right; text-align: center;">
+                <!--<div style="float: right; text-align: center;">
                     <img src="../user_center_files/324847">
                     <p style="color: #666; font-size: 12px;">扫一扫 手机关注TA</p>
-                </div>
+                </div>-->
                 <!--获取微信号码-->
-                <div style="clear:both"></div>
+                <!--<div style="clear:both"></div>
                 <ul style="width:200px; margin-top:-66px;">
                     <li>微信号：
                         <a href="javascript:;" class="gain_wx" style="padding:10px 38px; color:#fff; background:#44b94f; border-radius:5px">获取微信</a>
                     </li>
-                </ul>
+                </ul>-->
                 <!--获取微信号码-->
             </div>
             <!-- ta end-->
-            <div class="info5">
+            <div class="info5" >
                 <div class="tit"> XX要求 </div>
                 <div class="text"> Ta很懒,什么都没留下</div>
             </div>
@@ -137,7 +140,7 @@
                     <li>
                         <span>年龄：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">女</span>
+                            <span class="tab_one tab_label">28</span>
                             <input class="tab_one tab_edit txt" type="text" id="age" name="sex" />
                         </div>
                     </li>
@@ -893,8 +896,6 @@
 
     center.init();
     $(document).ready(function(){
-
-
 
     });
 </script>

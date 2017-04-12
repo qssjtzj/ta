@@ -2,6 +2,9 @@
 var center={
 
     init:function(){
+
+        this.getinfo();
+
         $("#btn_edit").click(function(){
             $(".sub2 .right .tab .tab_edit").show();
             $(".sub2 .right .tab .tab_label").hide();
@@ -10,10 +13,11 @@ var center={
         $("#btn_save").click(function(){
             $(".sub2 .right .tab .tab_edit").hide();
             $(".sub2 .right .tab .tab_label").show();
+
+            this.update();
         });
 
-
-        $("input[type='text']").blur(function(){
+     /*   $("input[type='text']").blur(function(){
             var id = this.id;
             register.check(id);
         });
@@ -25,9 +29,7 @@ var center={
 
         $("#btn_save").on('click', function (event) {
             event.preventDefault();
-
-
-        });
+        });*/
     },
     hideTip:function(id){
         $("#"+id).parent().find(".err-tip").html("");
@@ -122,23 +124,18 @@ var center={
         }
         this.hideTip(id);
     },
-    getSMSVerify:function(){
+    getinfo:function(){
+        var uid = $("#uid").val();
 
-        var phone = $("input[name='mobile']").val();
-        var verify = $("input[name='img_verify']").val();
-
-        var url = TA.apiPath + "/account/get_sms_code.php";
-        var data = {"phone": phone, "code": verify, "debug":"true"};
-
+        var url = TA.apiPath + "/get_uinfo.php";
+        var data = {"uid": uid};
         RequestUtil.credent("GET",url, data , function(data){
 
             if (data.rescode == 200 ) {
-                alert("验证码已发送");
-            }else if (data.rescode == 413 ) {
-                register.showTip("img_verify", "图形验证码不正确");
+                alert(data);
             } else {
                 swal({
-                    title: "获取验证码失败,请稍后重试",
+                    title: "获取失败,请稍后重试",
                     text: data.rescode,
                     imageUrl: "/imgs/dlshibai.png",
                     timer: 5000,
@@ -146,13 +143,13 @@ var center={
             }
         } );
     },
-    createUser:function(){
-        var phone = $("input[name='mobile']").val();
-        var sms_verify = $("input[name='sms_verify']").val();
-        var password = $("input[name='password']").val();
-        var nickname = $("input[name='nickname']").val();
+    update:function(){
+        var sex = $("input[name='sex']").val();
+        var age = $("input[name='age']").val();
+        var height = $("input[name='height']").val();
+        var weight = $("input[name='weight']").val();
 
-        var url = TA.apiPath + "/register.php";
+        var url = TA.apiPath + "/update_uinfo.php";
         var data = {"account": phone, "passwd": password, "nick" : nickname, "verify" : sms_verify};
 
         RequestUtil.credent("GET",url, data , function(data){
