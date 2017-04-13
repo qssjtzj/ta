@@ -56,7 +56,13 @@ var account= {
         });
     },
     logout:function(){
-        location.href = "/";
+
+        var url = TA.apiPath + "/logout.php";
+        RequestUtil.credent("GET", url , {} , function(data) {
+            if (data.rescode == 200) {
+                window.parent.location.href = "/";
+            }
+        });
     },
     checkLogin:function(){
         var uid = common.cookies.read("_uid_");
@@ -67,7 +73,7 @@ var account= {
             $("#nav_user").show();
             $("#user_name").html(name);
         }else{
-            window.location.href= "/login.hmtl";
+            window.parent.location.href = "/login.html";
         }
     }
 }
@@ -228,7 +234,10 @@ var register={
         RequestUtil.credent("GET",url, data , function(data){
 
             if (data.rescode == 200 ) {
-                alert("验证码已发送");
+
+                var sms = common.cookies.read("sms");
+                alert("验证码已发送" + sms);
+
             }else if (data.rescode == 413 ) {
                 register.showTip("img_verify", "图形验证码不正确");
             } else {
