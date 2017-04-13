@@ -20,6 +20,69 @@ var TA = {
 
 }
 
+var common={};
+
+/**
+ * cookieg处理工具对象
+ */
+common.cookies = {
+    // 创建cookie
+    create : function(name, value, minutes) {
+        var expires = "";
+        if (minutes) {
+            var date = new Date();
+            date.setTime(date.getTime() + (minutes * 60000));
+            expires = "; expires=" + date.toGMTString();
+        }
+        document.cookie = name + "=" + value + expires + "; path=/";
+    },
+    // 读取cookie
+    read : function(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for ( var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ')
+                c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) == 0)
+                return decodeURIComponent(c.substring(nameEQ.length, c.length),
+                    "UTF-8");
+        }
+        return null;
+    },
+    // 删除cookie
+    remove : function(name) {
+        common.cookies.create(name, "", -1);
+    }
+};
+
+/**
+ * 键盘监听工具
+ */
+common.keyboard = {
+    tempoldcallback : null,
+    keydownmap : new Map(),
+    // 监听回调
+    keydownCallback : function(key) {
+        var callback = common.keyboard.keydownmap.get(key);
+        if (undefined != callback) {
+            callback();
+        }
+    },
+    // 监听回调方法注册,如果没传callback参数 代表删除该key的监听
+    keydownRegisterOrRemoveCallback : function(key, callback) {
+        var oldcallback = common.keyboard.keydownmap.get(key);
+        if (undefined != callback) {
+            common.keyboard.keydownmap.put(key, callback);
+        } else {
+            common.keyboard.keydownmap.remove(key);
+        }
+        if (undefined != oldcallback) {
+            return oldcallback;
+        }
+    }
+};
+
 /*工具*/
 String.prototype.trim = function(str) {
     return str.replace(/(^\s*)|(\s*$)/g, "");
@@ -29,6 +92,7 @@ Array.prototype.contains = function(item){
 };
 
 var RequestUtil = {
+
     credent:function(type, url, data, success){
 
         $.ajax({

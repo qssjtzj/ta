@@ -12,19 +12,19 @@
     <div class="ac_header">
         <div class="logo">
             <a href="/index.html">
-                <img src="imgs/logo2.png" height="75" alt="">
+                <img src="imgs/logo2.png" height="75" alt="寻TA互动" />
             </a>
         </div>
         <div class="right_nav1">
-            <ul style="margin-left:20px; ">
+            <ul id="nav_user" style="margin-left:20px; display: none; ">
                 <a href="#">
                     <li style="">
-                        <img src="imgs/ac_top_icon1.png" alt="" style="">
+                        <img src="imgs/ac_top_icon1.png" alt="消息中心" style="">
                         <span class="xx" id="xx">1</span>
                     </li>
                 </a>
-                <a href="#">
-                    <li style="width:100px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; text-decoration: underline;">
+                <a href="usercenter/user_center.html" target="_top">
+                    <li id="user_name" style="overflow: hidden;white-space: nowrap;text-overflow: ellipsis; text-decoration: underline; color:#fbb03f; min-width: 100px; padding: 0 18px;">
                         用户名
                     </li>
                 </a>
@@ -36,16 +36,16 @@
 
         <div class="right_nav">
             <ul>
-                <a href="/search">
+                <a href="#">
                     <li class="bk">搜索</li>
                 </a>
-                <a href="/event/index">
+                <a href="#">
                     <li class="bk">活动</li>
                 </a>
-                <a href="/teacher/index">
+                <a href="#">
                     <li class="bk">会员</li>
                 </a>
-                <a href="/teacher/index">
+                <a href="#">
                     <li class="bk">XX课堂</li>
                 </a>
 
@@ -55,6 +55,15 @@
     </div>
 </div>
 <!-- 头部结束 -->
+<script src="./js/jquery-1.11.3.js"></script>
+
+<script src="./js/ta_common.js"></script>
+<script src="./js/ta_account.js"></script>
+<script>
+    $(document).ready(function(){
+        account.checkLogin();
+    });
+</script>
 
 </body>
 </html>

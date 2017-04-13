@@ -56,20 +56,19 @@ var account= {
         });
     },
     logout:function(){
-            $.ajax({
-                type: "POST",
-                url: "/account/do_logout",
-                data: null,
-                dataType: "json",
-                success: function (data) {
-                    if (data.status) {
-                        //$.showSuccess(data.info);
-                        location.href = data.jump;
-                    } else {
-                        location.href = "/";
-                    }
-                }
-            });
+        location.href = "/";
+    },
+    checkLogin:function(){
+        var uid = common.cookies.read("_uid_");
+
+        if( uid!=null && uid>0 ){
+            var name = common.cookies.read("_name_");
+            console.log('login', uid, name);
+            $("#nav_user").show();
+            $("#user_name").html(name);
+        }else{
+            window.location.href= "/login.hmtl";
+        }
     }
 }
 

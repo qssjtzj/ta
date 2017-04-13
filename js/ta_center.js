@@ -2,6 +2,8 @@
 var center={
 
     init:function(){
+        var uid = common.cookies.read("_uid_");
+        console.log('uid', uid);
 
         this.getinfo();
 
@@ -132,10 +134,11 @@ var center={
         this.hideTip(id);
     },
     getinfo:function(){
-        var uid = $("#uid").val();
+        // var uid = $("#uid").val();
+        var uid = common.cookies.read("_uid_");
 
         var url = TA.apiPath + "/get_uinfo_attr.php";
-        var data = {"uid": uid ==0 ? 46 : uid};
+        var data = {"uid": uid};
         RequestUtil.credent("GET",url, data , function(data){
 
             if (data.rescode == 200 ) {
@@ -160,10 +163,8 @@ var center={
         } );
     },
     update:function(){
-        var sex = $("input[name='sex']").val();
-        var age = $("input[name='age']").val();
-        var height = $("input[name='height']").val();
-        var weight = $("input[name='weight']").val();
+
+        var uid = common.cookies.read("_uid_");
 
         var url = TA.apiPath + "/update_uinfo.php";
         var data = {};//{"account": phone, "passwd": password, "nick" : nickname, "verify" : sms_verify};
@@ -172,6 +173,7 @@ var center={
             data[this.name]= this.value;
         });
         console.log("data", data);
+        data["uid"]= uid;
 
         RequestUtil.credent("GET", url, data , function(data){
 

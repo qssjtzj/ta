@@ -203,7 +203,7 @@ a:focus {
     font-size: 16px;
     color: #666;
     margin-top: 22px;
-    width:220px;
+    min-width:220px;
 }
 
 .ac_header .right_nav1 ul li {
@@ -277,10 +277,12 @@ body .row h3{ text-align: center; color: #fbb03f; font-size: 28px; font-weight: 
 body .row h3 a{ float:right; color: #fbb03f; font-size: 14px; line-height:28px; text-decoration: underline; font-weight: normal;}
 
 .index_banner {
-    position: absolute;
-    top:81px;
+   /* position: absolute;
+    top:81px;*/
     z-index: -1;
     width: 100%;
-    height: 325px;
-    background: url(../imgs/banner.jpg) no-repeat center;
+    height: 485px;
+    background: url(../imgs/bannerback2.gif) no-repeat center;
+    text-align: center;
 }
+
