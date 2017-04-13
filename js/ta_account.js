@@ -78,7 +78,7 @@ var register={
     init:function(){
         this.refresh();
 
-        $("input[type='text']").blur(function(){
+        $("input[class='txt']").blur(function(){
             var id = this.id;
             register.check(id);
         });

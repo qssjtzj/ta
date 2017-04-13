@@ -14,22 +14,24 @@
     <link href="../css/center.css" rel="stylesheet" type="text/css">
 
  <!--   <link href="./user_center_files/public.css" rel="stylesheet" type="text/css">-->
-    <link href="../user_center_files/style.css" rel="stylesheet" type="text/css">
-    <link href="../user_center_files/style1.css" rel="stylesheet" type="text/css">
-    <link href="../css/style2.css" rel="stylesheet" type="text/css">
+ <!--   <link href="../user_center_files/style.css" rel="stylesheet" type="text/css">
+    <link href="../user_center_files/style1.css" rel="stylesheet" type="text/css">-->
 
-    <link href="../user_center_files/page.css" rel="stylesheet" type="text/css">
+    <link href="../css/style2.css" rel="stylesheet" type="text/css">
+    <link href="../css/sweetalert.css" rel="stylesheet" type="text/css">
+
+<!--    <link href="../user_center_files/page.css" rel="stylesheet" type="text/css">
     <link href="../user_center_files/forms.css" rel="stylesheet" type="text/css">
     <link href="../user_center_files/animate.css" rel="stylesheet" type="text/css">
-    <link href="../user_center_files/sweetalert.css" rel="stylesheet" type="text/css">
+    <link href="../user_center_files/sweetalert.css" rel="stylesheet" type="text/css">-->
 
-    <link rel="stylesheet" href="../user_center_files/layer.css" id="layui_layer_skinlayercss">
-
+    <!--<link rel="stylesheet" href="../user_center_files/layer.css" id="layui_layer_skinlayercss">
+-->
 </head>
 <body class="_ta" style="background:#f8f8f8;" >
 
 <!-- 头部开始 -->
-<iframe src="../header.html" height="81" width="100%" allowfullscreen scrolling="no"></iframe>
+<iframe src="../header.html" height="81" width="100%" allowfullscreen scrolling="no" frameborder="0" ></iframe>
 
 <!-- 头部结束 -->
 <div class="member_banner"></div>
@@ -73,9 +75,9 @@
         </div>
         <div class="right">
             <div class="info1">
-                <div class="name nickname"> 昵称 <img src="../user_center_files/mem_rz22.png" alt=""></div>
+                <div class="name nickname"> 我的昵称 <!--<img src="" alt="">--></div>
                 <div class="loveid" >XXID:324847</div>
-                <input type="hidden" id="uid" name="uid" value="0" />
+                <input type="hidden" id="uid" name="uid" value="46" isupdate="ture"/>
             </div>
 
             <div class="info2" style="position: relative; height: 120px;">
@@ -125,44 +127,39 @@
         <div class="info1">
 
             <p class="title">————— &nbsp; &nbsp; 详细资料 &nbsp; &nbsp; —————
-                <button id="btn_edit">编辑</button>
-                <button id="btn_save">完成</button>
+                <button class="btn edit" id="btn_update">编辑</button>
+                <!--<button class="btn" id="btn_save">完成</button>-->
             </p>
             <div class="right">
                 <ul>
                     <li>
                         <span>性别：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">女</span>
-                            <input class="tab_one tab_edit txt" type="text" id="sex" name="sex" />
+                            <input class="tab_one tab_show txt" readonly type="text" isupdate="ture"  id="sex" name="sex" />
                         </div>
                     </li>
                     <li>
                         <span>年龄：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">28</span>
-                            <input class="tab_one tab_edit txt" type="text" id="age" name="sex" />
+                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="age" name="age" />
                         </div>
                     </li>
                     <li>
                         <span>身高：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">160cm</span>
-                            <input class="tab_one tab_edit txt" type="text" id="height" name="sex" />
+                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="height" name="height" />
                         </div>
                     </li>
                     <li>
                         <span>体重：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">50kg</span>
-                            <input class="tab_one tab_edit txt" type="text" id="weight" name="sex" />
+                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="weight" name="weight" />
                         </div>
                     </li>
                     <li>
                         <span>民族：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">汉族</span>
-                            <input class="tab_one tab_edit txt" type="text" id="nationality" name="sex" />
+                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="nationality" name="nationality" />
                         </div>
                     </li>
                 </ul>
@@ -170,73 +167,64 @@
                     <li>
                         <span>生肖：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">龙</span>
-                            <input class="tab_one tab_edit txt" type="text" id="zodiac" name="sex" />
+                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="zodiac" name="zodiac" />
                         </div>
                     </li>
                     <li>
                         <span>星座：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">摩羯座</span>
-                            <input class="tab_one tab_edit txt" type="text" id="constellation" name="sex" />
+                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="constellation" name="constellation" />
                         </div>
                     </li>
                     <li>
                         <span>血型：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">B型</span>
-                            <input class="tab_one tab_edit txt" type="text" id="blood" name="sex" />
+                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="blood" name="blood" />
                         </div>
                     </li>
                     <li>
                         <span>职业：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">公务员</span>
-                            <input class="tab_one tab_edit txt" type="text" id="occupation" name="sex" />
+                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="occupation" name="occupation" />
                         </div>
                     </li>
                     <li>
                         <span>信仰：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">无</span>
-                            <input class="tab_one tab_edit txt" type="text" id="faith" name="sex" />
+                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="faith" name="faith" />
                         </div>
                     </li>
                 </ul>
                 <ul >
-                    <li>
-                        <span>婚姻状况：</span>
-                        <div class="tab">
-                            <span class="tab_one tab_label">未婚</span>
-                            <input class="tab_one tab_edit txt" type="text" id="marital_status" name="sex" />
-                        </div>
-                    </li>
+
                     <li>
                         <span>户籍地址：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">北京市</span>
-                            <input class="tab_one tab_edit txt" type="text" id="home_address" name="sex" />
+                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="home_address" name="home_address" />
                         </div>
                     </li>
                     <li>
                         <span>最高学历：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">本科</span>
-                            <input class="tab_one tab_edit txt" type="text" id="education" name="sex" />
+                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="education" name="education" />
                         </div>
                     </li>
                     <li>
-                        <span>是否吸烟：</span>
+                        <span>婚姻状况：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">否</span>
-                            <input class="tab_one tab_edit txt" type="text" id="smoking" name="sex" />
+                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="marital_status" name="marital_status" />
                         </div>
                     </li>
                     <li>
-                        <span>是否喝酒：</span>
+                        <span>有孩子吗：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">无</span>
-                            <input class="tab_one tab_edit txt" type="text" id="drinking" name="sex" />
+                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="children" name="children" />
+                        </div>
+                    </li>
+                    <li>
+                        <span>喜欢宠物：</span>
+                        <div class="tab">
+                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="like_pet" name="like_pet" />
                         </div>
                     </li>
 
@@ -253,28 +241,28 @@
                         <span>住房条件：</span>
                         <div class="tab">
                             <span class="tab_one tab_label">否</span>
-                            <input class="tab_one tab_edit txt" type="text" id="housing" name="sex" />
+                            <input class="tab_one tab_show txt" type="text" isupdate="ture" id="housing" name="housing" />
                         </div>
                     </li>
                     <li>
                         <span>是否购车：</span>
                         <div class="tab">
                             <span class="tab_one tab_label">否</span>
-                            <input class="tab_one tab_edit txt" type="text" id="caring" name="sex" />
+                            <input class="tab_one tab_show txt" type="text" isupdate="ture" id="caring" name="caring" />
                         </div>
                     </li>
                     <li>
                         <span>是否吸烟：</span>
                         <div class="tab">
                             <span class="tab_one tab_label">否</span>
-                            <input class="tab_one tab_edit txt" type="text" id="smoking" name="sex" />
+                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="smoking" name="smoking" />
                         </div>
                     </li>
                     <li>
                         <span>是否喝酒：</span>
                         <div class="tab">
                             <span class="tab_one tab_label">否</span>
-                            <input class="tab_one tab_edit txt" type="text" id="drinking" name="sex" />
+                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="drinking" name="drinking" />
                         </div>
                     </li>
                 </ul>
@@ -283,58 +271,58 @@
                         <span>厨艺：</span>
                         <div class="tab">
                             <span class="tab_one tab_label">否</span>
-                            <input class="tab_one tab_edit txt" type="text" id="cooking" name="sex" />
+                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="cooking" name="cooking" />
                         </div>
                     </li>
                     <li>
                         <span>家务：</span>
                         <div class="tab">
                             <span class="tab_one tab_label">否</span>
-                            <input class="tab_one tab_edit txt" type="text" id="housework" name="sex" />
+                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="housework" name="housework" />
                         </div>
                     </li>
                     <li>
                         <span>唱歌：</span>
                         <div class="tab">
                             <span class="tab_one tab_label">高级</span>
-                            <input class="tab_one tab_edit txt" type="text" id="music" name="sex" />
+                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="music" name="music" />
                         </div>
                     </li>
                     <li>
                         <span>才艺：</span>
                         <div class="tab">
                             <span class="tab_one tab_label">高级</span>
-                            <input class="tab_one tab_edit txt" type="text" id="art" name="sex" />
+                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="art" name="art" />
                         </div>
                     </li>
                 </ul>
                 <ul>
                     <li>
-                        <span>想何时结婚：</span>
+                        <span>想交往多久结婚：</span>
                         <div class="tab">
                             <span class="tab_one tab_label">3年内</span>
-                            <input class="tab_one tab_edit txt" type="text" id="married_year" name="sex" />
+                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="married_year" name="married_year" />
                         </div>
                     </li>
                     <li>
                         <span>婚后与父母住吗：</span>
                         <div class="tab">
                             <span class="tab_one tab_label">否</span>
-                            <input class="tab_one tab_edit txt" type="text" id="live_parents" name="sex" />
+                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="live_parents" name="live_parents" />
                         </div>
                     </li>
                     <li>
                         <span>喜欢怎样的约会：</span>
                         <div class="tab">
                             <span class="tab_one tab_label">否</span>
-                            <input class="tab_one tab_edit txt" type="text" id="love_style" name="sex" />
+                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="love_style" name="love_style" />
                         </div>
                     </li>
                     <li>
-                        <span>较大的消费：</span>
+                        <span>较大的消费项目：</span>
                         <div class="tab">
                             <span class="tab_one tab_label">否</span>
-                            <input class="tab_one tab_edit txt" type="text" id="max_consum" name="sex" />
+                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="max_consum" name="max_consum" />
                         </div>
                     </li>
                 </ul>
@@ -348,44 +336,68 @@
                         <span>喜欢的活动：</span>
                         <div class="tab">
                             <span class="tab_one tab_label">否</span>
-                            <input class="tab_one tab_edit txt" type="text" id="favorite_active" name="sex" />
+                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="favorite_active" name="favorite_active" />
                         </div>
                     </li>
                     <li>
                         <span>喜欢的运动：</span>
                         <div class="tab">
                             <span class="tab_one tab_label">否</span>
-                            <input class="tab_one tab_edit txt" type="text" id="favorite_sports" name="sex" />
-                        </div>
-                    </li>
-                    <li>
-                        <span>喜欢的音乐：</span>
-                        <div class="tab">
-                            <span class="tab_one tab_label">否</span>
-                            <input class="tab_one tab_edit txt" type="text" id="favorite_music" name="sex" />
-                        </div>
-                    </li>
-                </ul>
-                <ul>
-                    <li>
-                        <span>喜欢的影视节目：</span>
-                        <div class="tab">
-                            <span class="tab_one tab_label">否</span>
-                            <input class="tab_one tab_edit txt" type="text" id="favorite_movie" name="sex" />
-                        </div>
-                    </li>
-                    <li>
-                        <span>喜欢的食物：</span>
-                        <div class="tab">
-                            <span class="tab_one tab_label">否</span>
-                            <input class="tab_one tab_edit txt" type="text" id="favorite_food" name="sex" />
+                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="favorite_sports" name="favorite_sports" />
                         </div>
                     </li>
                     <li>
                         <span>喜欢的地方：</span>
                         <div class="tab">
                             <span class="tab_one tab_label">否</span>
-                            <input class="tab_one tab_edit txt" type="text" id="favorite_city" name="sex" />
+                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="favorite_city" name="favorite_city" />
+                        </div>
+                    </li>
+
+                </ul>
+                <ul>
+                    <li>
+                        <span>喜欢的影视：</span>
+                        <div class="tab">
+                            <span class="tab_one tab_label">否</span>
+                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="favorite_movie" name="favorite_movie" />
+                        </div>
+                    </li>
+                    <li>
+                        <span>喜欢的音乐：</span>
+                        <div class="tab">
+                            <span class="tab_one tab_label">否</span>
+                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="favorite_music" name="favorite_music" />
+                        </div>
+                    </li>
+                    <li>
+                        <span>喜欢的食物：</span>
+                        <div class="tab">
+                            <span class="tab_one tab_label">否</span>
+                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="favorite_food" name="favorite_food" />
+                        </div>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <span>喜欢的：</span>
+                        <div class="tab">
+                            <span class="tab_one tab_label">否</span>
+                            <input class="tab_one tab_show txt" type="text" isupdate="ture" name="favorite_1" />
+                        </div>
+                    </li>
+                    <li>
+                        <span>喜欢的：</span>
+                        <div class="tab">
+                            <span class="tab_one tab_label">否</span>
+                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  name="favorite_2" />
+                        </div>
+                    </li>
+                    <li>
+                        <span>喜欢的：</span>
+                        <div class="tab">
+                            <span class="tab_one tab_label">否</span>
+                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  name="favorite_3" />
                         </div>
                     </li>
                 </ul>
@@ -400,65 +412,65 @@
                         <span>性别：</span>
                         <div class="tab">
                             <span class="tab_one tab_label">女</span>
-                            <input class="tab_one tab_edit txt" type="text" id="mate_sex" name="sex" />
+                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="mate_sex" name="mate_sex" />
                         </div>
                     </li>
                     <li>
                         <span>年纪：</span>
                         <div class="tab">
                             <span class="tab_one tab_label">25以上</span>
-                            <input class="tab_one tab_edit txt" type="text" id="mate_age" name="sex" />
+                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="mate_age" name="mate_age" />
                         </div>
                     </li>
                     <li>
                         <span>身高：</span>
                         <div class="tab">
                             <span class="tab_one tab_label">180cm</span>
-                            <input class="tab_one tab_edit txt" type="text" id="mate_height" name="sex" />
+                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="mate_height" name="mate_height" />
                         </div>
                     </li>
                     <li>
                         <span>学历：</span>
                         <div class="tab">
                             <span class="tab_one tab_label">本科</span>
-                            <input class="tab_one tab_edit txt" type="text" id="mate_education" name="sex" />
+                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="mate_education" name="mate_education" />
                         </div>
                     </li>
                     <li>
                         <span>婚况：</span>
                         <div class="tab">
                             <span class="tab_one tab_label">有</span>
-                            <input class="tab_one tab_edit txt" type="text" id="mate_marital" name="sex" />
+                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="mate_marital" name="mate_marital" />
                         </div>
                     </li>
                 </ul>
                 <ul>
                     <li>
-                        <span>婚况：</span>
+                        <span>车子：</span>
                         <div class="tab">
                             <span class="tab_one tab_label">有</span>
-                            <input class="tab_one tab_edit txt" type="text" id="mate_marital" name="sex" />
+                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="mate_car" name="mate_car" />
                         </div>
                     </li>
                     <li>
-                        <span>体型：</span>
+                        <span>房子：</span>
                         <div class="tab">
                             <span class="tab_one tab_label">有</span>
-                            <input class="tab_one tab_edit txt" type="text" id="mate_marital" name="sex" />
+                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="mate_house" name="mate_house" />
                         </div>
                     </li>
                     <li>
                         <span>职业：</span>
                         <div class="tab">
                             <span class="tab_one tab_label">有</span>
-                            <input class="tab_one tab_edit txt" type="text" id="mate_work" name="sex" />
+                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="mate_work" name="mate_work" />
                         </div>
                     </li>
                     <li>
                         <span>工作地：</span>
                         <div class="tab">
                             <span class="tab_one tab_label">北京</span>
-                            <input class="tab_one tab_edit txt" type="text" id="mate_work_place" name="sex" />
+                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="mate_work_place" name="mate_work_place" />
                         </div>
                     </li>
                 </ul>
@@ -467,28 +479,28 @@
                         <span>年收入：</span>
                         <div class="tab">
                             <span class="tab_one tab_label">10w</span>
-                            <input class="tab_one tab_edit txt" type="text" id="mate_income" name="sex" />
+                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="mate_income" name="mate_income" />
                         </div>
                     </li>
                     <li>
                         <span>是否吸烟：</span>
                         <div class="tab">
                             <span class="tab_one tab_label">10w</span>
-                            <input class="tab_one tab_edit txt" type="text" id="mate_smoking" name="sex" />
+                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="mate_smoking" name="mate_smoking" />
                         </div>
                     </li>
                     <li>
                         <span>是否喝酒：</span>
                         <div class="tab">
                             <span class="tab_one tab_label">10w</span>
-                            <input class="tab_one tab_edit txt" type="text" id="mate_drinking" name="sex" />
+                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="mate_drinking" name="mate_drinking" />
                         </div>
                     </li>
                     <li>
                         <span>是否有孩子：</span>
                         <div class="tab">
                             <span class="tab_one tab_label">10w</span>
-                            <input class="tab_one tab_edit txt" type="text" id="mate_children" name="sex" />
+                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="mate_children" name="mate_children" />
                         </div>
                     </li>
                 </ul>

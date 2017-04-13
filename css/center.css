@@ -1,5 +1,7 @@
 
-
+._ta .mem_main .sub2 {
+    position: relative;
+}
 ._ta .mem_main .sub2 .title{
     color: #fbb03f;
     width: 100%;
@@ -9,8 +11,23 @@
     line-height: 48px;
     padding: 10px 0px;
 }
+._ta .mem_main .sub2 .title .btn{
+    position: fixed;
+    right:0px;
+    bottom: 200px;
+    border: none;
+    background: #fbb03f;
+    color: #ffffff;
 
+    font-size:16px;
+    line-height:20px;
+    text-decoration: underline;
+    font-weight: normal;
+    padding:10px 20px;
+
+}
 ._ta .mem_main .sub2 .right{
+
     width:1020px;
     padding:0px 85px;
 }
@@ -54,8 +71,15 @@
     top:0px;
     left:0px;
 }
-.mem_main ul li .tab .tab_one.tab_edit{
+.mem_main ul li .tab .tab_one.tab_label{
     display: none;
+}
+
+.mem_main ul li .tab .tab_one.tab_edit{
+    border: 1px #d9d8d8 solid;
+}
+.mem_main ul li .tab .tab_one.tab_show{
+    border: none;
 }
 
 .mem_main .txt{

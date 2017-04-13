@@ -5,16 +5,26 @@ var center={
 
         this.getinfo();
 
-        $("#btn_edit").click(function(){
-            $(".sub2 .right .tab .tab_edit").show();
-            $(".sub2 .right .tab .tab_label").hide();
-        });
+        $("#btn_update").click(function(){
+            var cls = $("#btn_update").attr("class");
 
-        $("#btn_save").click(function(){
-            $(".sub2 .right .tab .tab_edit").hide();
-            $(".sub2 .right .tab .tab_label").show();
+            if(cls.indexOf("edit")>0){
 
-            this.update();
+                $(".sub2 .right .tab .tab_one.txt").removeAttr("readonly")
+                $(".sub2 .right .tab .tab_one.txt").removeClass("tab_show").addClass("tab_edit");
+
+                $("#btn_update").removeClass("edit").addClass("save");
+                $("#btn_update").html("完成");
+            }else if(cls.indexOf("save")>0){
+
+                $(".sub2 .right .tab .tab_one.txt").attr("readonly","true")
+                $(".sub2 .right .tab .tab_one.txt").removeClass("tab_edit").addClass("tab_show");
+
+                $("#btn_update").removeClass("save").addClass("edit");
+                $("#btn_update").html("编辑");
+
+                center.update();
+            }
         });
 
      /*   $("input[type='text']").blur(function(){
@@ -26,10 +36,7 @@ var center={
             var id = this.id;
 
         });
-
-        $("#btn_save").on('click', function (event) {
-            event.preventDefault();
-        });*/
+    */
     },
     hideTip:function(id){
         $("#"+id).parent().find(".err-tip").html("");
@@ -127,12 +134,21 @@ var center={
     getinfo:function(){
         var uid = $("#uid").val();
 
-        var url = TA.apiPath + "/get_uinfo.php";
-        var data = {"uid": uid};
+        var url = TA.apiPath + "/get_uinfo_attr.php";
+        var data = {"uid": uid ==0 ? 46 : uid};
         RequestUtil.credent("GET",url, data , function(data){
 
             if (data.rescode == 200 ) {
-                alert(data);
+                var obj = data.result;
+                console.log(obj);
+
+                jQuery.each(obj, function(i, val) {
+                    if(val === ''){
+                        val = "保密"
+                    }
+                    $("input[name='"+ i +"']").val(val);
+                });
+
             } else {
                 swal({
                     title: "获取失败,请稍后重试",
@@ -150,14 +166,21 @@ var center={
         var weight = $("input[name='weight']").val();
 
         var url = TA.apiPath + "/update_uinfo.php";
-        var data = {"account": phone, "passwd": password, "nick" : nickname, "verify" : sms_verify};
+        var data = {};//{"account": phone, "passwd": password, "nick" : nickname, "verify" : sms_verify};
 
-        RequestUtil.credent("GET",url, data , function(data){
+        $("input[isupdate='ture']").map(function() {
+            data[this.name]= this.value;
+        });
+        console.log("data", data);
+
+        RequestUtil.credent("GET", url, data , function(data){
+
+            console.log("result", data);
             if (data.rescode == 200 ) {
-                location.href = "login.html";
+                window.location.reload();
             } else{
                 swal({
-                    title: "注册失败",
+                    title: "修改失败",
                     text: data.error,
                     //type:"error"
                     imageUrl: "/imgs/dlshibai.png",
