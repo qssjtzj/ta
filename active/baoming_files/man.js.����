@@ -1,0 +1,225 @@
+// JavaScript Document
+
+// var $li=$(".jbzl_list li:gt(5):not(:last)");
+//    var $a=$(".jbzl_list li:eq(0) a,#box li:eq(3) a");
+//    var $span=$(".jbzl_list ul a");
+//    $li.hide();
+//    $(".jbzl_list ul a").toggle(function(){
+// 	       $li.slideDown(300);
+//            $a.addClass("change");
+//            $span.text("收起");
+// 		   return false;
+// 	   },function(){		   
+// 		   $li.slideUp(300);
+// 		   $a.removeClass();
+// 		   $span.text("展开");
+// 		   return false;
+// 		   });
+		   		   
+// var $li1=$(".jbzl_list1 li:gt(5):not(:last)");
+//    var $a1=$(".jbzl_list1 li:eq(0) a,#box li:eq(3) a");
+//    var $span1=$(".jbzl_list1 ul a");
+//    $li1.hide();
+//    $(".jbzl_list1 ul a").toggle(function(){
+// 	       $li1.slideDown(300);
+//            $a1.addClass("change");
+//            $span1.text("收起");
+// 		   return false;
+// 	   },function(){		   
+// 		   $li1.slideUp(300);
+// 		   $a1.removeClass();
+// 		   $span1.text("展开");
+// 		   return false;
+// 		   }); 
+
+
+<!--性别-->		   
+var sex = syscode.sex;
+	ergodic( "sex" ,sex);
+	function ergodic( classname , data ){
+		var name = classname;
+		var span = "";
+		var len = data.length;
+		for ( i = 0 ; i < len ;i++){
+			var temp = "";
+			temp = data[i].split(',');
+			span += "<option value="+temp[0]+">"+temp[1]+"</option> "
+		}
+		console.log(span)
+		$("."+classname+"").append( span );
+	}
+	
+	
+	var age = syscode.age;
+	ergodic( "age" ,age);
+	function ergodic( classname , data ){
+		var name = classname;
+		var span = "";
+		var len = data.length;
+		for ( i = 0 ; i < len ;i++){
+			var temp = "";
+			temp = data[i].split(',');
+			span += "<option value="+temp[0]+">"+temp[1]+"</option> "
+		}
+		console.log(span)
+		$("."+classname+"").append( span );
+	} 
+	
+	var height = syscode.height;
+	ergodic( "height" ,height);
+	function ergodic( classname , data ){
+		var name = classname;
+		var span = "";
+		var len = data.length;
+		for ( i = 0 ; i < len ;i++){
+			var temp = "";
+			temp = data[i].split(',');
+			span += "<option value="+temp[0]+">"+temp[1]+"</option> "
+		}
+		console.log(span)
+		$("."+classname+"").append( span );
+	} 
+	
+	
+	var yearly = syscode.yearly;
+	ergodic( "yearly" ,yearly);
+	function ergodic( classname , data ){
+		var name = classname;
+		var span = "";
+		var len = data.length;
+		for ( i = 0 ; i < len ;i++){
+			var temp = "";
+			temp = data[i].split(',');
+			span += "<option value="+temp[0]+">"+temp[1]+"</option> "
+		}
+		console.log(span)
+		$("."+classname+"").append( span );
+	} 
+    var education = syscode.education;
+	ergodic( "education" ,education);
+	function ergodic( classname , data ){
+		var name = classname;
+		var span = "";
+		var len = data.length;
+		for ( i = 0 ; i < len ;i++){
+			var temp = "";
+			temp = data[i].split(',');
+			span += "<option value="+temp[0]+">"+temp[1]+"</option> "
+		}
+		console.log(span)
+		$("."+classname+"").append( span );
+	} 
+
+    var stock = syscode.stock;
+	ergodic( "stock" ,stock);
+	function ergodic( classname , data ){
+		var name = classname;
+		var span = "";
+		var len = data.length;
+		for ( i = 0 ; i < len ;i++){
+			var temp = "";
+			temp = data[i].split(',');
+			span += "<option value="+temp[0]+">"+temp[1]+"</option> "
+		}
+		console.log(span)
+		$("."+classname+"").append( span );
+	} 
+
+    
+    var newmarriage = syscode.newmarriage;
+	ergodic( "newmarriage" ,newmarriage);
+	function ergodic( classname , data ){
+		var name = classname;
+		var span = "";
+		var len = data.length;
+		for ( i = 0 ; i < len ;i++){
+			var temp = "";
+			temp = data[i].split(',');
+			span += "<option value="+temp[0]+">"+temp[1]+"</option> "
+		}
+		console.log(span)
+		$("."+classname+"").append( span );
+	} 
+
+    var occupation = syscode.occupation;
+	ergodic( "occupation" ,occupation);
+	function ergodic( classname , data ){
+		var name = classname;
+		var span = "";
+		var len = data.length;
+		for ( i = 0 ; i < len ;i++){
+			var temp = "";
+			temp = data[i].split(',');
+			span += "<option value="+temp[0]+">"+temp[1]+"</option> "
+		}
+		console.log(span)
+		$("."+classname+"").append( span );
+	} 
+
+    var yearly = syscode.yearly;
+	ergodic( "yearly" ,yearly);
+	function ergodic( classname , data ){
+		var name = classname;
+		var span = "";
+		var len = data.length;
+		for ( i = 0 ; i < len ;i++){
+			var temp = "";
+			temp = data[i].split(',');
+			span += "<option value="+temp[0]+">"+temp[1]+"</option> "
+		}
+		console.log(span)
+		$("."+classname+"").append( span );
+	} 
+
+    var house = syscode.house;
+	ergodic( "house" ,house);
+	function ergodic( classname , data ){
+		var name = classname;
+		var span = "";
+		var len = data.length;
+		for ( i = 0 ; i < len ;i++){
+			var temp = "";
+			temp = data[i].split(',');
+			span += "<option value="+temp[0]+">"+temp[1]+"</option> "
+		}
+		console.log(span)
+		$("."+classname+"").append( span );
+	} 
+
+    var vehicle = syscode.vehicle;
+	ergodic( "vehicle" ,vehicle);
+	function ergodic( classname , data ){
+		var name = classname;
+		var span = "";
+		var len = data.length;
+		for ( i = 0 ; i < len ;i++){
+			var temp = "";
+			temp = data[i].split(',');
+			span += "<option value="+temp[0]+">"+temp[1]+"</option> "
+		}
+		console.log(span)
+		$("."+classname+"").append( span );
+	} 
+
+    var taChildren = syscode.taChildren;
+	ergodic( "taChildren" ,vehicle);
+	function ergodic( classname , data ){
+		var name = classname;
+		var span = "";
+		var len = data.length;
+		for ( i = 0 ; i < len ;i++){
+			var temp = "";
+			temp = data[i].split(',');
+			span += "<option value="+temp[0]+">"+temp[1]+"</option> "
+		}
+		console.log(span)
+		$("."+classname+"").append( span );
+	} 
+
+	//弹框
+	$(".alertmore").click(function(){
+		$(".alertbox").show()
+		})
+	$(".alert_close").click(function(){
+		$(".alertbox").hide()
+		})

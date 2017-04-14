@@ -569,6 +569,13 @@
     display: block;
     margin-right: 10px;
 }
+.imglist li p a.gz{
+    float: right;
+    background: #dbdbdb;
+}
+.imglist li p a:hover{
+    background: rgba(251, 176, 63, 0.44);
+}
 
 a.abtn {
     display: block;

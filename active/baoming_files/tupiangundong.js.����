@@ -1,0 +1,105 @@
+<!doctype html> <html> <head> <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> <title>发生错误 - 杭州相亲交友 - 中国红娘网(www.hongniang.com)</title> <meta name="Keywords" content=",杭州红娘网,杭州交友" /> <meta name="Description" content="" /> <meta name="viewport" content="width=device-width"> <meta property="wb:webmaster" content="fa5ea4ed552d9afc" /> <!--公用--> <link href="/public/home/css/public.css" rel="stylesheet" type="text/css"> <link href="/public/home/css/style.css" rel="stylesheet" type="text/css"> <link href="/public/home/css/style1.css" rel="stylesheet" type="text/css"> <link href="/public/home/css/style2.css" rel="stylesheet" type="text/css"> <!--jquery-ui--> <link href="/public/home/css/jquery-ui.css" rel="stylesheet" type="text/css"> <!--jquery-ui--> <link href="/public/home/css/page.css" rel="stylesheet" type="text/css"> <link href="/public/home/css/forms.css" rel="stylesheet" type="text/css"> <link href="/public/home/css/animate.css" rel="stylesheet" type="text/css"> <link href="/public/home/assets/plugins/sweetalert/sweetalert.css" rel="stylesheet" type="text/css"> <!--IE兼容--> <script type="text/javascript" src="/public/home/assets/js/jquery.min.js"></script> <!-- 扩展 --> <script type="text/javascript" src="/public/home/assets/js/dui.js"></script> <!-- 公用函数 --> <script type="text/javascript" src="/public/home/assets/js/scripts.js"></script> <script type="text/javascript" src="/public/home/js/main.js"></script> <script type="text/javascript" src="/public/home/js/jquery-ui.js"></script> <script type="text/javascript" src="/public/home/assets/plugins/sweetalert/sweetalert.min.js"></script> <script type="text/javascript" src="/public/home/assets/plugins/layer/layer.js"></script> <script type="text/javascript">	var USER = USER || '';
+</script> </head> <body class="home-page page-scroll"> <!-- 头部开始 --> <div class="g-header header-show"> <!-- 头部开始 --> <div class="g-header header-show"> <div class="header"> <!--<div class="logo"><a href="/index/index"><img src="/public/home/images/logo.png" height="69" width="359" alt=""></a></div>--> <!--<div class="denglu"> <input type="text" name="username" value="" placeholder="手机号/用户名"> <input type="password" name="password" value="" placeholder="密码"> <input type="button" name="" value="登录" class="dlbtn" style="border-radius: 3px; width:auto;"> </div>--> <!-- <div class="bshare-custom"> <a title="分享到QQ好友" class="bshare-qqim"></a> <a title="分享到新浪微博" class="bshare-sinaminiblog"></a> <a title="分享到微信" class="bshare-weixin"></a> <a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a> </div> <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"> </script><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script> --> <!-- 快捷登录 --> <!--<div class="kjdl"> <ul> <li><a href="/Api/Oauth/login/type/sina"><img src="/public/home/images/weibodl_08.png" alt=""></a></li> <li><a href="/Api/Oauth/login/type/qq"><img src="/public/home/images/qqdl_06.png" alt=""></a></li> </ul> </div>--> <!-- 快捷登录 --> <div class="g-header header-show"> <div class="ac_header"> <div class="logo"><a href="/"><img src="/public/home/images/logo.png" height="61" width="297" alt="" ></a></div> <div class="right_nav"> <div class="wjma" style="float:right; padding:7px; margin-top:-10px; background:#efeded; border:solid 1px #e4e5e9; border-radius:5px;"> <a href="http://www.hongniang.com/account/login">登录</a><span style=" margin-left:3px; color:#b2b1b1">|</span> <a href="http://www.hongniang.com/account/register" id="register_a">注册</a> </div> <ul style="float:right; margin-right: 10px"> <li><a href="http://www.hongniang.com/" class="col_index">首页</a></li> <li> <a href="http://www.hongniang.com/match" class="col_search">交友</a> <div> <ul> <li><a href="http://www.hongniang.com/match">同城交友</a></li> <li><a href="http://www.hongniang.com/index/online">同城在线</a></li> <li><a href="http://www.hongniang.com/index/photo_wall">照片墙</a></li> </ul> </div> </li> <li><a href="http://www.hongniang.com/huodong" class="col_event">活动</a></li> <li><a href="http://www.hongniang.com/teacher" class="col_teach">红娘</a></li> <li><a href="http://www.hongniang.com/xuetang" class="col_school">学堂</a></li> <li><a href="http://www.hongniang.com/marry" class="col_marry">婚庆</a></li> <li><a href="http://www.hongniang.com/yuesao" class="col_matron">月嫂</a></li> <!--<li><a href="#">.&nbsp;学堂</a></li> <li><a href="#">.&nbsp;婚庆</a></li> <li><a href="#">.&nbsp;月嫂</a></li>--> </ul> </div> </div> </div> </div> </div><!-- 头部结束 --> <script type="text/javascript">    var USER = USER || '';
+
+</script> <script type="text/javascript">    $(function(){
+        $(".dlbtn").on('click', function(event){
+            event.preventDefault();
+            var username = $("input[name='username']").val();
+            var password = $("input[name='password']").val();
+            $.ajax({
+                type:"POST",
+                url:"/account/do_login",
+                data:{"username":username,"password":password},
+                dataType:"json",
+                success:function(data){
+                    //alert(data);
+                    if(data.status){
+                        location.href = data.jump;
+                    }else{
+                        
+                        swal({
+                            title:"操作失败",
+                            text:data.info,
+                            //type:"error"
+                            imageUrl: "http://www.hongniang.com/public/home/images/dlshibai.png",
+                            timer:5000,
+                        });
+                        //$.showError(data.info);
+                    }
+                }
+            });
+        });
+        
+        $(".logout").on('click', function(){
+            // console.log(1222);
+            //alert("ok!");
+            $.ajax({
+                type:"POST",
+                url:"/account/do_logout",
+                data:null,
+                dataType:"json",
+                success:function(data){
+                    if(data.status){
+                        //$.showSuccess(data.info);
+                        location.href = data.jump;
+                    }else{
+                        location.href = "/";
+                    }
+                }
+            });
+        });
+    });
+
+    
+$(".right_nav>ul>li").hover(function(){
+    $(this).children('a').addClass('online').siblings('div').fadeIn(300)
+    },function(){
+        $(this).children('div').hide()
+        })
+
+
+</script> </div> <!-- 头部结束 --> <div class="register" style="margin-top:115px;"> <div class="mains"> <div class="tzs"> <div class="title">您查看的活动不存在</div> <div class="js">                        请点击 <a href="/event">这里</a> 返回
+                      </div> <div class="clear"></div> </div> </div> <script type="text/javascript">var t=5;//设定跳转的时间 
+setInterval("refer()",1000); //启动1秒定时 
+function refer(){  
+    if(t==0){ 
+        location="/event"; //#设定跳转的链接地址 
+    } 
+    document.getElementById('show').innerHTML=""+t+""; // 显示倒计时 
+    t--; // 计数器递减 
+    //本文转自： 
+} 
+</script> </div> <!-- footer --> <div class="t_wap"> <div class="wap2"> <div class="yh_links"> <div class="yh_link_title">中国红娘网分站</div> <div class="list"> <ul style="margin-left:20px;"> <li><a href="http://hangzhou.hongniang.com" title="杭州红娘网" target="_blank">杭州红娘网</a></li> <li><a href="http://xiacheng.hongniang.com" title="杭州下城红娘网" target="_blank">杭州下城红娘网</a></li> <li><a href="http://shangcheng.hongniang.com" title="杭州上城红娘网" target="_blank">杭州上城红娘网</a></li> <li><a href="http://jianggan.hongniang.com" title="杭州江干红娘网" target="_blank">杭州江干红娘网</a></li> <li><a href="http://gongshu.hongniang.com" title="杭州拱墅红娘网" target="_blank">杭州拱墅红娘网</a></li> <li><a href="http://xihu.hongniang.com" title="杭州西湖红娘网" target="_blank">杭州西湖红娘网</a></li> <li><a href="http://binjiang.hongniang.com" title="杭州滨江红娘网" target="_blank">杭州滨江红娘网</a></li> <li><a href="http://xiaoshan.hongniang.com" title="萧山红娘网" target="_blank">萧山红娘网</a></li> <li><a href="http://yuhang.hongniang.com" title="余杭红娘网" target="_blank">余杭红娘网</a></li> <li><a href="http://fuyang.hongniang.com" title="富阳红娘网" target="_blank">富阳红娘网</a></li> <li><a href="http://tonglu.hongniang.com" title="桐庐红娘网" target="_blank">桐庐红娘网</a></li> <li><a href="http://chunan.hongniang.com" title="淳安红娘网" target="_blank">淳安红娘网</a></li> <li><a href="http://jiande.hongniang.com" title="建德红娘网" target="_blank">建德红娘网</a></li> <li><a href="http://linan.hongniang.com" title="临安红娘网" target="_blank">临安红娘网</a></li> <li><a href="http://ningbo.hongniang.com" title="宁波红娘网" target="_blank">宁波红娘网</a></li> <li><a href="http://wenzhou.hongniang.com" title="温州红娘网" target="_blank">温州红娘网</a></li> <li><a href="http://jinhua.hongniang.com" title="金华红娘网" target="_blank">金华红娘网</a></li> <li><a href="http://quzhou.hongniang.com" title="衢州红娘网" target="_blank">衢州红娘网</a></li> </ul> </div> </div> </div> </div> <div class="footer" style="background:none"> <div class="footer_jz"> <div class="footer1"> <h3>关于我们</h3> <ul> <li><a href="http://www.hongniang.com/page/index/id/249316" target="_blank">关于我们</a></li> <li><a href="http://www.hongniang.com/news/index" target="_blank">媒体报道</a></li> <li><a href="http://www.hongniang.com/article/love_list" target="_blank">恋爱百科</a></li> <li><a href="http://www.hongniang.com/page/index/id/249315" target="_blank">会员条款</a></li> <li><a href="http://www.hongniang.com/page/index/id/249314" target="_blank">招商合作</a></li> <li><a href="http://www.hongniang.com/page/index/id/249318" target="_blank">常见问题</a></li> <li><a href="http://www.hongniang.com/page/index/id/249317" target="_blank">征婚提醒</a></li> <li><a href="http://www.hongniang.com/page/index/id/249314" target="_blank">友情链接</a></li> </ul> </div> <div class="footer2"> <h3>手机微信</h3> <img src="/public/home/images/hnweixin.jpg" width="137" height="133" alt=""/> </div> <div class="footer3"> <h3>服务热线</h3> <p class="rxdh" style="font-size:12px; color:#666">热线电话：0571-85337299</p> <p class="address" style="font-size:12px; color:#666">地址：杭州市朝晖路219号中山花园写字楼3楼       ( 地铁1号线西湖文化广场站，附近公交          车站：西湖文化广场，中北桥</p> </div> <div class="footer1"> <h3>友情链接</h3> <!-- <div class="xl"> <a href="#"><img src="/public/home/images/xl_03.png" width="53" height="53" alt=""/></a> <span style="display:block; left:-100px; opacity:0"><img src="/public/home/images/hnweixin.jpg" width="137" height="133" alt=""/></span> </div> --> <!-- <div class="wx"> <a href="#"><img src="/public/home/images/wx_05.png" width="53" height="53" alt=""/></a> <span style="display:block; left:-100px; opacity:0"><img src="/public/home/images/hnweixin.jpg" width="137" height="133" alt=""/></span> </div> --> <ul> <li><a href="http://www.hongniang.com/event/detail/id/775" target="_blank">杭州红娘网</a></li> <li><a href="http://www.hongniang.com/news/index" target="_blank">杭州交友</a></li> <li><a href="http://www.hongniang.com/event/detail/id/548" target="_blank">中国红娘日</a></li> <li><a href="http://www.hongniang.com/event/detail/id/776" target="_blank">相亲大会</a></li> <li style="margin-right:24px;"><a href="http://www.hongniang.com/event/index" target="_blank">情缘活动</a></li> <li><a href="http://www.hongniang.com/event/index" target="_blank">交友活动</a></li> <li><a href="http://www.hongniang.com/index/index" target="_blank">浙江红娘网</a></li> <li><a href="http://www.hongniang.com/index/search" target="_blank">找对象</a></li> </ul> </div> <div class="clear"></div> <div class="gaba"> <p>中国红娘网 ◎版权所有 <a target="_blank" href="http://www.miitbeian.gov.cn/">浙ICP备浙B2-20090133</a></p> <ul> <li><img src="/public/home/images/goan1.jpg" width="126" height="49" alt=""/></li> <li><img src="/public/home/images/goan2.jpg" width="126" height="49" alt=""/></li> <li><img src="/public/home/images/goan3.jpg" width="126" height="49" alt=""/></li> <li><a href="http://v.pinpaibao.com.cn/authenticate/cert/?site=www.hongniang.com&at=realname"><img src="/public/home/images/goan4.jpg" width="126" height="49" alt=""/></a></li> </ul> </div> </div> <!--footer--> <!-- 新增浮动导航 --> <!-- <div style=" position:fixed; z-index: 999; bottom:109px; left:0"> <ul> <li style=" width:50px; margin-bottom: 1px; height:50px; background:#d86ea3"><a href="/index/search" style="display:block" target="_blank"><img src="/public/home/images/vipfloat.png"  alt=""/ title="搜索"></a></li> <li style=" width:50px; margin-bottom: 1px; height:50px; background:#d86ea3"><a href="/event/index" style="display:block" target="_blank"><img src="/public/home/images/hdfloat.png"  alt=""/ title="活动"></a></li> <li style=" width:50px; margin-bottom: 1px; height:50px; background:#d86ea3"><a href="/teacher/index" style="display:block" target="_blank"><img src="/public/home/images/hnfloat.png"  alt=""/ title="红娘"></a></li> --> <!-- <li style=" width:50px; margin-bottom: 1px; height:50px; background:#d86ea3"><a href="/index/search" style="display:block"><img src="/public/home/images/vipfloat.png"  alt=""/ title="搜索"></a></li> <li style=" width:50px; margin-bottom: 1px; height:50px; background:#d86ea3"><a href="/event/index" style="display:block"><img src="/public/home/images/hdfloat.png"  alt=""/ title=活动></a></li> <li style=" width:50px; margin-bottom: 1px; height:50px; background:#d86ea3"><a href="/teacher/index" style="display:block"><img src="/public/home/images/hnfloat.png"  alt=""/ title="红娘"></a></li> --> <!--    </ul> </div> --> <!-- 新增浮动导航 --> <script>	$(".xl>a>img").mouseover(function(){
+		$(this).parent().siblings().animate({left:"0px",opacity:"1"},300)
+		})
+
+	$(".xl>a>img").mouseout(function(){
+		$(this).parent().siblings().animate({left:"-100px",opacity:"0"},300)
+		})
+
+	$(".wx>a>img").mouseover(function(){
+		$(this).parent().siblings().animate({left:"-2px",opacity:"1"},300)
+		})
+	$(".wx>a>img").mouseout(function(){
+		$(this).parent().siblings().animate({left:"-100px",opacity:"0"},300)
+		})
+</script> <script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?13345a0835e13dfae20053e4d44560b9";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script> <script>(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script> </div> <!-- footer --> </body> </html>

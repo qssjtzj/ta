@@ -191,9 +191,11 @@ a:focus {
     float: left;
     width: 100px;
     text-align: center;
-    height: 30px
+    height: 30px;
 }
-
+.ac_header .right_nav ul li:hover{
+    color: #fbb03f;
+}
 .bk {
     border-right: 1px #f1f2f3 solid;
 }
