@@ -2870,3 +2870,44 @@
     text-align: center;
     line-height: 50px;
 }
+
+
+.list1 p{ width: 75px; float: left; }
+.list2 p{ width: 75px; float: left; }
+.list1 .list1r{ width: 825px; float: left; }
+.list1 .list1r span{ height: 33px; background: #ffdfe8; margin-right: 10px; display: inline-block; float: left; margin-bottom: 10px; }
+.list2 .list2r span{ height: 28px; background: #ffdfe8; margin-right: 10px; display: inline-block; float: left; margin-bottom: 10px; }
+.search_banner .main .left .list1 select{ background: #ffdfe8; border: 0; outline: 0; }
+.list1 .list1r span em{ cursor: pointer; width: 15px; height: 15px; display: inline-block; float: right; background: #7db4ec; margin-top: 7px; margin-right: 9px; }
+.list1 .list1r span em img{ width: 7px; height: 7px; display: block; margin: 4px; }
+.list2 .list2r{ width: 825px; float: left; }
+.search_banner .main .left .list2{ margin-top: 0; }
+.SumoSelect > .CaptionCont{ color:#000;}
+.SumoSelect .select-all > label, .SumoSelect .select-all > span i{ color:#000;}
+.SumoSelect > .optWrapper > .options li.opt label, .SumoSelect > .CaptionCont, .SumoSelect .select-all > label{ color:#000;}
+.SumoSelect > .optWrapper > .options{ margin-top:36px;}
+.SumoSelect > .optWrapper.multiple > .MultiControls > p.btnOk{ color:#000}
+.SumoSelect > .optWrapper.multiple > .MultiControls > p.btnCancel{ color:#000}
+.SumoSelect > .CaptionCont > span{ padding-right:0}
+.SumoSelect > .CaptionCont > span.placeholder{ width: 110px; height: 20px; color:#666; font-style:normal}
+.SumoSelect > .optWrapper > .options li.opt label, .SumoSelect > .CaptionCont, .SumoSelect .select-all > label{ width: 104px; height: 22px; background: #fff; border: none;}
+.SumoSelect > .CaptionCont > span{ height: 21px; background: none;
+}
+.SumoSelect.open > .optWrapper{ width:173px;}
+.SumoSelect > .optWrapper > .options li.opt label, .SumoSelect > .CaptionCont, .SumoSelect .select-all > label{ background:#ffdfe8; padding:3px 5px;}
+
+.SumoSelect > .optWrapper > .options li.opt label{ background:#fff}
+.SumoSelect > .CaptionCont > span.placeholder:hover{ border:none}
+.SumoSelect > .CaptionCont > label{ border:none}
+.SumoSelect > .optWrapper > .options li.opt{ padding:4px 6px;}
+.SumoSelect > .optWrapper > .options li.opt label, .SumoSelect > .CaptionCont, .SumoSelect .select-all > label:hover{ border:none;}
+.SumoSelect > .optWrapper.multiple > .options li.opt span, .SumoSelect .select-all > span{ background:none}
+.SumoSelect > .optWrapper > .select-all > label{ background:none}
+.SumoSelect > .optWrapper > .select-all{ width:136px}
+
+
+/*面包屑*/
+.bread{  width: 1203px; margin: 0 auto; margin-bottom: 10px; margin-top: 10px}
+.bread .bieda a{ font-size: 14px;  padding: 0 5px; }
+.bread .bieda h4{ display: inline; font-weight: normal; }
+.ss_main{ margin-top: 20px }

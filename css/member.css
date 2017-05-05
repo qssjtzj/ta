@@ -7,7 +7,7 @@
 .ac_banner {
     min-width: 100%;
     height: 199px;
-    background: url(../images/ac_banners2.jpg) no-repeat;
+    background: url(../imgs/ac_banners2.jpg) no-repeat;
     background-size: 100% 100%
 }
 
@@ -117,12 +117,12 @@
 
 .ac_main .sub1 .right .bm_xx ul .asd {
     padding-left: 30px;
-    background: url(../images/ac_bm_icon3.png) no-repeat left center;
+    background: url(../imgs/ac_bm_icon3.png) no-repeat left center;
 }
 
 .ac_main .sub1 .right .bm_xx ul .asd1 {
     padding-left: 30px;
-    background: url(../images/ac_bm_icon3_2.png) no-repeat left center;
+    background: url(../imgs/ac_bm_icon3_2.png) no-repeat left center;
 }
 
 .ac_main .sub1 .right .bm_xx ul li img {
@@ -254,7 +254,7 @@
     height: 97px;
     cursor: pointer;
     cursor: hand;
-    background-image: url(../images/company_10.jpg);
+    background-image: url(../imgs/company_10.jpg);
     background-repeat: no-repeat;
     background-position: left center;
     float: left;
@@ -265,7 +265,7 @@
     height: 97px;
     cursor: pointer;
     cursor: hand;
-    background-image: url(../images/company_13.jpg);
+    background-image: url(../imgs/company_13.jpg);
     background-repeat: no-repeat;
     right: 0px;
     background-position: left center;
@@ -363,7 +363,7 @@
 .ac_list_sub .sub_main .bm .btn2 span {
     width: 15px;
     height: 13px;
-    background: url(../images/ac_bm_jt.png) 0 0 no-repeat;
+    background: url(../imgs/ac_bm_jt.png) 0 0 no-repeat;
     display: block;
     float: right;
     position: relative;
@@ -400,11 +400,11 @@
 }
 
 .gz1 {
-    background: url(../images/ac_bm_icon3.png) no-repeat top center
+    background: url(../imgs/ac_bm_icon3.png) no-repeat top center
 }
 
 .gz2 {
-    background: url(../images/ac_bm_icon3_2.png) no-repeat top center
+    background: url(../imgs/ac_bm_icon3_2.png) no-repeat top center
 }
 
 .gz p {
@@ -416,12 +416,12 @@
     display: block;
     width: 154px;
     height: 50px;
-    background: url(../images/baoming1.png);
+    background: url(../imgs/baoming1.png);
     float: left
 }
 
 .wybml a:hover {
-    background: url(../images/baoming2.png);
+    background: url(../imgs/baoming2.png);
     background-size: 100%
 }
 
@@ -429,7 +429,7 @@
     display: block;
     width: 154px;
     height: 50px;
-    background: url(../images/ybm_btn.jpg);
+    background: url(../imgs/ybm_btn.jpg);
     float: left
 }
 
@@ -479,7 +479,7 @@
     max-width: 100%;
     background: #ccc;
     display: block;
-    background: url(images/loding.gif) no-repeat center;
+    background: url(../imgs/loding.gif) no-repeat center;
 }
 
 .sub_img img {
@@ -592,18 +592,18 @@
 
 .mem_main .sub1 .right .info4 .guanz_btn {
     padding-left: 30px;
-    background: url(../images/ac_bm_icon3.png) no-repeat left center;
+    background: url(../imgs/ac_bm_icon3.png) no-repeat left center;
 }
 
 .mem_main .sub1 .right .info4 .guanz_btn1 {
     padding-left: 30px;
-    background: url(../images/ac_bm_icon3_2.png) no-repeat left center;
+    background: url(../imgs/ac_bm_icon3_2.png) no-repeat left center;
 }
 
 .dashang {
     width: 431px;
     height: 303px;
-    background: url(../images/dashang.png) no-repeat;
+    background: url(../imgs/dashang.png) no-repeat;
     position: absolute;
     left: 179px;
     display: none;
