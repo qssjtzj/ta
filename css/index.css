@@ -471,7 +471,7 @@
 }
 
 .cell div input {
-	background: url(/public/home/images/bigmu1_03.png) no-repeat left center;
+	background: url(../imgs/bigmu1_03.png) no-repeat left center;
 	color: #fff;
 	padding: 4px 0px;
 	border: none;
