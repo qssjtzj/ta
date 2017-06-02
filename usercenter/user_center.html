@@ -19,7 +19,7 @@
 
     <link href="../css/style2.css" rel="stylesheet" type="text/css">
     <link href="../css/sweetalert.css" rel="stylesheet" type="text/css">
-
+    <link href="../css/layer.css" rel="stylesheet" >
 <!--    <link href="../user_center_files/page.css" rel="stylesheet" type="text/css">
     <link href="../user_center_files/forms.css" rel="stylesheet" type="text/css">
     <link href="../user_center_files/animate.css" rel="stylesheet" type="text/css">
@@ -47,7 +47,7 @@
                 <ul id="tFocus-pic">
                     <li style="opacity: 100; z-index: 5;">
                         <a href="#">
-                            <img src="../imgs/woman.jpg" alt="">
+                            <img id="user_icon" src="../imgs/woman.jpg" alt="" onclick="openDialog()">
                         </a>
                     </li>
                 </ul>
@@ -903,6 +903,7 @@
 <script src="../js/sweetalert.min.js"></script>
 <script src="../js/ta_common.js"></script>
 <script src="../js/ta_center.js"></script>
+<script src="../js/layer.js" type="text/javascript" ></script>
 
 <script>
 
@@ -910,6 +911,33 @@
     $(document).ready(function(){
 
     });
+</script>
+
+<script>
+
+    function openDialog(){
+        //iframe层
+        layer.open({
+            type: 2,
+            title: '上传照片',
+            shadeClose: true,
+            shade: 0.8,
+            area: ['593px', '593px'],
+            content: '../upload.html' //iframe的url
+        });
+    }
+
+    /*相册*/
+    function photoView(){
+
+        $.getJSON('test/photos.json?v='+new Date, function(json){
+            layer.photos({
+                photos: json //格式见API文档手册页
+                ,anim: 5 //0-6的选择，指定弹出图片动画类型，默认随机
+            });
+        });
+    }
+
 </script>
 </body>
 </html>

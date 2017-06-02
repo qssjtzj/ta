@@ -145,6 +145,9 @@ var center={
                 var obj = data.result;
                 console.log(obj);
 
+                document.getElementById("user_icon").setAttribute("src", obj.icon)
+                $("#user_icon").attr('src',obj.icon);
+
                 jQuery.each(obj, function(i, val) {
                     if(val === ''){
                         val = "保密"

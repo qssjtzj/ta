@@ -28,3 +28,4 @@ include/
 *.o
 *.out
 rebel.xml
+jtopo/
