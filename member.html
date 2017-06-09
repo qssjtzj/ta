@@ -23,93 +23,104 @@
 <!-- 头部结束 -->
 
 <!--搜索-->
-<div class="search_banner" style=" height: initial; padding-bottom: 20px; background-size: 100% 100%; margin-top: -4px;">
+<div class="search_banner"
+     style=" height: initial; padding-bottom: 20px; background-size: 100% 100%; margin-top: -4px;">
     <div class="main" style=" border-top: #f39ac3 1px solid; padding: 23px 0px;">
         <form action="#" method="get">
 
             <div class="left" style="margin-top: 4px;">
                 <div class="list1" id="w_list1">
 
-                    <select name="starage[]" placeholder="年龄" style="background: rgb(255, 223, 232);">
-                        <option value="0">年龄</option>
-                        <option value="1">18-24</option>
-                        <option value="2">25-29</option>
-                        <option value="3">30-34</option>
-                        <option value="4">35-39</option>
-                        <option value="5">40-44</option>
-                        <option value="6">45-49</option>
-                        <option value="7">50-54</option>
-                        <option value="8">55-59</option>
-                        <option value="9">60-64</option>
+                    <select name="age[]" placeholder="年龄" style="background: rgb(255, 223, 232);">
+                        <option value="0">选择年龄</option>
+                        <option value="18-24">18-24</option>
+                        <option value="25-29">25-29</option>
+                        <option value="30-34">30-34</option>
+                        <option value="35-39">35-39</option>
+                        <option value="40-44">40-44</option>
+                        <option value="45-49">45-49</option>
+                        <option value="50-54">50-54</option>
+                        <option value="55-59">55-59</option>
+                        <option value="60-64">60-64</option>
                     </select>
 
-                    <select name="searchheight[]" placeholder="身高" tabindex="-1">
-                        <option value="0">身高</option>
-                        <option value="1">155cm以下</option>
-                        <option value="2">155cm-160cm</option>
-                        <option value="3">160cm-165cm</option>
-                        <option value="4">165cm-170cm</option>
-                        <option value="5">170cm-175cm</option>
-                        <option value="6">175cm-180cm</option>
-                        <option value="20">180cm以上</option>
+                    <select name="height[]" placeholder="身高" tabindex="-1">
+                        <option value="0">选择身高</option>
+                        <option value="100-155">155cm以下</option>
+                        <option value="155-160">155cm-160cm</option>
+                        <option value="160-165">160cm-165cm</option>
+                        <option value="165-170">165cm-170cm</option>
+                        <option value="170-175">170cm-175cm</option>
+                        <option value="175-180">175cm-180cm</option>
+                        <option value="180-250">180cm以上</option>
                     </select>
 
-                    <select name="pro[]" id="pro" placeholder="职业" tabindex="-1">
-                                    <option value="0">职业</option>
-                                    <option value="100">销售</option>
-                                    <option value="200">客户服务</option>
-                                    <option value="300">计算机/互联网</option>
-                                    <option value="400">通信/电子</option>
-                                    <option value="500">生产/制造</option>
-                                    <option value="600">物流/仓储</option>
-                                    <option value="700">商贸/采购</option>
-                                    <option value="800">人事/行政</option>
-                                    <option value="900">高级管理</option>
-                                    <option value="1000">广告/市场</option>
-                                    <option value="1100">传媒/艺术</option>
-                                    <option value="1200">生物/制药</option>
-                                    <option value="1300">医疗/护理</option>
-                                    <option value="1400">金融/银行/保险</option>
-                                    <option value="1500">建筑/房地产</option>
-                                    <option value="1600">咨询/顾问</option>
-                                    <option value="1700">法律</option>
-                                    <option value="1800">财会/审计</option>
-                                    <option value="1900">教育/科研</option>
-                                    <option value="2000">服务业</option>
-                                    <option value="2100">交通运输</option>
-                                    <option value="2200">政府机构</option>
-                                    <option value="2300">军人/警察</option>
-                                    <option value="2400">农林牧渔</option>
-                                    <option value="2500">自由职业</option>
-                                    <option value="2600">在校学生</option>
-                                    <option value="2700">待业</option>
-                                    <option value="2800">其他行业</option>
-                                    <option value="2900">退休</option>
-                                </select>
+                    <select name="occupation[]" placeholder="职业" tabindex="-1">
 
-                    <select name="marriage[]" id="marriage" placeholder="婚姻状况" tabindex="-1">
-                                    <option value="0">婚姻状况</option>
-                                    <option value="1">未婚</option>
-                                    <option value="2">离异单身</option>
-                                    <option value="3">离异带孩子</option>
-                                    <option value="4">丧偶带孩子</option>
-                                    <option value="5">丧偶单身</option>
-                                    <option value="6">保密</option>
-                                </select>
+                        <option value="0">选择职业</option>
+                        <option value="销售">销售</option>
+                        <option value="客户服务">客户服务</option>
+                        <option value="计算机/互联网">计算机/互联网</option>
+                        <option value="通信/电子">通信/电子</option>
+                        <option value="生产/制造">生产/制造</option>
+                        <option value="物流/仓储">物流/仓储</option>
+                        <option value="商贸/采购">商贸/采购</option>
+                        <option value="人事/行政">人事/行政</option>
+                        <option value="高级管理">高级管理</option>
+                        <option value="广告/市场">广告/市场</option>
+                        <option value="传媒/艺术">传媒/艺术</option>
+                        <option value="生物/制药">生物/制药</option>
+                        <option value="医疗/护理">医疗/护理</option>
+                        <option value="金融/银行/保险">金融/银行/保险</option>
+                        <option value="建筑/房地产">建筑/房地产</option>
+                        <option value="咨询/顾问">咨询/顾问</option>
+                        <option value="法律">法律</option>
+                        <option value="财会/审计">财会/审计</option>
+                        <option value="教育/科研">教育/科研</option>
+                        <option value="服务业">服务业</option>
+                        <option value="交通运输">交通运输</option>
+                        <option value="政府机构">政府机构</option>
+                        <option value="军人/警察">军人/警察</option>
+                        <option value="农林牧渔">农林牧渔</option>
+                        <option value="自由职业">自由职业</option>
+                        <option value="在校学生">在校学生</option>
+                        <option value="待业">待业</option>
+                        <option value="其他行业">其他行业</option>
+                        <option value="退休">退休</option>
+                    </select>
 
                     <select name="income[]" id="income" placeholder="年收入" tabindex="-1">
-                            <option value="0">年收入</option>
-                            <option value="1">1-5万元</option>
-                            <option value="2">5-10万元</option>
-                            <option value="3">10-15万元</option>
-                            <option value="4">15-20万元</option>
-                            <option value="5">20-35万元</option>
-                            <option value="6">35-50万元</option>
-                            <option value="7">50-100万元</option>
-                            <option value="8">100万元以上</option>
+                        <option value="0">选择年收入</option>
+                        <option value="1-5万元">1-5万元</option>
+                        <option value="5-10万元">5-10万元</option>
+                        <option value="10-15万元">10-15万元</option>
+                        <option value="15-20万元">15-20万元</option>
+                        <option value="20-35万元">20-35万元</option>
+                        <option value="35-50万元">35-50万元</option>
+                        <option value="50-100万元">50-100万元</option>
+                        <option value="100万元以上">100万元以上</option>
                     </select>
 
-                    <select name="house[]" id="house" placeholder="住房情况" tabindex="-1">
+                    <div  style="background: rgb(255, 223, 232); display: inline-block;">
+                        <select name="province" id="province" placeholder="工作地" tabindex="-1" >
+                            <option value="0">选择工作地</option>
+                        </select>
+                        <select name="work_place[]" id="city" placeholder="工作地" tabindex="-1">
+                        </select>
+                    </div>
+
+                    <select name="marital_status[]" id="marriage" placeholder="婚姻状况" tabindex="-1">
+                        <option value="0">选择婚姻状况</option>
+                        <option value="未婚">未婚</option>
+                        <option value="离异单身">离异单身</option>
+                        <option value="离异带孩子">离异带孩子</option>
+                        <option value="丧偶带孩子">丧偶带孩子</option>
+                        <option value="丧偶单身">丧偶单身</option>
+                        <option value="保密">保密</option>
+                    </select>
+
+                    <!--
+                    <select name="housing[]" id="house" placeholder="住房情况" tabindex="-1">
                         <option value="0">住房情况</option>
                         <option value="1">和家人同住</option>
                         <option value="2">已购房</option>
@@ -120,44 +131,54 @@
 
                     <select name="child[]" id="child" placeholder="是否有孩子" tabindex="-1">
                         <option value="0">是否有孩子</option>
-                        <option value="1">没有</option>
-                        <option value="3">有，我们住在一起</option>
-                        <option value="4">有，我们偶尔一起住</option>
-                        <option value="5">有，但不在身边</option>
+                        <option value="没有">没有</option>
+                        <option value="有，我们住在一起">有，我们住在一起</option>
+                        <option value="有，我们偶尔一起住">有，我们偶尔一起住</option>
+                        <option value="有，但不在身边">有，但不在身边</option>
+                    </select>
+                    -->
+
+                    <select name="hometown[]" placeholder="籍贯" style="background: rgb(255, 223, 232);">
+                        <option value="0">选择籍贯</option>
+                        <option value="北京">北京</option>
+                        <option value="天津">天津</option>
+                        <option value="河北">河北</option>
+                        <option value="山西">山西</option>
+                        <option value="内蒙古">内蒙古</option>
+                        <option value="辽宁">辽宁</option>
+                        <option value="吉林">吉林</option>
+                        <option value="黑龙江">黑龙江</option>
+                        <option value="上海">上海</option>
+                        <option value="江苏">江苏</option>
+                        <option value="浙江">浙江</option>
+                        <option value="安徽">安徽</option>
+                        <option value="福建">福建</option>
+                        <option value="江西">江西</option>
+                        <option value="山东">山东</option>
+                        <option value="河南">河南</option>
+                        <option value="湖北">湖北</option>
+                        <option value="湖南">湖南</option>
+                        <option value="广东">广东</option>
+                        <option value="广西">广西</option>
+                        <option value="海南">海南</option>
+                        <option value="重庆">重庆</option>
+                        <option value="四川">四川</option>
+                        <option value="贵州">贵州</option>
+                        <option value="云南">云南</option>
+                        <option value="西藏">西藏</option>
+                        <option value="陕西">陕西</option>
+                        <option value="甘肃">甘肃</option>
+                        <option value="青海">青海</option>
+                        <option value="宁夏">宁夏</option>
+                        <option value="新疆">新疆</option>
                     </select>
 
-                    <select name="hometownprovince" placeholder="籍贯" style="background: rgb(255, 223, 232);">
-                        <option value="">籍贯</option><option value="北京">北京</option>
-                        <option value="天津">天津</option><option value="河北">河北</option><option value="山西">山西</option>
-                        <option value="内蒙古">内蒙古</option><option value="辽宁">辽宁</option><option value="吉林">吉林</option>
-                        <option value="黑龙江">黑龙江</option><option value="上海">上海</option><option value="江苏">江苏</option>
-                        <option value="浙江">浙江</option><option value="安徽">安徽</option><option value="福建">福建</option>
-                        <option value="江西">江西</option><option value="山东">山东</option><option value="河南">河南</option>
-                        <option value="湖北">湖北</option><option value="湖南">湖南</option><option value="广东">广东</option>
-                        <option value="广西">广西</option><option value="海南">海南</option><option value="重庆">重庆</option>
-                        <option value="四川">四川</option><option value="贵州">贵州</option><option value="云南">云南</option>
-                        <option value="西藏">西藏</option><option value="陕西">陕西</option><option value="甘肃">甘肃</option>
-                        <option value="青海">青海</option><option value="宁夏">宁夏</option><option value="新疆">新疆</option>
+                    <select name="constellation[]" id="constellation" placeholder="星座" tabindex="-1">
+                        <option value="0">选择星座</option>
                     </select>
 
-                    <select name="sx[]" id="sx" placeholder="生肖" tabindex="-1">
-                        <option value="0">生肖</option>
-                        <option value="1">鼠</option>
-                        <option value="2">牛</option>
-                        <option value="3">虎</option>
-                        <option value="4">兔</option>
-                        <option value="5">龙</option>
-                        <option value="6">蛇</option>
-                        <option value="7">马</option>
-                        <option value="8">羊</option>
-                        <option value="9">猴</option>
-                        <option value="10">鸡</option>
-                        <option value="11">狗</option>
-                        <option value="12">猪</option>
-                    </select>
-
-                    <select name="mz[]" id="mz" placeholder="民族" tabindex="-1">
-                        <option value="0">民族</option>
+                    <select name="nationality[]" placeholder="民族" tabindex="-1">
+                        <option value="0">选择民族</option>
                         <option value="1">汉族</option>
                         <option value="2">藏族</option>
                         <option value="3">朝鲜族</option>
@@ -168,31 +189,59 @@
                         <option value="8">壮族</option>
                         <option value="9">彝族</option>
                         <option value="10">苗族</option>
-                        <option value="11">侗族</option> <option value="12">瑶族</option> <option
-                                value="13">白族</option> <option value="14">布依族</option> <option value="15">傣族</option> <option
-                                value="16">京族</option> <option value="17">黎族</option> <option value="18">羌族</option> <option
-                                value="19">怒族</option> <option value="20">佤族</option> <option value="21">水族</option> <option
-                                value="22">畲族</option> <option value="23">土族</option> <option value="24">阿昌族</option> <option
-                                value="25">哈尼族</option> <option value="26">高山族</option> <option value="27">景颇族</option> <option
-                                value="28">珞巴族</option> <option value="29">锡伯族</option> <option
-                                value="30">德昂(崩龙)族</option> <option value="31">保安族</option> <option
-                                value="32">基诺族</option> <option value="33">门巴族</option> <option value="34">毛南族</option> <option
-                                value="35">赫哲族</option> <option value="36">裕固族</option> <option value="37">撒拉族</option> <option
-                                value="38">独龙族</option> <option value="39">普米族</option> <option value="40">仫佬族</option> <option
-                                value="41">仡佬族</option> <option value="42">东乡族</option> <option value="43">拉祜族</option> <option
-                                value="44">土家族</option> <option value="45">纳西族</option> <option value="46">傈僳族</option> <option
-                                value="47">布朗族</option> <option value="48">哈萨克族</option> <option
-                                value="49">达斡尔族</option> <option value="50">鄂伦春族</option> <option
-                                value="51">鄂温克族</option> <option value="52">俄罗斯族</option> <option
-                                value="53">塔塔尔族</option> <option value="54">塔吉克族</option> <option
-                                value="55">柯尔克孜族</option> <option value="56">乌兹别克族</option>
-                            <option value="57">国外</option>
-                        </select>
+                        <option value="11">侗族</option>
+                        <option value="12">瑶族</option>
+                        <option value="13">白族</option>
+                        <option value="14">布依族</option>
+                        <option value="15">傣族</option>
+                        <option value="16">京族</option>
+                        <option value="17">黎族</option>
+                        <option value="18">羌族</option>
+                        <option value="19">怒族</option>
+                        <option value="20">佤族</option>
+                        <option value="21">水族</option>
+                        <option value="22">畲族</option>
+                        <option value="23">土族</option>
+                        <option value="24">阿昌族</option>
+                        <option value="25">哈尼族</option>
+                        <option value="26">高山族</option>
+                        <option value="27">景颇族</option>
+                        <option value="28">珞巴族</option>
+                        <option value="29">锡伯族</option>
+                        <option value="30">德昂(崩龙)族</option>
+                        <option value="31">保安族</option>
+                        <option value="32">基诺族</option>
+                        <option value="33">门巴族</option>
+                        <option value="34">毛南族</option>
+                        <option value="35">赫哲族</option>
+                        <option value="36">裕固族</option>
+                        <option value="37">撒拉族</option>
+                        <option value="38">独龙族</option>
+                        <option value="39">普米族</option>
+                        <option value="40">仫佬族</option>
+                        <option value="41">仡佬族</option>
+                        <option value="42">东乡族</option>
+                        <option value="43">拉祜族</option>
+                        <option value="44">土家族</option>
+                        <option value="45">纳西族</option>
+                        <option value="46">傈僳族</option>
+                        <option value="47">布朗族</option>
+                        <option value="48">哈萨克族</option>
+                        <option value="49">达斡尔族</option>
+                        <option value="50">鄂伦春族</option>
+                        <option value="51">鄂温克族</option>
+                        <option value="52">俄罗斯族</option>
+                        <option value="53">塔塔尔族</option>
+                        <option value="54">塔吉克族</option>
+                        <option value="55">柯尔克孜族</option>
+                        <option value="56">乌兹别克族</option>
+                        <option value="57">国外</option>
+                    </select>
 
                 </div>
             </div>
             <div class="right" id="sq_r1">
-                <input type="submit" class="btn_ss" value="搜索" style="float: left; margin-top: 0; width: 99px; height: 34px; line-height:32px; background: #8969a4; color: #fff; border: #f39ac3 1px solid; border-radius: 5px; ">
+                <input type="button" class="btn_ss" value="搜索">
             </div>
         </form>
         <style type="text/css">
@@ -254,275 +303,52 @@
 <!-- 面包屑 -->
 
 <!--内容-->
-<div class="content"> <!-- 瀑布流样式开始 -->
+<div class="content">
+    <!-- 瀑布流样式开始 -->
     <div class="waterfull clearfloat" id="waterfull" style="width: 1280px;">
-        <ul style="position: relative; height: 3833px; width: 1280px;" class="masonry">
-            <li class="cell item masonry-brick" style="position: absolute; top: 0px; left: 0px;"><a
-                    href="http://www.hongniang.com/user/member/id/258124" target="_blank"> <img
-                    src="./vip_files/woman.jpg"> </a>
-                <div><h3>小新雨 <a href="javascript:void(0)" class="gz_btn" data-id="258124">关注</a></h3> <span
-                        style="margin-bottom: 10px;">28岁，北京北京,其他行业</span> <em style="margin: 0;border: 0;padding: 0">内心独白：有缘千里来相会
-                    有缘人 你是吗？？？</em></div>
-            </li>
-            <li class="cell item masonry-brick" style="position: absolute; top: 0px; left: 320px;"><a
-                    href="http://www.hongniang.com/user/member/id/258110" target="_blank"> <img
-                    src="./vip_files/woman.jpg"> </a>
-                <div><h3>心灵独舞 <a href="javascript:void(0)" class="gz_btn" data-id="258110">关注</a></h3> <span
-                        style="margin-bottom: 10px;">51岁，北京北京,其他行业</span> <em style="margin: 0;border: 0;padding: 0">内心独白：Ta很懒,什么都没留下</em>
-                </div>
-            </li>
-            <li class="cell item masonry-brick"
-                style="position: absolute; top: 0px; left: 640px; background-color: rgb(255, 255, 255);"><a
-                    href="http://www.hongniang.com/user/member/id/258095" target="_blank"> <img
-                    src="./vip_files/woman.jpg"> </a>
-                <div><h3>藕荷色 <a href="javascript:void(0)" class="gz_btn" data-id="258095">关注</a></h3> <span
-                        style="margin-bottom: 10px;">29岁，北京北京,其他行业</span> <em style="margin: 0;border: 0;padding: 0">内心独白：Ta很懒,什么都没留下</em>
-                </div>
-            </li>
-            <li class="cell item masonry-brick" style="position: absolute; top: 0px; left: 960px;"><a
-                    href="http://www.hongniang.com/user/member/id/258087" target="_blank"> <img
-                    src="./vip_files/man.jpg"> </a>
-                <div><h3>爱的眷恋 <a href="javascript:void(0)" class="gz_btn" data-id="258087">关注</a></h3> <span
-                        style="margin-bottom: 10px;">40岁，北京北京,其他行业</span> <em style="margin: 0;border: 0;padding: 0">内心独白：爱是宽容
-                    爱是相伴 爱是付出 爱......</em></div>
-            </li>
-            <li class="cell item masonry-brick" style="position: absolute; top: 405px; left: 0px;"><a
-                    href="http://www.hongniang.com/user/member/id/258058" target="_blank"> <img
-                    src="./vip_files/man.jpg"> </a>
-                <div><h3>小蹇 <a href="javascript:void(0)" class="gz_btn" data-id="258058">关注</a></h3> <span
-                        style="margin-bottom: 10px;">28岁，北京北京,其他行业</span> <em style="margin: 0;border: 0;padding: 0">内心独白：Ta很懒,什么都没留下</em>
-                </div>
-            </li>
-            <li class="cell item masonry-brick" style="position: absolute; top: 405px; left: 320px;"><a
-                    href="http://www.hongniang.com/user/member/id/258015" target="_blank"> <img
-                    src="./vip_files/man.jpg"> </a>
-                <div><h3>Melbourne <a href="javascript:void(0)" class="gz_btn" data-id="258015">关注</a></h3> <span
-                        style="margin-bottom: 10px;">31岁，北京北京,其他行业</span> <em style="margin: 0;border: 0;padding: 0">内心独白：Ta很懒,什么都没留下</em>
-                </div>
-            </li>
-            <li class="cell item masonry-brick"
-                style="position: absolute; top: 405px; left: 640px; background-color: rgb(255, 255, 255);"><a
-                    href="http://www.hongniang.com/user/member/id/257934" target="_blank"> <img
-                    src="./vip_files/woman.jpg"> </a>
-                <div><h3>大大大后天 <a href="javascript:void(0)" class="gz_btn" data-id="257934">关注</a></h3> <span
-                        style="margin-bottom: 10px;">27岁，北京北京,其他行业</span> <em style="margin: 0;border: 0;padding: 0">内心独白：Ta很懒,什么都没留下</em>
-                </div>
-            </li>
-            <li class="cell item masonry-brick" style="position: absolute; top: 405px; left: 960px;"><a
-                    href="http://www.hongniang.com/user/member/id/257922" target="_blank"> <img
-                    src="./vip_files/man.jpg"> </a>
-                <div><h3>未来的你在那0 <a href="javascript:void(0)" class="gz_btn" data-id="257922">关注</a></h3> <span
-                        style="margin-bottom: 10px;">27岁，北京北京,其他行业</span> <em style="margin: 0;border: 0;padding: 0">内心独白：0.0</em>
-                </div>
-            </li>
-            <li class="cell item masonry-brick" style="position: absolute; top: 810px; left: 0px;"><a
-                    href="http://www.hongniang.com/user/member/id/257920" target="_blank"> <img
-                    src="./vip_files/man.jpg"> </a>
-                <div><h3>未来的你在那 <a href="javascript:void(0)" class="gz_btn" data-id="257920">关注</a></h3> <span
-                        style="margin-bottom: 10px;">27岁，北京北京,其他行业</span> <em style="margin: 0;border: 0;padding: 0">内心独白：Ta很懒,什么都没留下</em>
-                </div>
-            </li>
-            <li class="cell item masonry-brick"
-                style="position: absolute; top: 810px; left: 320px; background-color: rgb(255, 255, 255);"><a
-                    href="http://www.hongniang.com/user/member/id/257921" target="_blank"> <img
-                    src="./vip_files/man.jpg"> </a>
-                <div><h3>未来的你在那 <a href="javascript:void(0)" class="gz_btn" data-id="257921">关注</a></h3> <span
-                        style="margin-bottom: 10px;">27岁，北京北京,其他行业</span> <em style="margin: 0;border: 0;padding: 0">内心独白：0.0</em>
-                </div>
-            </li>
-            <li class="cell item masonry-brick"
-                style="position: absolute; top: 810px; left: 640px; background-color: rgb(255, 255, 255);"><a
-                    href="http://www.hongniang.com/user/member/id/257852" target="_blank"> <img
-                    src="./vip_files/9c2fec2b30a699080a363e2642b3122c.jpg"> </a>
-                <div><h3>wangxu1515 <a href="javascript:void(0)" class="gz_btn" data-id="257852">关注</a></h3> <span
-                        style="margin-bottom: 10px;">28岁，北京北京,其他行业</span> <em style="margin: 0;border: 0;padding: 0">内心独白：
-                    山无棱，江水无竭，冬雷阵阵，夏雨雪，天地合，乃敢与君绝！</em></div>
-            </li>
-            <li class="cell item masonry-brick"
-                style="position: absolute; top: 810px; left: 960px; background-color: rgb(255, 255, 255);"><a
-                    href="http://www.hongniang.com/user/member/id/257823" target="_blank"> <img
-                    src="./vip_files/man.jpg"> </a>
-                <div><h3>孺子牛2013 <a href="javascript:void(0)" class="gz_btn" data-id="257823">关注</a></h3> <span
-                        style="margin-bottom: 10px;">60岁，北京北京,其他行业</span> <em style="margin: 0;border: 0;padding: 0">内心独白：有缘就牵手走到老</em>
-                </div>
-            </li>
-            <if condition="$type eq &#39;photos&#39;"></if>
-            <li class="cell item masonry-brick"
-                style="opacity: 1; top: 1164px; position: absolute; left: 640px; background-color: rgb(255, 255, 255);">
-                <a href="http://www.hongniang.com/user/member/id/257782" target="_blank"><img src="./vip_files/man.jpg"></a>
-                <div><h3>TOP-龍少<a href="javascript:void(0)" class="gz_btn" data-id="257782">关注</a></h3><span>30岁，北京北京,其他行业</span><em
-                        style="margin: 0;border: 0;padding: 0">内心独白：Ta很懒,什么都没留下</em></div>
-            </li>
-            <li class="cell item masonry-brick" style="opacity: 1; top: 1215px; position: absolute; left: 0px;"><a
-                    href="http://www.hongniang.com/user/member/id/257731" target="_blank"><img
-                    src="./vip_files/man.jpg"></a>
-                <div><h3>大海里的小草草<a href="javascript:void(0)" class="gz_btn" data-id="257731">关注</a></h3><span>31岁，北京北京,其他行业</span><em
-                        style="margin: 0;border: 0;padding: 0">内心独白：Ta很懒,什么都没留下</em></div>
-            </li>
-            <li class="cell item masonry-brick" style="opacity: 1; top: 1215px; position: absolute; left: 320px;"><a
-                    href="http://www.hongniang.com/user/member/id/257729" target="_blank"><img
-                    src="./vip_files/woman.jpg"></a>
-                <div><h3>foxyjenni<a href="javascript:void(0)" class="gz_btn" data-id="257729">关注</a></h3><span>33岁，北京北京,其他行业</span><em
-                        style="margin: 0;border: 0;padding: 0">内心独白：不想再错过！</em></div>
-            </li>
-            <li class="cell item masonry-brick"
-                style="opacity: 1; top: 1215px; position: absolute; left: 960px; background-color: rgb(255, 255, 255);">
-                <a href="http://www.hongniang.com/user/member/id/257612" target="_blank"><img src="./vip_files/man.jpg"></a>
-                <div><h3>楚函<a href="javascript:void(0)" class="gz_btn" data-id="257612">关注</a></h3>
-                    <span>31岁，北京北京,其他行业</span><em style="margin: 0;border: 0;padding: 0">内心独白：2013，希望遇到他！非诚勿扰！</em>
-                </div>
-            </li>
-            <li class="cell item masonry-brick"
-                style="opacity: 1; top: 1559px; position: absolute; left: 640px; background-color: rgb(255, 255, 255);">
-                <a href="http://www.hongniang.com/user/member/id/257563" target="_blank"><img src="./vip_files/man.jpg"></a>
-                <div><h3>qishiwoyehenhaoa<a href="javascript:void(0)" class="gz_btn" data-id="257563">关注</a></h3><span>43岁，北京北京,其他行业</span><em
-                        style="margin: 0;border: 0;padding: 0">内心独白：Ta很懒,什么都没留下</em></div>
-            </li>
-            <li class="cell item masonry-brick" style="opacity: 1; top: 1610px; position: absolute; left: 0px;"><a
-                    href="http://www.hongniang.com/user/member/id/257555" target="_blank"><img
-                    src="./vip_files/woman.jpg"></a>
-                <div><h3>真水无香75<a href="javascript:void(0)" class="gz_btn" data-id="257555">关注</a></h3><span>42岁，北京北京,其他行业</span><em
-                        style="margin: 0;border: 0;padding: 0">内心独白： 我发现拾麦穗的故事好象大家都知道， 但仍有不少人在反复搜索， 日复一日，
-                    生活中曾经的我不知道自己想要什么，极为挑剔，错过不少缘份，其实是自己耽误自己，现在我不想在这里重蹈覆辙， 我自以为人品不错，善良孝顺，性格还好， 宜静宜动。
-                    我知道在这里遇到一个同样心态，真正适合自己的人不容易，但我依然心存侥幸，希望彼此的交往以真诚沟通和信任为基础，能够找到自己一生的幸福！　　理想中的他：善良孝顺，成熟大度，积极上进的优秀男士，外表朴素的我，有着一颗金子般的心灵和谦和乐观的心态，如果有缘相知相携，相信我们会成为幸运和幸福的人！　　幸福是朴实的.它存在于生活中的每时每刻.它不一定是物质的,也不能够量化.要获得它并不难---只要你有一颗懂得欣赏,充满感激的,安宁的心.　　没有近期结婚打算的勿扰，离异的我不介意，但有子女的我不能接受，希望大家都能早日找到适合自己的那一半！
-                    ：）</em></div>
-            </li>
-            <li class="cell item masonry-brick" style="opacity: 1; top: 1610px; position: absolute; left: 320px;"><a
-                    href="http://www.hongniang.com/user/member/id/257553" target="_blank"><img
-                    src="./vip_files/woman.jpg"></a>
-                <div><h3>鬼鬼1124<a href="javascript:void(0)" class="gz_btn" data-id="257553">关注</a></h3><span>30岁，北京北京,其他行业</span><em
-                        style="margin: 0;border: 0;padding: 0">内心独白：Ta很懒,什么都没留下</em></div>
-            </li>
-            <li class="cell item masonry-brick"
-                style="opacity: 1; top: 1610px; position: absolute; left: 960px; background-color: rgb(255, 255, 255);">
-                <a href="http://www.hongniang.com/user/member/id/257537" target="_blank"><img src="./vip_files/man.jpg"></a>
-                <div><h3>芊百度<a href="javascript:void(0)" class="gz_btn" data-id="257537">关注</a></h3>
-                    <span>29岁，北京北京,其他行业</span><em style="margin: 0;border: 0;padding: 0">内心独白：相逢即是缘，想了解一个人只有生活在一起。</em>
-                </div>
-            </li>
-            <li class="cell item masonry-brick"
-                style="opacity: 1; background-color: rgb(255, 255, 255); top: 1954px; position: absolute; left: 640px;">
-                <a href="http://www.hongniang.com/user/member/id/257535" target="_blank"><img src="./vip_files/man.jpg"></a>
-                <div><h3>HR奇男子<a href="javascript:void(0)" class="gz_btn" data-id="257535">关注</a></h3><span>30岁，北京北京,其他行业</span><em
-                        style="margin: 0;border: 0;padding: 0">内心独白：男人在身心疲惫什么都不顺利的时候最想得到什么? </em></div>
-            </li>
-            <li class="cell item masonry-brick" style="opacity: 1; top: 2005px; position: absolute; left: 320px;"><a
-                    href="http://www.hongniang.com/user/member/id/257520" target="_blank"><img
-                    src="./vip_files/man.jpg"></a>
-                <div><h3>mgan007<a href="javascript:void(0)" class="gz_btn" data-id="257520">关注</a></h3><span>47岁，北京北京,其他行业</span><em
-                        style="margin: 0;border: 0;padding: 0">内心独白：Ta很懒,什么都没留下</em></div>
-            </li>
-            <li class="cell item masonry-brick"
-                style="opacity: 1; top: 2025px; position: absolute; left: 960px; background-color: rgb(255, 255, 255);">
-                <a href="http://www.hongniang.com/user/member/id/257505" target="_blank"><img
-                        src="./vip_files/b7bd4ac55ad2699f5a98ce8ddbaa3c33.jpg"></a>
-                <div><h3>西城飞扬<a href="javascript:void(0)" class="gz_btn" data-id="257505">关注</a></h3>
-                    <span>39岁，北京北京,其他行业</span><em style="margin: 0;border: 0;padding: 0">内心独白：想有个家。扣扣一二五九一九八一二七</em>
-                </div>
-            </li>
-            <li class="cell item masonry-brick" style="opacity: 1; top: 2324px; position: absolute; left: 960px;"><a
-                    href="http://www.hongniang.com/user/member/id/257495" target="_blank"><img
-                    src="./vip_files/man.jpg"></a>
-                <div><h3>飞独<a href="javascript:void(0)" class="gz_btn" data-id="257495">关注</a></h3>
-                    <span>28岁，北京北京,其他行业</span><em style="margin: 0;border: 0;padding: 0">内心独白：Ta很懒,什么都没留下</em></div>
-            </li>
-            <li class="cell item masonry-brick" style="opacity: 1; top: 2345px; position: absolute; left: 0px;"><a
-                    href="http://www.hongniang.com/user/member/id/257476" target="_blank"><img
-                    src="./vip_files/man.jpg"></a>
-                <div><h3>大糊涂虫<a href="javascript:void(0)" class="gz_btn" data-id="257476">关注</a></h3>
-                    <span>35岁，北京北京,其他行业</span><em style="margin: 0;border: 0;padding: 0">内心独白：Ta很懒,什么都没留下</em></div>
-            </li>
-            <li class="cell item masonry-brick" style="opacity: 1; top: 2369px; position: absolute; left: 640px;"><a
-                    href="http://www.hongniang.com/user/member/id/257475" target="_blank"><img
-                    src="./vip_files/man.jpg"></a>
-                <div><h3>情场 小乐子<a href="javascript:void(0)" class="gz_btn" data-id="257475">关注</a></h3><span>0岁，北京北京,其他行业</span><em
-                        style="margin: 0;border: 0;padding: 0">内心独白：Ta很懒,什么都没留下</em></div>
-            </li>
-            <li class="cell item masonry-brick" style="opacity: 1; top: 2400px; position: absolute; left: 320px;"><a
-                    href="http://www.hongniang.com/user/member/id/257463" target="_blank"><img
-                    src="./vip_files/woman.jpg"></a>
-                <div><h3>20130301<a href="javascript:void(0)" class="gz_btn" data-id="257463">关注</a></h3><span>27岁，北京北京,其他行业</span><em
-                        style="margin: 0;border: 0;padding: 0">内心独白：Ta很懒,什么都没留下</em></div>
-            </li>
-            <li class="cell item masonry-brick" style="opacity: 1; top: 2719px; position: absolute; left: 960px;"><a
-                    href="http://www.hongniang.com/user/member/id/257419" target="_blank"><img
-                    src="./vip_files/man.jpg"></a>
-                <div><h3>小名三三<a href="javascript:void(0)" class="gz_btn" data-id="257419">关注</a></h3>
-                    <span>29岁，北京北京,其他行业</span><em style="margin: 0;border: 0;padding: 0">内心独白：Ta很懒,什么都没留下</em></div>
-            </li>
-            <li class="cell item masonry-brick" style="opacity: 1; top: 2740px; position: absolute; left: 0px;"><a
-                    href="http://www.hongniang.com/user/member/id/257393" target="_blank"><img
-                    src="./vip_files/man.jpg"></a>
-                <div><h3>强子H<a href="javascript:void(0)" class="gz_btn" data-id="257393">关注</a></h3>
-                    <span>27岁，北京北京,其他行业</span><em style="margin: 0;border: 0;padding: 0">内心独白：Ta很懒,什么都没留下</em></div>
-            </li>
-            <li class="cell item masonry-brick" style="opacity: 1; top: 2764px; position: absolute; left: 640px;"><a
-                    href="http://www.hongniang.com/user/member/id/257349" target="_blank"><img
-                    src="./vip_files/man.jpg"></a>
-                <div><h3>贾飞<a href="javascript:void(0)" class="gz_btn" data-id="257349">关注</a></h3>
-                    <span>31岁，北京北京,其他行业</span><em style="margin: 0;border: 0;padding: 0">内心独白：Ta很懒,什么都没留下</em></div>
-            </li>
-            <li class="cell item masonry-brick" style="opacity: 1; top: 2795px; position: absolute; left: 320px;"><a
-                    href="http://www.hongniang.com/user/member/id/257278" target="_blank"><img
-                    src="./vip_files/man.jpg"></a>
-                <div><h3>忧郁天空<a href="javascript:void(0)" class="gz_btn" data-id="257278">关注</a></h3><span>28岁，北京北京,通信/电子</span><em
-                        style="margin: 0;border: 0;padding: 0">内心独白：Ta很懒,什么都没留下</em></div>
-            </li>
-            <li class="cell item masonry-brick" style="opacity: 1; top: 3114px; position: absolute; left: 960px;"><a
-                    href="http://www.hongniang.com/user/member/id/257264" target="_blank"><img
-                    src="./vip_files/ff7a2099f1ae700f4cf918f51bf4c876.jpg"></a>
-                <div><h3>骑白马的<a href="javascript:void(0)" class="gz_btn" data-id="257264">关注</a></h3>
-                    <span>42岁，北京北京,其他行业</span><em style="margin: 0;border: 0;padding: 0">内心独白：Ta很懒,什么都没留下</em></div>
-            </li>
-            <li class="cell item masonry-brick" style="opacity: 1; top: 3135px; position: absolute; left: 0px;"><a
-                    href="http://www.hongniang.com/user/member/id/257235" target="_blank"><img
-                    src="./vip_files/man.jpg"></a>
-                <div><h3>逍遥山人<a href="javascript:void(0)" class="gz_btn" data-id="257235">关注</a></h3>
-                    <span>62岁，北京北京,其他行业</span><em style="margin: 0;border: 0;padding: 0">内心独白：不信此生白来</em></div>
-            </li>
-            <li class="cell item masonry-brick" style="opacity: 1; top: 3159px; position: absolute; left: 640px;"><a
-                    href="http://www.hongniang.com/user/member/id/257213" target="_blank"><img
-                    src="./vip_files/man.jpg"></a>
-                <div><h3>非你不爱dear<a href="javascript:void(0)" class="gz_btn" data-id="257213">关注</a></h3><span>32岁，北京北京,其他行业</span><em
-                        style="margin: 0;border: 0;padding: 0">内心独白：非你不爱</em></div>
-            </li>
-            <li class="cell item masonry-brick" style="opacity: 1; top: 3190px; position: absolute; left: 320px;"><a
-                    href="http://www.hongniang.com/user/member/id/257207" target="_blank"><img
-                    src="./vip_files/man.jpg"></a>
-                <div><h3>鹏子<a href="javascript:void(0)" class="gz_btn" data-id="257207">关注</a></h3>
-                    <span>29岁，北京北京,其他行业</span><em style="margin: 0;border: 0;padding: 0">内心独白：Ta很懒,什么都没留下</em></div>
-            </li>
-            <li class="cell item masonry-brick" style="opacity: 1; top: 3438px; position: absolute; left: 960px;"><a
-                    href="http://www.hongniang.com/user/member/id/257145" target="_blank"><img
-                    src="./vip_files/woman.jpg"></a>
-                <div><h3>彼岸蔷薇<a href="javascript:void(0)" class="gz_btn" data-id="257145">关注</a></h3>
-                    <span>45岁，北京北京,其他行业</span><em style="margin: 0;border: 0;padding: 0">内心独白：一个人太过孤单，渴望家庭生活</em></div>
-            </li>
-        </ul>
-    </div> <!-- loading按钮自己通过样式调整 -->
-    <div id="imloading"
-         style="width: 150px; height: 30px; line-height: 30px; font-size: 16px; text-align: center; border-radius: 3px; opacity: 0.7; background: rgb(0, 0, 0); margin: 10px auto 30px; color: rgb(255, 255, 255); display: none;">
-        加载中.....
+        <ul style="position: relative; width: 100% " class="masonry">
 
+            <!-- <li class="cell item masonry-brick" style="position: absolute; top: 0px; left: 320px;"><a
+                     href="http://www.hongniang.com/user/member/id/258110" target="_blank"> <img
+                     src="./vip_files/woman.jpg" > </a>
+                 <div><h3>心灵独舞 <a href="javascript:void(0)" class="gz_btn" data-id="258110">关注</a></h3> <span
+                         style="margin-bottom: 10px;">51岁，北京北京,其他行业</span> <em style="margin: 0;border: 0;padding: 0">内心独白：Ta很懒,什么都没留下</em>
+                 </div>
+             </li>
+ -->
+        </ul>
     </div>
+
 </div>
 
 <!--分页-->
 <div class="page_foot" style="text-align: center;margin-top: 60px;">
     <div style="">
         <span class="current">1</span>
-        <a style="padding:2px 6px;width:50px;height:10px;border:1px solid" class="num" href="http://www.hongniang.com/index/online/p/2">2</a>
-        <a style="padding:2px 6px;width:50px;height:10px;border:1px solid" class="num" href="http://www.hongniang.com/index/online/p/3">3</a>
-        <a style="padding:2px 6px;width:50px;height:10px;border:1px solid" class="num" href="http://www.hongniang.com/index/online/p/4">4</a>
-        <a style="padding:2px 6px;width:50px;height:10px;border:1px solid" class="num" href="http://www.hongniang.com/index/online/p/5">5</a>
-        <a style="padding:2px 6px;width:50px;height:10px;border:1px solid" class="num" href="http://www.hongniang.com/index/online/p/6">6</a>
-        <a style="padding:2px 6px;width:50px;height:10px;border:1px solid" class="num" href="http://www.hongniang.com/index/online/p/7">7</a>
-        <a style="padding:2px 6px;width:50px;height:10px;border:1px solid" class="num" href="http://www.hongniang.com/index/online/p/8">8</a>
-        <a style="padding:2px 6px;width:50px;height:10px;border:1px solid" class="num" href="http://www.hongniang.com/index/online/p/9">9</a>
-        <a style="padding:2px 6px;width:50px;height:10px;border:1px solid" class="num" href="http://www.hongniang.com/index/online/p/10">10</a>
-        <a style="padding:2px 6px;width:50px;height:10px;border:1px solid" class="num" href="http://www.hongniang.com/index/online/p/11">11</a>
-        <a style="padding:2px;width:50px;height:10px;border:1px solid" class="next" href="http://www.hongniang.com/index/online/p/2">下一页</a>
-        <a style="padding:2px;width:50px;height:10px;border:1px solid" class="end" href="http://www.hongniang.com/index/online/p/368">最后一页</a>
+        <a style="padding:2px 6px;width:50px;height:10px;border:1px solid" class="num"
+           href="http://www.hongniang.com/index/online/p/2">2</a>
+        <a style="padding:2px 6px;width:50px;height:10px;border:1px solid" class="num"
+           href="http://www.hongniang.com/index/online/p/3">3</a>
+        <a style="padding:2px 6px;width:50px;height:10px;border:1px solid" class="num"
+           href="http://www.hongniang.com/index/online/p/4">4</a>
+        <a style="padding:2px 6px;width:50px;height:10px;border:1px solid" class="num"
+           href="http://www.hongniang.com/index/online/p/5">5</a>
+        <a style="padding:2px 6px;width:50px;height:10px;border:1px solid" class="num"
+           href="http://www.hongniang.com/index/online/p/6">6</a>
+        <a style="padding:2px 6px;width:50px;height:10px;border:1px solid" class="num"
+           href="http://www.hongniang.com/index/online/p/7">7</a>
+        <a style="padding:2px 6px;width:50px;height:10px;border:1px solid" class="num"
+           href="http://www.hongniang.com/index/online/p/8">8</a>
+        <a style="padding:2px 6px;width:50px;height:10px;border:1px solid" class="num"
+           href="http://www.hongniang.com/index/online/p/9">9</a>
+        <a style="padding:2px 6px;width:50px;height:10px;border:1px solid" class="num"
+           href="http://www.hongniang.com/index/online/p/10">10</a>
+        <a style="padding:2px 6px;width:50px;height:10px;border:1px solid" class="num"
+           href="http://www.hongniang.com/index/online/p/11">11</a>
+        <a style="padding:2px;width:50px;height:10px;border:1px solid" class="next"
+           href="http://www.hongniang.com/index/online/p/2">下一页</a>
+        <a style="padding:2px;width:50px;height:10px;border:1px solid" class="end"
+           href="http://www.hongniang.com/index/online/p/368">最后一页</a>
     </div>
 </div>
 
@@ -532,14 +358,16 @@
 
 <script src="./js/jquery-1.8.3.min.js"></script>
 
-<script type="text/javascript" src="./vip_files/jQueryColor.js.下载"></script> <!--这个插件是瀑布流主插件函数必须-->
-<script type="text/javascript" src="./vip_files/jquery.masonry.min.js.下载"></script>
-<script type="text/javascript" src="./vip_files/jQeasing.js.下载"></script>
+<script type="text/javascript" src="js/jQueryColor.js"></script> <!--这个插件是瀑布流主插件函数必须-->
+<script type="text/javascript" src="js/jquery.masonry.min.js"></script>
+<script type="text/javascript" src="js/jQeasing.js"></script>
 
 <script src="./js/sweetalert.min.js"></script>
 <script src="./js/ta_common.js"></script>
 <script src="./js/ta_member.js"></script>
-
+<script>
+    member.init();
+</script>
 
 </body>
 </html>

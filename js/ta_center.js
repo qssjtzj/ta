@@ -3,7 +3,6 @@ var center={
 
     init:function(){
         var uid = common.cookies.read("_uid_");
-        console.log('uid', uid);
 
         this.getinfo();
 
@@ -29,6 +28,14 @@ var center={
             }
         });
 
+        $("#tFocus-btn li img").click(function(){
+            center.photoView();
+        });
+
+        $("#user_icon").click(function(){
+            center.openDialog();
+        });
+
      /*   $("input[type='text']").blur(function(){
             var id = this.id;
             register.check(id);
@@ -39,6 +46,26 @@ var center={
 
         });
     */
+    },
+    openDialog:function (){
+        //iframe层
+        layer.open({
+            type: 2,
+            title: '上传照片',
+            shadeClose: true,
+            shade: 0.8,
+            area: ['593px', '593px'],
+            content: '../upload.html' //iframe的url
+        });
+    },
+    /*相册*/
+    photoView:function (){
+        $.getJSON('/photos.json', function(json){
+            layer.photos({
+                photos: json //格式见API文档手册页
+                ,anim: 5 //0-6的选择，指定弹出图片动画类型，默认随机
+            });
+        });
     },
     hideTip:function(id){
         $("#"+id).parent().find(".err-tip").html("");
@@ -143,10 +170,10 @@ var center={
 
             if (data.rescode == 200 ) {
                 var obj = data.result;
-                console.log(obj);
+                console.log(obj.icon);
 
                 document.getElementById("user_icon").setAttribute("src", obj.icon)
-                $("#user_icon").attr('src',obj.icon);
+                $("#user_icon").attr('src', obj.icon);
 
                 jQuery.each(obj, function(i, val) {
                     if(val === ''){
