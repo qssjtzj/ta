@@ -112,10 +112,12 @@
     <div class="clear" style="height:30px;"></div>
 
     <div class="sub2">
+        <button class="btn btn_default edit" id="btn_update">编辑</button>
+
         <div class="info1">
 
             <p class="title">————— &nbsp; &nbsp; 详细资料 &nbsp; &nbsp; —————
-                <button class="btn edit" id="btn_update">编辑</button>
+                <!--<button class="btn edit" id="btn_update">编辑</button>-->
                 <!--<button class="btn" id="btn_save">完成</button>-->
             </p>
             <div class="right">
@@ -123,90 +125,103 @@
                     <li>
                         <span>性别：</span>
                         <div class="tab">
-                            <input class="tab_one tab_show txt" readonly type="text" isupdate="ture"  id="sex" name="sex" />
+                            <!-- <input class="tab_one tab_show txt" readonly type="text" isupdate="ture"  id="sex" name="sex" />-->
+                            <span class="tab_one txt tab_show" id="sex"></span>
+                            <select class="tab_one txt tab_edit" name="sex" isupdate="ture" placeholder="性别" >
+                                <option value="0">请选择</option>
+                                <option value="1">女</option>
+                                <option value="2">男</option>
+                            </select>
                         </div>
                     </li>
                     <li>
                         <span>年龄：</span>
                         <div class="tab">
-                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="age" name="age" />
+                            <span class="tab_one txt tab_show" id="age"></span>
+                            <input class="tab_one txt tab_edit" type="text" isupdate="ture" name="age"
+                                   maxlength="2" size="2" onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')" />
                         </div>
                     </li>
                     <li>
-                        <span>身高：</span>
+                        <span>身高(cm)：</span>
                         <div class="tab">
-                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="height" name="height" />
+                            <span class="tab_one txt tab_show" id="height"></span>
+                            <input class="tab_one txt tab_edit" type="text" isupdate="ture" name="height"
+                                   maxlength="3" size="3" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" />
                         </div>
                     </li>
                     <li>
-                        <span>体重：</span>
+                        <span>体重(kg)：</span>
                         <div class="tab">
-                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="weight" name="weight" />
+                            <span class="tab_one txt tab_show" id="weight"></span>
+                            <input class="tab_one txt tab_edit" type="text" isupdate="ture" name="weight"
+                                   maxlength="6" size="6" onkeyup="value=value.replace(/[^\d.]/g,'')" onafterpaste="value=value.replace(/[^\d.]/g,'')" />
                         </div>
                     </li>
                     <li>
                         <span>民族：</span>
                         <div class="tab">
-                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="nationality" name="nationality" />
-                            <select name="nationality" placeholder="民族" tabindex="-1">
-                                <option value="0">民族</option>
-                                <option value="1">汉族</option>
-                                <option value="2">藏族</option>
-                                <option value="3">朝鲜族</option>
-                                <option value="4">蒙古族</option>
-                                <option value="5">回族</option>
-                                <option value="6">满族</option>
-                                <option value="7">维吾尔族</option>
-                                <option value="8">壮族</option>
-                                <option value="9">彝族</option>
-                                <option value="10">苗族</option>
-                                <option value="11">侗族</option>
-                                <option value="12">瑶族</option>
-                                <option value="13">白族</option>
-                                <option value="14">布依族</option>
-                                <option value="15">傣族</option>
-                                <option value="16">京族</option>
-                                <option value="17">黎族</option>
-                                <option value="18">羌族</option>
-                                <option value="19">怒族</option>
-                                <option value="20">佤族</option>
-                                <option value="21">水族</option>
-                                <option value="22">畲族</option>
-                                <option value="23">土族</option>
-                                <option value="24">阿昌族</option>
-                                <option value="25">哈尼族</option>
-                                <option value="26">高山族</option>
-                                <option value="27">景颇族</option>
-                                <option value="28">珞巴族</option>
-                                <option value="29">锡伯族</option>
-                                <option value="30">德昂(崩龙)族</option>
-                                <option value="31">保安族</option>
-                                <option value="32">基诺族</option>
-                                <option value="33">门巴族</option>
-                                <option value="34">毛南族</option>
-                                <option value="35">赫哲族</option>
-                                <option value="36">裕固族</option>
-                                <option value="37">撒拉族</option>
-                                <option value="38">独龙族</option>
-                                <option value="39">普米族</option>
-                                <option value="40">仫佬族</option>
-                                <option value="41">仡佬族</option>
-                                <option value="42">东乡族</option>
-                                <option value="43">拉祜族</option>
-                                <option value="44">土家族</option>
-                                <option value="45">纳西族</option>
-                                <option value="46">傈僳族</option>
-                                <option value="47">布朗族</option>
-                                <option value="48">哈萨克族</option>
-                                <option value="49">达斡尔族</option>
-                                <option value="50">鄂伦春族</option>
-                                <option value="51">鄂温克族</option>
-                                <option value="52">俄罗斯族</option>
-                                <option value="53">塔塔尔族</option>
-                                <option value="54">塔吉克族</option>
-                                <option value="55">柯尔克孜族</option>
-                                <option value="56">乌兹别克族</option>
-                                <option value="57">国外</option>
+                            <span class="tab_one txt tab_show" id="nationality"></span>
+                            <!--<input class="tab_one tab_show txt" type="text" isupdate="ture"  id="nationality" name="nationality" />-->
+                            <select class="tab_one txt tab_edit" name="nationality" isupdate="ture" placeholder="民族" >
+                                <option value="">请选择</option>
+                                <option value="汉族">汉族</option>
+                                <option value="藏族">藏族</option>
+                                <option value="朝鲜族">朝鲜族</option>
+                                <option value="蒙古族">蒙古族</option>
+                                <option value="回族">回族</option>
+                                <option value="满族">满族</option>
+                                <option value="维吾尔族">维吾尔族</option>
+                                <option value="壮族">壮族</option>
+                                <option value="彝族">彝族</option>
+                                <option value="苗族">苗族</option>
+                                <option value="侗族">侗族</option>
+                                <option value="瑶族">瑶族</option>
+                                <option value="白族">白族</option>
+                                <option value="布依族">布依族</option>
+                                <option value="傣族">傣族</option>
+                                <option value="京族">京族</option>
+                                <option value="黎族">黎族</option>
+                                <option value="羌族">羌族</option>
+                                <option value="怒族">怒族</option>
+                                <option value="佤族">佤族</option>
+                                <option value="水族">水族</option>
+                                <option value="畲族">畲族</option>
+                                <option value="土族">土族</option>
+                                <option value="阿昌族">阿昌族</option>
+                                <option value="哈尼族">哈尼族</option>
+                                <option value="高山族">高山族</option>
+                                <option value="景颇族">景颇族</option>
+                                <option value="珞巴族">珞巴族</option>
+                                <option value="锡伯族">锡伯族</option>
+                                <option value="德昂(崩龙)族">德昂(崩龙)族</option>
+                                <option value="保安族">保安族</option>
+                                <option value="基诺族">基诺族</option>
+                                <option value="门巴族">门巴族</option>
+                                <option value="毛南族">毛南族</option>
+                                <option value="赫哲族">赫哲族</option>
+                                <option value="裕固族">裕固族</option>
+                                <option value="撒拉族">撒拉族</option>
+                                <option value="独龙族">独龙族</option>
+                                <option value="普米族">普米族</option>
+                                <option value="仫佬族">仫佬族</option>
+                                <option value="仡佬族">仡佬族</option>
+                                <option value="东乡族">东乡族</option>
+                                <option value="拉祜族">拉祜族</option>
+                                <option value="土家族">土家族</option>
+                                <option value="纳西族">纳西族</option>
+                                <option value="傈僳族">傈僳族</option>
+                                <option value="布朗族">布朗族</option>
+                                <option value="哈萨克族">哈萨克族</option>
+                                <option value="达斡尔族">达斡尔族</option>
+                                <option value="鄂伦春族">鄂伦春族</option>
+                                <option value="鄂温克族">鄂温克族</option>
+                                <option value="俄罗斯族">俄罗斯族</option>
+                                <option value="塔塔尔族">塔塔尔族</option>
+                                <option value="塔吉克族">塔吉克族</option>
+                                <option value="柯尔克孜族">柯尔克孜族</option>
+                                <option value="乌兹别克族">乌兹别克族</option>
+                                <option value="国外">国外</option>
                             </select>
                         </div>
                     </li>
@@ -215,64 +230,217 @@
                     <li>
                         <span>生肖：</span>
                         <div class="tab">
-                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="zodiac" name="zodiac" />
+                            <span class="tab_one txt tab_show" id="zodiac"></span>
+                            <!--<input class="tab_one txt tab_edit" type="text" isupdate="ture" name="zodiac" />-->
+                            <select class="tab_one txt tab_edit" name="zodiac" isupdate="ture" placeholder="生肖" >
+                                <option value="">请选择</option>
+                                <option value="鼠">鼠</option>
+                                <option value="牛">牛</option>
+                                <option value="虎">虎</option>
+                                <option value="兔">兔</option>
+                                <option value="龙">龙</option>
+                                <option value="蛇">蛇</option>
+                                <option value="马">马</option>
+                                <option value="羊">羊</option>
+                                <option value="猴">猴</option>
+                                <option value="鸡">鸡</option>
+                                <option value="狗">狗</option>
+                                <option value="猪">猪</option>
+                            </select>
                         </div>
                     </li>
                     <li>
                         <span>星座：</span>
                         <div class="tab">
-                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="constellation" name="constellation" />
+                            <span class="tab_one txt tab_show" id="constellation"></span>
+                            <!--<input class="tab_one txt tab_edit" type="text" isupdate="ture" name="constellation" />-->
+                            <select class="tab_one txt tab_edit" name="constellation" isupdate="ture" placeholder="星座" >
+                                <option value="">请选择</option>
+                                <option value="白羊座(03.21-04.20)">白羊座(03.21-04.20)</option>
+                                <option value="金牛座(04.21-05.20)">金牛座(04.21-05.20)</option>
+                                <option value="双子座(05.21-06.21)">双子座(05.21-06.21)</option>
+                                <option value="巨蟹座(06.22-07.22)">巨蟹座(06.22-07.22)</option>
+                                <option value="狮子座(07.23-08.22)">狮子座(07.23-08.22)</option>
+                                <option value="处女座(08.23-09.22)">处女座(08.23-09.22)</option>
+                                <option value="天秤座(09.23-10.22)">天秤座(09.23-10.22)</option>
+                                <option value="天蝎座(10.23-11.21)">天蝎座(10.23-11.21)</option>
+                                <option value="射手座(11.22-12.21)">射手座(11.22-12.21)</option>
+                                <option value="魔羯座(12.22-01.19)">魔羯座(12.22-01.19)</option>
+                                <option value="水瓶座(01.20-02.19)">水瓶座(01.20-02.19)</option>
+                                <option value="双鱼座(02.20-03.20)">双鱼座(02.20-03.20)</option>
+                            </select>
+
                         </div>
                     </li>
                     <li>
                         <span>血型：</span>
                         <div class="tab">
-                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="blood" name="blood" />
+                            <span class="tab_one txt tab_show" id="blood"></span>
+                            <!--<input class="tab_one txt tab_edit" type="text" isupdate="ture" name="blood" placeholder="血型"/>-->
+                            <select class="tab_one txt tab_edit" name="blood" isupdate="ture" placeholder="生肖" >
+                                <option value="">请选择</option>
+                                <option value="A型">A型</option>
+                                <option value="B型">B型</option>
+                                <option value="O型">O型</option>
+                                <option value="AB型">AB型</option>
+                            </select>
+
                         </div>
                     </li>
                     <li>
                         <span>职业：</span>
                         <div class="tab">
-                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="occupation" name="occupation" />
+                            <span class="tab_one txt tab_show" id="occupation"></span>
+                            <!--<input class="tab_one tab_show txt" type="text" isupdate="ture"  id="occupation" name="occupation" />-->
+                            <select class="tab_one txt tab_edit" name="occupation" isupdate="ture" placeholder="职业" >
+
+                                <option value="">请选择</option>
+                                <option value="销售">销售</option>
+                                <option value="客户服务">客户服务</option>
+                                <option value="计算机/互联网">计算机/互联网</option>
+                                <option value="通信/电子">通信/电子</option>
+                                <option value="生产/制造">生产/制造</option>
+                                <option value="物流/仓储">物流/仓储</option>
+                                <option value="商贸/采购">商贸/采购</option>
+                                <option value="人事/行政">人事/行政</option>
+                                <option value="高级管理">高级管理</option>
+                                <option value="广告/市场">广告/市场</option>
+                                <option value="传媒/艺术">传媒/艺术</option>
+                                <option value="生物/制药">生物/制药</option>
+                                <option value="医疗/护理">医疗/护理</option>
+                                <option value="金融/银行/保险">金融/银行/保险</option>
+                                <option value="建筑/房地产">建筑/房地产</option>
+                                <option value="咨询/顾问">咨询/顾问</option>
+                                <option value="法律">法律</option>
+                                <option value="财会/审计">财会/审计</option>
+                                <option value="教育/科研">教育/科研</option>
+                                <option value="服务业">服务业</option>
+                                <option value="交通运输">交通运输</option>
+                                <option value="政府机构">政府机构</option>
+                                <option value="军人/警察">军人/警察</option>
+                                <option value="农林牧渔">农林牧渔</option>
+                                <option value="自由职业">自由职业</option>
+                                <option value="在校学生">在校学生</option>
+                                <option value="待业">待业</option>
+                                <option value="其他行业">其他行业</option>
+                                <option value="退休">退休</option>
+                            </select>
                         </div>
                     </li>
                     <li>
                         <span>信仰：</span>
                         <div class="tab">
-                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="faith" name="faith" />
+                            <span class="tab_one txt tab_show" id="faith"></span>
+                            <input class="tab_one txt tab_edit" type="text" isupdate="ture" name="faith" />
                         </div>
                     </li>
                 </ul>
                 <ul >
 
                     <li>
-                        <span>户籍地址：</span>
+                        <span>籍贯：</span>
                         <div class="tab">
-                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="hometown" name="hometown" />
+                            <span class="tab_one txt tab_show" id="hometown"></span>
+                            <!--<input class="tab_one tab_show txt" type="text" isupdate="ture"  name="hometown" />-->
+                            <select class="tab_one txt tab_edit" name="hometown" isupdate="ture" placeholder="籍贯">
+                                <option value="">请选择</option>
+                                <option value="北京">北京</option>
+                                <option value="天津">天津</option>
+                                <option value="河北">河北</option>
+                                <option value="山西">山西</option>
+                                <option value="内蒙古">内蒙古</option>
+                                <option value="辽宁">辽宁</option>
+                                <option value="吉林">吉林</option>
+                                <option value="黑龙江">黑龙江</option>
+                                <option value="上海">上海</option>
+                                <option value="江苏">江苏</option>
+                                <option value="浙江">浙江</option>
+                                <option value="安徽">安徽</option>
+                                <option value="福建">福建</option>
+                                <option value="江西">江西</option>
+                                <option value="山东">山东</option>
+                                <option value="河南">河南</option>
+                                <option value="湖北">湖北</option>
+                                <option value="湖南">湖南</option>
+                                <option value="广东">广东</option>
+                                <option value="广西">广西</option>
+                                <option value="海南">海南</option>
+                                <option value="重庆">重庆</option>
+                                <option value="四川">四川</option>
+                                <option value="贵州">贵州</option>
+                                <option value="云南">云南</option>
+                                <option value="西藏">西藏</option>
+                                <option value="陕西">陕西</option>
+                                <option value="甘肃">甘肃</option>
+                                <option value="青海">青海</option>
+                                <option value="宁夏">宁夏</option>
+                                <option value="新疆">新疆</option>
+                            </select>
                         </div>
                     </li>
                     <li>
                         <span>最高学历：</span>
                         <div class="tab">
-                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="education" name="education" />
+                            <span class="tab_one txt tab_show" id="education"></span>
+                            <!--<input class="tab_one txt tab_edit"  type="text" isupdate="ture" name="education" />-->
+                            <select class="tab_one txt tab_edit" name="education" isupdate="ture" placeholder="最高学历">
+                                <option value="">请选择</option>
+                                <option value="高中及以下">高中及以下</option>
+                                <option value="中专">中专</option>
+                                <option value="大专">大专</option>
+                                <option value="大学本科">大学本科</option>
+                                <option value="硕士">硕士</option>
+                                <option value="博士">博士</option>
+                            </select>
+
                         </div>
                     </li>
                     <li>
                         <span>婚姻状况：</span>
                         <div class="tab">
-                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="marital_status" name="marital_status" />
+                            <span class="tab_one txt tab_show" id="marital_status"></span>
+                            <!--<input class="tab_one tab_show txt" type="text" isupdate="ture"  id="marital_status" name="marital_status" />-->
+                            <select class="tab_one txt tab_edit" name="marital_status" isupdate="ture" placeholder="婚姻状况" >
+                                <option value="">请选择</option>
+                                <option value="未婚">未婚</option>
+                                <option value="离异单身">离异单身</option>
+                                <option value="离异带孩子">离异带孩子</option>
+                                <option value="丧偶带孩子">丧偶带孩子</option>
+                                <option value="丧偶单身">丧偶单身</option>
+                                <option value="保密">保密</option>
+                            </select>
                         </div>
                     </li>
                     <li>
                         <span>有孩子吗：</span>
                         <div class="tab">
-                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="children" name="children" />
+                            <span class="tab_one txt tab_show" id="children"></span>
+                            <!--<input class="tab_one tab_show txt" type="text" isupdate="ture"  id="children" name="children" />-->
+                            <select class="tab_one txt tab_edit" name="children" isupdate="ture" placeholder="是否有孩子" >
+                                <option value="">请选择</option>
+                                <option value="没有">没有</option>
+                                <option value="有，我们住在一起">有，我们住在一起</option>
+                                <option value="有，我们偶尔一起住">有，我们偶尔一起住</option>
+                                <option value="有，但不在身边">有，但不在身边</option>
+                            </select>
                         </div>
                     </li>
                     <li>
-                        <span>喜欢宠物：</span>
+                        <span>年收入：</span>
                         <div class="tab">
-                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="like_pet" name="like_pet" />
+                            <span class="tab_one txt tab_show" id="income"></span>
+                            <!--<input class="tab_one txt tab_edit" type="text" isupdate="ture" name="income" />-->
+                            <select class="tab_one txt tab_edit" name="income" isupdate="ture" placeholder="年收入" >
+                                <option value="">选择年收入</option>
+                                <option value="1-5万元">1-5万元</option>
+                                <option value="5-10万元">5-10万元</option>
+                                <option value="10-15万元">10-15万元</option>
+                                <option value="15-20万元">15-20万元</option>
+                                <option value="20-35万元">20-35万元</option>
+                                <option value="35-50万元">35-50万元</option>
+                                <option value="50-100万元">50-100万元</option>
+                                <option value="100万元以上">100万元以上</option>
+                            </select>
                         </div>
                     </li>
 
@@ -286,61 +454,89 @@
 
                 <ul>
                     <li>
-                        <span>住房条件：</span>
+                        <span>有无住房：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">否</span>
-                            <input class="tab_one tab_show txt" type="text" isupdate="ture" id="housing" name="housing" />
+                            <span class="tab_one txt tab_show" id="housing"></span>
+                            <!--<input class="tab_one txt tab_edit" type="text" isupdate="ture" name="housing" />-->
+                            <select class="tab_one txt tab_edit" name="housing" isupdate="ture" >
+                                <option value="0">无</option>
+                                <option value="1">有</option>
+                            </select>
                         </div>
                     </li>
                     <li>
                         <span>是否购车：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">否</span>
-                            <input class="tab_one tab_show txt" type="text" isupdate="ture" id="caring" name="caring" />
+                            <span class="tab_one txt tab_show" id="caring"></span>
+                            <!--<input class="tab_one txt tab_edit" type="text" isupdate="ture" name="caring" />-->
+                            <select class="tab_one txt tab_edit" name="caring" isupdate="ture" >
+                                <option value="0">否</option>
+                                <option value="1">是</option>
+                            </select>
                         </div>
                     </li>
                     <li>
                         <span>是否吸烟：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">否</span>
-                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="smoking" name="smoking" />
+                            <span class="tab_one txt tab_show" id="smoking"></span>
+                            <!--<input class="tab_one txt tab_edit" type="text" isupdate="ture" name="smoking" />-->
+                            <select class="tab_one txt tab_edit" name="smoking" isupdate="ture" >
+                                <option value="0">否</option>
+                                <option value="1">是</option>
+                            </select>
                         </div>
                     </li>
                     <li>
                         <span>是否喝酒：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">否</span>
-                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="drinking" name="drinking" />
+                            <span class="tab_one txt tab_show" id="drinking"></span>
+                            <!--<input class="tab_one txt tab_edit" type="text" isupdate="ture" name="drinking" />-->
+                            <select class="tab_one txt tab_edit" name="drinking" isupdate="ture" >
+                                <option value="0">否</option>
+                                <option value="1">是</option>
+                            </select>
                         </div>
                     </li>
                 </ul>
                 <ul>
                     <li>
-                        <span>厨艺：</span>
+                        <span>是否下厨：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">否</span>
-                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="cooking" name="cooking" />
+                            <span class="tab_one txt tab_show" id="cooking"></span>
+                            <!--<input class="tab_one txt tab_edit" type="text" isupdate="ture" name="cooking" />-->
+                            <select class="tab_one txt tab_edit" name="cooking" isupdate="ture" >
+                                <option value="0">否</option>
+                                <option value="1">是</option>
+                            </select>
                         </div>
                     </li>
                     <li>
-                        <span>家务：</span>
+                        <span>是否做家务：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">否</span>
-                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="housework" name="housework" />
+                            <span class="tab_one txt tab_show" id="housework"></span>
+                            <!--<input class="tab_one txt tab_edit" type="text" isupdate="ture" name="housework" />-->
+                            <select class="tab_one txt tab_edit" name="housework" isupdate="ture" >
+                                <option value="0">否</option>
+                                <option value="1">是</option>
+                            </select>
                         </div>
                     </li>
                     <li>
-                        <span>唱歌：</span>
+                        <span>是否养宠物：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">高级</span>
-                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="music" name="music" />
+                            <span class="tab_one txt tab_show" id="keep_pets"></span>
+                            <!--<input class="tab_one txt tab_edit" type="text" isupdate="ture" name="music" />-->
+                            <select class="tab_one txt tab_edit" name="keep_pets" isupdate="ture" >
+                                <option value="0">否</option>
+                                <option value="1">是</option>
+                            </select>
                         </div>
                     </li>
                     <li>
-                        <span>才艺：</span>
+                        <span>是否：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">高级</span>
-                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="art" name="art" />
+                            <span class="tab_one txt tab_show" id="art"></span>
+                            <input class="tab_one txt tab_edit" type="text" isupdate="ture" name="art" />
                         </div>
                     </li>
                 </ul>
@@ -348,57 +544,74 @@
                     <li>
                         <span>想交往多久结婚：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">3年内</span>
-                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="married_year" name="married_year" />
+                            <span class="tab_one txt tab_show" id="married_year"></span>
+                            <!--<input class="tab_one txt tab_edit" type="text" isupdate="ture" name="married_year" />-->
+                            <select class="tab_one txt tab_edit" name="married_year" isupdate="ture" >
+                                <option value="">请选择</option>
+                                <option value="1年以内">1年以内</option>
+                                <option value="2-3年">2-3年</option>
+                                <option value="2-3年">3年以上</option>
+                                <option value="听对方的意见">听对方的意见</option>
+                                <option value="其他">其他</option>
+                            </select>
                         </div>
                     </li>
                     <li>
                         <span>婚后与父母住吗：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">否</span>
-                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="live_parents" name="live_parents" />
+                            <span class="tab_one txt tab_show" id="live_parents"></span>
+                            <!--<input class="tab_one txt tab_edit" type="text" isupdate="ture" name="live_parents" />-->
+                            <select class="tab_one txt tab_edit" name="live_parents" isupdate="ture" >
+                                <option value="">请选择</option>
+                                <option value="否，希望过二人世界">否，希望过二人世界</option>
+                                <option value="否，不接受和对方父母同住">否，不接受和对方父母同住</option>
+                                <option value="是，要和自己的父母一起住">是，要和自己的父母一起住</option>
+                                <option value="是，接受和对方父母一起住">是，接受和对方父母一起住</option>
+                                <option value="尊重对方意见">尊重对方意见</option>
+                                <option value="其他">其他</option>
+                            </select>
                         </div>
                     </li>
                     <li>
                         <span>喜欢怎样的约会：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">否</span>
-                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="love_style" name="love_style" />
+                            <span class="tab_one txt tab_show" id="love_style"></span>
+                            <input class="tab_one txt tab_edit" type="text" isupdate="ture" name="love_style" />
                         </div>
                     </li>
                     <li>
                         <span>较大的消费项目：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">否</span>
-                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="max_consum" name="max_consum" />
+                            <span class="tab_one txt tab_show" id="max_consum"></span>
+                            <input class="tab_one txt tab_edit" type="text" isupdate="ture" name="max_consum" />
                         </div>
                     </li>
                 </ul>
             </div>
         </div>
         <div class="info1">
-            <p class="title">————— &nbsp; &nbsp; 生活状况 &nbsp; &nbsp; —————</p>
+            <p class="title">————— &nbsp; &nbsp; 兴趣爱好 &nbsp; &nbsp; —————</p>
             <div class="right">
                 <ul>
                     <li>
-                        <span>喜欢的活动：</span>
+                        <span>喜欢的社交活动：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">否</span>
-                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="favorite_active" name="favorite_active" />
+                            <span class="tab_one txt tab_show" id="favorite_active"></span>
+                            <input class="tab_one txt tab_edit" type="text" isupdate="ture" name="favorite_active" />
                         </div>
                     </li>
                     <li>
                         <span>喜欢的运动：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">否</span>
-                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="favorite_sports" name="favorite_sports" />
+                            <span class="tab_one txt tab_show" id="favorite_sports" ></span>
+                            <input class="tab_one txt tab_edit" type="text" isupdate="ture" name="favorite_sports" />
                         </div>
                     </li>
                     <li>
-                        <span>喜欢的地方：</span>
+                        <span>喜欢的城市：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">否</span>
-                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="favorite_city" name="favorite_city" />
+                            <span class="tab_one txt tab_show" id="favorite_city" ></span>
+                            <input class="tab_one txt tab_edit" type="text" isupdate="ture" name="favorite_city" />
                         </div>
                     </li>
 
@@ -407,45 +620,45 @@
                     <li>
                         <span>喜欢的影视：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">否</span>
-                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="favorite_movie" name="favorite_movie" />
+                            <span class="tab_one txt tab_show" id="favorite_movie" ></span>
+                            <input class="tab_one txt tab_edit" type="text" isupdate="ture" name="favorite_movie" />
                         </div>
                     </li>
                     <li>
                         <span>喜欢的音乐：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">否</span>
-                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="favorite_music" name="favorite_music" />
+                            <span class="tab_one txt tab_show" id="favorite_music" ></span>
+                            <input class="tab_one txt tab_edit" type="text" isupdate="ture" name="favorite_music" />
                         </div>
                     </li>
                     <li>
                         <span>喜欢的食物：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">否</span>
-                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="favorite_food" name="favorite_food" />
+                            <span class="tab_one txt tab_show" id="favorite_food" ></span>
+                            <input class="tab_one txt tab_edit" type="text" isupdate="ture" name="favorite_food" />
                         </div>
                     </li>
                 </ul>
                 <ul>
                     <li>
-                        <span>喜欢的：</span>
+                        <span>喜欢的城市：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">否</span>
-                            <input class="tab_one tab_show txt" type="text" isupdate="ture" name="favorite_1" />
+                            <span class="tab_one txt tab_show" id="favorite_1" ></span>
+                            <input class="tab_one txt tab_edit" type="text" isupdate="ture" name="favorite_1" />
                         </div>
                     </li>
                     <li>
-                        <span>喜欢的：</span>
+                        <span>喜欢的行业：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">否</span>
-                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  name="favorite_2" />
+                            <span class="tab_one txt tab_show" id="favorite_2" ></span>
+                            <input class="tab_one txt tab_edit" type="text" isupdate="ture"  name="favorite_2" />
                         </div>
                     </li>
                     <li>
-                        <span>喜欢的：</span>
+                        <span>喜欢的名人：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">否</span>
-                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  name="favorite_3" />
+                            <span class="tab_one txt tab_show" id="favorite_3" ></span>
+                            <input class="tab_one txt tab_edit" type="text" isupdate="ture"  name="favorite_3" />
                         </div>
                     </li>
                 </ul>
@@ -459,36 +672,36 @@
                     <li>
                         <span>性别：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">女</span>
-                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="mate_sex" name="mate_sex" />
+                            <span class="tab_one txt tab_show" id="mate_sex" ></span>
+                            <input class="tab_one txt tab_edit" type="text" isupdate="ture" name="mate_sex" />
                         </div>
                     </li>
                     <li>
                         <span>年纪：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">25以上</span>
-                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="mate_age" name="mate_age" />
+                            <span class="tab_one txt tab_show" id="mate_age" ></span>
+                            <input class="tab_one txt tab_edit" type="text" isupdate="ture" name="mate_age" />
                         </div>
                     </li>
                     <li>
                         <span>身高：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">180cm</span>
-                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="mate_height" name="mate_height" />
+                            <span class="tab_one txt tab_show" id="mate_height" ></span>
+                            <input class="tab_one txt tab_edit" type="text" isupdate="ture" name="mate_height" />
                         </div>
                     </li>
                     <li>
                         <span>学历：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">本科</span>
-                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="mate_education" name="mate_education" />
+                            <span class="tab_one txt tab_show" id="mate_education" ></span>
+                            <input class="tab_one txt tab_edit" type="text" isupdate="ture" name="mate_education" />
                         </div>
                     </li>
                     <li>
                         <span>婚况：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">有</span>
-                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="mate_marital" name="mate_marital" />
+                            <span class="tab_one txt tab_show" id="mate_marital" ></span>
+                            <input class="tab_one txt tab_edit" type="text" isupdate="ture" name="mate_marital" />
                         </div>
                     </li>
                 </ul>
@@ -496,29 +709,29 @@
                     <li>
                         <span>车子：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">有</span>
-                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="mate_car" name="mate_car" />
+                            <span class="tab_one txt tab_show" id="mate_car" ></span>
+                            <input class="tab_one txt tab_edit" type="text" isupdate="ture" name="mate_car" />
                         </div>
                     </li>
                     <li>
                         <span>房子：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">有</span>
-                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="mate_house" name="mate_house" />
+                            <span class="tab_one txt tab_show" id="mate_house" ></span>
+                            <input class="tab_one txt tab_edit" type="text" isupdate="ture" name="mate_house" />
                         </div>
                     </li>
                     <li>
                         <span>职业：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">有</span>
-                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="mate_work" name="mate_work" />
+                            <span class="tab_one txt tab_show" id="mate_work" ></span>
+                            <input class="tab_one txt tab_edit" type="text" isupdate="ture" name="mate_work" />
                         </div>
                     </li>
                     <li>
                         <span>工作地：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">北京</span>
-                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="mate_work_place" name="mate_work_place" />
+                            <span class="tab_one txt tab_show" id="mate_work_place" ></span>
+                            <input class="tab_one txt tab_edit" type="text" isupdate="ture" name="mate_work_place" />
                         </div>
                     </li>
                 </ul>
@@ -526,29 +739,29 @@
                     <li>
                         <span>年收入：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">10w</span>
-                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="mate_income" name="mate_income" />
+                            <span class="tab_one txt tab_show" id="mate_income" ></span>
+                            <input class="tab_one txt tab_edit" type="text" isupdate="ture" name="mate_income" />
                         </div>
                     </li>
                     <li>
                         <span>是否吸烟：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">10w</span>
-                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="mate_smoking" name="mate_smoking" />
+                            <span class="tab_one txt tab_show" id="mate_smoking" ></span>
+                            <input class="tab_one txt tab_edit" type="text" isupdate="ture" name="mate_smoking" />
                         </div>
                     </li>
                     <li>
                         <span>是否喝酒：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">10w</span>
-                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="mate_drinking" name="mate_drinking" />
+                            <span class="tab_one txt tab_show" id="mate_drinking" ></span>
+                            <input class="tab_one txt tab_edit" type="text" isupdate="ture" name="mate_drinking" />
                         </div>
                     </li>
                     <li>
                         <span>是否有孩子：</span>
                         <div class="tab">
-                            <span class="tab_one tab_label">10w</span>
-                            <input class="tab_one tab_show txt" type="text" isupdate="ture"  id="mate_children" name="mate_children" />
+                            <span class="tab_one txt tab_show" id="mate_children" ></span>
+                            <input class="tab_one txt tab_edit" type="text" isupdate="ture" name="mate_children" />
                         </div>
                     </li>
                 </ul>

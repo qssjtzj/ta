@@ -9,17 +9,23 @@ var center={
         $("#btn_update").click(function(){
             var cls = $("#btn_update").attr("class");
 
-            if(cls.indexOf("edit")>0){
+            if(cls.indexOf("edit") > 0){
 
-                $(".sub2 .right .tab .tab_one.txt").removeAttr("readonly")
-                $(".sub2 .right .tab .tab_one.txt").removeClass("tab_show").addClass("tab_edit");
+                $(".sub2 .right .tab .tab_one.tab_show").hide();
+                $(".sub2 .right .tab .tab_one.tab_edit").show();
+
+                // $(".sub2 .right .tab .tab_one.txt").removeAttr("readonly");
+                // $(".sub2 .right .tab .tab_one.txt").removeClass("tab_show").addClass("tab_edit");
 
                 $("#btn_update").removeClass("edit").addClass("save");
                 $("#btn_update").html("完成");
             }else if(cls.indexOf("save")>0){
 
-                $(".sub2 .right .tab .tab_one.txt").attr("readonly","true")
-                $(".sub2 .right .tab .tab_one.txt").removeClass("tab_edit").addClass("tab_show");
+                $(".sub2 .right .tab .tab_one.tab_edit").hide();
+                $(".sub2 .right .tab .tab_one.tab_show").show();
+
+                // $(".sub2 .right .tab .tab_one.txt").attr("readonly","true");
+                // $(".sub2 .right .tab .tab_one.txt").removeClass("tab_edit").addClass("tab_show");
 
                 $("#btn_update").removeClass("save").addClass("edit");
                 $("#btn_update").html("编辑");
@@ -176,10 +182,10 @@ var center={
                 $("#user_icon").attr('src', obj.icon);
 
                 jQuery.each(obj, function(i, val) {
-                    if(val === ''){
-                        val = "保密"
-                    }
-                    $("input[name='"+ i +"']").val(val);
+
+                    $("[name='"+ i +"']").val(decodeURI(val));
+                    //$("select[name='"+ i +"']").val(val);
+                    $("span[id='"+ i +"']").html(decodeURI(val));
                 });
 
             } else {
@@ -199,7 +205,7 @@ var center={
         var url = TA.apiPath + "/update_uinfo.php";
         var data = {};//{"account": phone, "passwd": password, "nick" : nickname, "verify" : sms_verify};
 
-        $("input[isupdate='ture']").map(function() {
+        $("[isupdate='ture']").map(function() {
             data[this.name]= this.value;
         });
         console.log("data", data);

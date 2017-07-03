@@ -480,7 +480,7 @@
 .mem_main .sub1 .left {
     width: 320px;
     margin-left: 26px;
-    height: 500px;
+    height: 420px;
     float: left
 }
 
@@ -790,7 +790,7 @@
 
 #tFocus {
     width: 338px;
-    height: 500px;
+    height: 410px;
     overflow: hidden;
 }
 
